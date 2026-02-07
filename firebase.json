@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "cordon-blue-deployment.zip",
+      "*.md",
+      "START-HERE.txt"
+    ]
+  }
+}
