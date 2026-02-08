@@ -16,7 +16,16 @@
       "Cordon_Blue_Portfolio.pdf",
       "portfolio-print.html",
       "firebase-debug.log",
-      "memory.md"
+      "memory.md",
+      "flutter_app/**"
     ]
+  },
+  "emulators": {
+    "dataconnect": {
+      "dataDir": "dataconnect/.dataconnect/pgliteData"
+    }
+  },
+  "dataconnect": {
+    "source": "dataconnect"
   }
 }

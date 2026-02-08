@@ -1,0 +1,55 @@
+mutation CreateInquiry(
+  $name: String!
+  $email: String!
+  $message: String!
+  $phoneNumber: String
+  $subject: String
+) @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  inquiry_insert(
+    data: {
+      name: $name
+      email: $email
+      message: $message
+      phoneNumber: $phoneNumber
+      subject: $subject
+      createdAt_expr: "request.time"
+    }
+  )
+}
+
+query ListProjects @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  projects {
+    id
+    title
+    description
+    startDate
+    endDate
+    status
+    clientName
+    budget
+    location
+  }
+}
+
+mutation UpdateProjectStatus(
+  $id: UUID!
+  $status: String!
+) @auth(level: USER) {
+  project_update(
+    id: $id
+    data: {
+      status: $status
+    }
+  )
+}
+
+query ListTeamMembers @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  teamMembers {
+    id
+    name
+    role
+    photoUrl
+    bio
+    linkedinProfile
+  }
+}

@@ -1,0 +1,66 @@
+mutation SeedData @transaction @auth(level: PUBLIC, insecureReason: "This operation is used to seed the database with initial data and is safe to expose to the public.") {
+  service_insertMany(data: [
+    {
+      name: "Service 1",
+      description: "Description for Service 1",
+      imageUrl: "url_for_service_1_image"
+    },
+    {
+      name: "Service 2",
+      description: "Description for Service 2",
+      imageUrl: "url_for_service_2_image"
+    }
+  ])
+  teamMember_insertMany(data: [
+    {
+      name: "Team Member 1",
+      role: "Role 1",
+      bio: "Bio for Team Member 1",
+      photoUrl: "url_for_team_member_1_photo",
+      linkedinProfile: "linkedin_profile_1"
+    },
+    {
+      name: "Team Member 2",
+      role: "Role 2",
+      bio: "Bio for Team Member 2",
+      photoUrl: "url_for_team_member_2_photo",
+      linkedinProfile: "linkedin_profile_2"
+    }
+  ])
+  project_insertMany(data: [
+    {
+      title: "Project 1",
+      description: "Description for Project 1",
+      clientName: "Client 1",
+      startDate: "2024-01-01",
+      endDate: "2024-02-01",
+      status: "In Progress",
+      budget: 10000.00,
+      location: "Location 1"
+    },
+    {
+      title: "Project 2",
+      description: "Description for Project 2",
+      clientName: "Client 2",
+      startDate: "2024-03-01",
+      endDate: "2024-04-01",
+      status: "Completed",
+      budget: 20000.00,
+      location: "Location 2"
+    }
+  ])
+  projectImage_insertMany(data: [
+    {
+      projectId: "550e8400-e29b-41d4-a716-446655440000",
+      caption: "Image 1 for Project 1",
+      imageUrl: "url_for_project_1_image_1",
+      order: 1
+    },
+    {
+      projectId: "550e8400-e29b-41d4-a716-446655440001",
+      caption: "Image 1 for Project 2",
+      imageUrl: "url_for_project_2_image_1",
+      order: 1
+    }
+  ])
+}

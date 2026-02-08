@@ -2,22 +2,33 @@
 .DS_Store
 Thumbs.db
 
-# Zip archives (deployment backups)
+# Zip archives
 *.zip
 
-# Node modules (if added later)
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log*
+
+# Firebase
+.firebase/
+
+# Node modules
 node_modules/
 
-# IDE/Editor folders
+# IDE/Editor
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# Firebase (if using)
-.firebase/
-firebase-debug.log
+# DataConnect
+.dataconnect
+dataconnect/.dataconnect/
 
-# Temporary files
+# Temp
 *.tmp
 *.temp
