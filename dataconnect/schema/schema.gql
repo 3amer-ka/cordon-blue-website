@@ -1,0 +1,40 @@
+type Service @table {
+  name: String!
+  description: String!
+  imageUrl: String
+}
+
+type Project @table {
+  title: String!
+  description: String!
+  startDate: Date!
+  endDate: Date!
+  status: String!
+  location: String
+  clientName: String
+  budget: Float
+}
+
+type ProjectImage @table {
+  project: Project!
+  imageUrl: String!
+  caption: String!
+  order: Int
+}
+
+type TeamMember @table {
+  name: String!
+  role: String!
+  bio: String
+  photoUrl: String
+  linkedinProfile: String
+}
+
+type Inquiry @table {
+  name: String!
+  email: String!
+  message: String!
+  createdAt: Timestamp!
+  phoneNumber: String
+  subject: String
+}
