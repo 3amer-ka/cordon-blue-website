@@ -6,9 +6,9 @@
     --navy-medium: #1e293b;
     --steel-blue: #334155;
     --steel-light: #6b8caf;
-    --gold-accent: #d4af37; /* Metallic Gold */
-    --gold-light: #f3e5ab;
-    --gold-dark: #aa8c2c;
+    --gold-accent: #5b9bd5; /* Steel Blue Accent */
+    --gold-light: #b8d4e8;
+    --gold-dark: #3b7fc4;
     --cobalt: #1f5eff;
     --electric: #6aa8ff;
     --ink-dark: #0f172a;
@@ -258,7 +258,7 @@ img {
     display: inline-block;
     border: 2px solid var(--gold-accent);
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(212, 166, 80, 0.4);
+    box-shadow: 0 4px 20px rgba(91, 155, 213, 0.4);
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -268,7 +268,7 @@ img {
     background: transparent;
     color: var(--gold-accent);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(212, 166, 80, 0.2);
+    box-shadow: 0 10px 30px rgba(91, 155, 213, 0.2);
 }
 
 .cover-footer {
@@ -1343,7 +1343,7 @@ body.landing .navbar.scrolled {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: radial-gradient(circle at 20% 20%, rgba(242, 200, 109, 0.32), transparent 60%),
+    background: radial-gradient(circle at 20% 20%, rgba(91, 155, 213, 0.32), transparent 60%),
         radial-gradient(circle at 80% 10%, rgba(106, 168, 255, 0.35), transparent 50%),
         linear-gradient(135deg, rgba(10, 18, 36, 0.9) 0%, rgba(16, 30, 60, 0.88) 48%, rgba(10, 18, 36, 0.96) 100%),
         url('../images/hero-blueprint.png') center/cover no-repeat;
@@ -1415,7 +1415,7 @@ body.landing .btn-primary {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    box-shadow: 0 16px 30px rgba(242, 200, 109, 0.35);
+    box-shadow: 0 16px 30px rgba(91, 155, 213, 0.35);
 }
 
 body.landing .btn-primary:hover {
@@ -1737,7 +1737,7 @@ body.landing .btn-secondary:hover {
 }
 
 body.landing :focus-visible {
-    outline: 3px solid rgba(232, 193, 112, 0.6);
+    outline: 3px solid rgba(91, 155, 213, 0.6);
     outline-offset: 3px;
 }
 
@@ -1945,9 +1945,9 @@ body.landing :focus-visible {
 }
 
 .featured-project--gold {
-    background: linear-gradient(135deg, #fffcf5 0%, #fff9e6 100%);
+    background: linear-gradient(135deg, #f0f5fa 0%, #e3f0fa 100%);
     border-left: 4px solid var(--gold-accent);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+    box-shadow: 0 10px 30px rgba(91, 155, 213, 0.1);
 }
 
 .featured-project--gold h2 {
