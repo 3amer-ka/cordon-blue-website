@@ -1973,8 +1973,7 @@ body:not(.landing) > .projects-section:first-of-type {
 .logo-box.nav-logo {
     padding: 10px;
     margin-right: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(4px);
+    background: none;
 }
 
 /* ===== ABOUT PAGE IMAGE VARIANTS ===== */

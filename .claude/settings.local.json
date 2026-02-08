@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew upgrade:*)",
+      "Bash(npx -y firebase-tools@latest hosting:sites:list:*)",
+      "WebFetch(domain:cbgs-bffaa.web.app)",
+      "Bash(npx -y firebase-tools@latest hosting:channel:list:*)",
+      "Bash(npx -y firebase-tools@latest deploy --only hosting --project cbgs-bffaa)",
+      "Bash(npx:*)",
+      "Bash(open:*)"
+    ]
+  }
+}

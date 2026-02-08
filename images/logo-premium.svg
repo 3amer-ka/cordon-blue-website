@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" fill="none">
+  <defs>
+    <linearGradient id="blueLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a8c4e0"/>
+      <stop offset="100%" stop-color="#6a9fd8"/>
+    </linearGradient>
+    <linearGradient id="blueMid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8bb5d9"/>
+      <stop offset="100%" stop-color="#5a8fc0"/>
+    </linearGradient>
+    <linearGradient id="blueDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7aaad2"/>
+      <stop offset="100%" stop-color="#4a80b0"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5a8bb8"/>
+      <stop offset="100%" stop-color="#3a6a98"/>
+    </linearGradient>
+    <linearGradient id="subtitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8bafc8"/>
+      <stop offset="100%" stop-color="#6a9fd8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Skyline Group -->
+  <g transform="translate(10, 8)">
+    <!-- Crane arm -->
+    <rect x="10" y="18" width="1.8" height="60" fill="#9dbdd8" opacity="0.6"/>
+    <rect x="5" y="16" width="28" height="1.8" fill="#9dbdd8" opacity="0.6"/>
+    <line x1="11" y1="18" x2="31" y2="16.5" stroke="#9dbdd8" stroke-width="0.7" opacity="0.45"/>
+    <line x1="11" y1="18" x2="5.5" y2="16.5" stroke="#9dbdd8" stroke-width="0.7" opacity="0.45"/>
+    <line x1="27" y1="17.5" x2="27" y2="30" stroke="#9dbdd8" stroke-width="0.6" opacity="0.4"/>
+
+    <!-- Building 1 - left short -->
+    <rect x="18" y="40" width="10" height="38" rx="0.5" fill="url(#blueLight)" opacity="0.5"/>
+    <rect x="20" y="43" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="24" y="43" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="20" y="49" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="24" y="49" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="20" y="55" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="24" y="55" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="20" y="61" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="24" y="61" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.5"/>
+
+    <!-- Building 2 - left tall -->
+    <rect x="30" y="24" width="12" height="54" rx="0.5" fill="url(#blueMid)" opacity="0.6"/>
+    <rect x="32" y="27" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="37" y="27" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="32" y="33" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="37" y="33" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="32" y="39" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="37" y="39" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="32" y="45" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="37" y="45" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="32" y="51" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="37" y="51" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="32" y="57" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="37" y="57" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+
+    <!-- Building 3 - center tallest -->
+    <rect x="44" y="14" width="14" height="64" rx="0.5" fill="url(#blueDark)" opacity="0.72"/>
+    <rect x="46" y="17" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <rect x="52" y="17" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <rect x="46" y="24" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <rect x="52" y="24" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <rect x="46" y="31" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <rect x="52" y="31" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <rect x="46" y="38" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <rect x="52" y="38" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <rect x="46" y="45" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <rect x="52" y="45" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <rect x="46" y="52" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <rect x="52" y="52" width="3" height="4" rx="0.3" fill="#ffffff" opacity="0.55"/>
+    <!-- Spire -->
+    <rect x="50" y="6" width="1.8" height="10" fill="#7aaad2" opacity="0.65"/>
+
+    <!-- Building 4 - right mid -->
+    <rect x="60" y="30" width="11" height="48" rx="0.5" fill="url(#blueMid)" opacity="0.55"/>
+    <rect x="62" y="33" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="66" y="33" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="62" y="39" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="66" y="39" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="62" y="45" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="66" y="45" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="62" y="51" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+    <rect x="66" y="51" width="2.5" height="3.5" rx="0.3" fill="#ffffff" opacity="0.5"/>
+
+    <!-- Building 5 - right short -->
+    <rect x="73" y="44" width="9" height="34" rx="0.5" fill="url(#blueLight)" opacity="0.45"/>
+    <rect x="75" y="47" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.45"/>
+    <rect x="79" y="47" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.45"/>
+    <rect x="75" y="53" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.45"/>
+    <rect x="79" y="53" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.45"/>
+    <rect x="75" y="59" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.45"/>
+    <rect x="79" y="59" width="2" height="3" rx="0.3" fill="#ffffff" opacity="0.45"/>
+
+    <!-- Building 6 - far right tiny -->
+    <rect x="84" y="52" width="7" height="26" rx="0.5" fill="url(#blueLight)" opacity="0.35"/>
+    <rect x="86" y="55" width="1.5" height="2.5" rx="0.3" fill="#ffffff" opacity="0.4"/>
+    <rect x="89" y="55" width="1.5" height="2.5" rx="0.3" fill="#ffffff" opacity="0.4"/>
+    <rect x="86" y="60" width="1.5" height="2.5" rx="0.3" fill="#ffffff" opacity="0.4"/>
+    <rect x="89" y="60" width="1.5" height="2.5" rx="0.3" fill="#ffffff" opacity="0.4"/>
+
+    <!-- Ground line -->
+    <line x1="4" y1="78" x2="94" y2="78" stroke="#8bb5d9" stroke-width="1" opacity="0.4"/>
+  </g>
+
+  <!-- Company Name -->
+  <text x="128" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="600" letter-spacing="5" fill="url(#textGrad)">CORDON BLUE</text>
+
+  <!-- Thin divider -->
+  <line x1="128" y1="56" x2="365" y2="56" stroke="#8bb5d9" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Subtitle -->
+  <text x="140" y="74" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="400" letter-spacing="7" fill="#8bafc8">GLOBAL SERVICES LTD</text>
+</svg>

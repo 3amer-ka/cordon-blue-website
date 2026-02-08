@@ -7,7 +7,16 @@
       "**/node_modules/**",
       "cordon-blue-deployment.zip",
       "*.md",
-      "START-HERE.txt"
+      "START-HERE.txt",
+      "openclaw/**",
+      "dataconnect/**",
+      "*.zip",
+      "*.pdf",
+      "*.log",
+      "Cordon_Blue_Portfolio.pdf",
+      "portfolio-print.html",
+      "firebase-debug.log",
+      "memory.md"
     ]
   }
 }
