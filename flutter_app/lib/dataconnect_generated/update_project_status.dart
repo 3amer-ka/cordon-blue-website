@@ -66,9 +66,9 @@ class UpdateProjectStatusProjectUpdate {
 
 @immutable
 class UpdateProjectStatusData {
-  final UpdateProjectStatusProjectUpdate? project_update;
+  final UpdateProjectStatusProjectUpdate? projectUpdate;
   UpdateProjectStatusData.fromJson(dynamic json)
-    : project_update = json['project_update'] == null
+    : projectUpdate = json['project_update'] == null
           ? null
           : UpdateProjectStatusProjectUpdate.fromJson(json['project_update']);
   @override
@@ -81,21 +81,21 @@ class UpdateProjectStatusData {
     }
 
     final UpdateProjectStatusData otherTyped = other as UpdateProjectStatusData;
-    return project_update == otherTyped.project_update;
+    return projectUpdate == otherTyped.projectUpdate;
   }
 
   @override
-  int get hashCode => project_update.hashCode;
+  int get hashCode => projectUpdate.hashCode;
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
-    if (project_update != null) {
-      json['project_update'] = project_update!.toJson();
+    if (projectUpdate != null) {
+      json['project_update'] = projectUpdate!.toJson();
     }
     return json;
   }
 
-  const UpdateProjectStatusData({this.project_update});
+  const UpdateProjectStatusData({this.projectUpdate});
 }
 
 @immutable

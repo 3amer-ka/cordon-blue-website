@@ -88,9 +88,9 @@ class CreateInquiryInquiryInsert {
 
 @immutable
 class CreateInquiryData {
-  final CreateInquiryInquiryInsert inquiry_insert;
+  final CreateInquiryInquiryInsert inquiryInsert;
   CreateInquiryData.fromJson(dynamic json)
-    : inquiry_insert = CreateInquiryInquiryInsert.fromJson(
+    : inquiryInsert = CreateInquiryInquiryInsert.fromJson(
         json['inquiry_insert'],
       );
   @override
@@ -103,19 +103,19 @@ class CreateInquiryData {
     }
 
     final CreateInquiryData otherTyped = other as CreateInquiryData;
-    return inquiry_insert == otherTyped.inquiry_insert;
+    return inquiryInsert == otherTyped.inquiryInsert;
   }
 
   @override
-  int get hashCode => inquiry_insert.hashCode;
+  int get hashCode => inquiryInsert.hashCode;
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
-    json['inquiry_insert'] = inquiry_insert.toJson();
+    json['inquiry_insert'] = inquiryInsert.toJson();
     return json;
   }
 
-  const CreateInquiryData({required this.inquiry_insert});
+  const CreateInquiryData({required this.inquiryInsert});
 }
 
 @immutable
@@ -123,25 +123,24 @@ class CreateInquiryVariables {
   final String name;
   final String email;
   final String message;
-  late final Optional<String> phoneNumber;
-  late final Optional<String> subject;
+  final Optional<String> phoneNumber;
+  final Optional<String> subject;
   @Deprecated(
     'fromJson is deprecated for Variable classes as they are no longer required for deserialization.',
   )
   CreateInquiryVariables.fromJson(Map<String, dynamic> json)
     : name = nativeFromJson<String>(json['name']),
       email = nativeFromJson<String>(json['email']),
-      message = nativeFromJson<String>(json['message']) {
-    phoneNumber = Optional.optional(nativeFromJson, nativeToJson);
-    phoneNumber.value = json['phoneNumber'] == null
-        ? null
-        : nativeFromJson<String>(json['phoneNumber']);
+      message = nativeFromJson<String>(json['message']),
+      phoneNumber = Optional.optional(nativeFromJson, nativeToJson)
+        ..value = (json['phoneNumber'] == null
+            ? null
+            : nativeFromJson<String>(json['phoneNumber'])),
+      subject = Optional.optional(nativeFromJson, nativeToJson)
+        ..value = (json['subject'] == null
+            ? null
+            : nativeFromJson<String>(json['subject']));
 
-    subject = Optional.optional(nativeFromJson, nativeToJson);
-    subject.value = json['subject'] == null
-        ? null
-        : nativeFromJson<String>(json['subject']);
-  }
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
@@ -182,7 +181,7 @@ class CreateInquiryVariables {
     return json;
   }
 
-  CreateInquiryVariables({
+  const CreateInquiryVariables({
     required this.name,
     required this.email,
     required this.message,
