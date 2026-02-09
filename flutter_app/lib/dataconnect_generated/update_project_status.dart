@@ -5,55 +5,41 @@ class UpdateProjectStatusVariablesBuilder {
   String status;
 
   final FirebaseDataConnect _dataConnect;
-  UpdateProjectStatusVariablesBuilder(
-    this._dataConnect, {
-    required this.id,
-    required this.status,
-  });
-  Deserializer<UpdateProjectStatusData> dataDeserializer = (dynamic json) =>
-      UpdateProjectStatusData.fromJson(jsonDecode(json));
-  Serializer<UpdateProjectStatusVariables> varsSerializer =
-      (UpdateProjectStatusVariables vars) => jsonEncode(vars.toJson());
-  Future<OperationResult<UpdateProjectStatusData, UpdateProjectStatusVariables>>
-  execute() {
+  UpdateProjectStatusVariablesBuilder(this._dataConnect, {required  this.id,required  this.status,});
+  Deserializer<UpdateProjectStatusData> dataDeserializer = (dynamic json)  => UpdateProjectStatusData.fromJson(jsonDecode(json));
+  Serializer<UpdateProjectStatusVariables> varsSerializer = (UpdateProjectStatusVariables vars) => jsonEncode(vars.toJson());
+  Future<OperationResult<UpdateProjectStatusData, UpdateProjectStatusVariables>> execute() {
     return ref().execute();
   }
 
   MutationRef<UpdateProjectStatusData, UpdateProjectStatusVariables> ref() {
-    UpdateProjectStatusVariables vars = UpdateProjectStatusVariables(
-      id: id,
-      status: status,
-    );
-    return _dataConnect.mutation(
-      "UpdateProjectStatus",
-      dataDeserializer,
-      varsSerializer,
-      vars,
-    );
+    UpdateProjectStatusVariables vars= UpdateProjectStatusVariables(id: id,status: status,);
+    return _dataConnect.mutation("UpdateProjectStatus", dataDeserializer, varsSerializer, vars);
   }
 }
 
 @immutable
 class UpdateProjectStatusProjectUpdate {
   final String id;
-  UpdateProjectStatusProjectUpdate.fromJson(dynamic json)
-    : id = nativeFromJson<String>(json['id']);
+  UpdateProjectStatusProjectUpdate.fromJson(dynamic json):
+  
+  id = nativeFromJson<String>(json['id']);
   @override
   bool operator ==(Object other) {
-    if (identical(this, other)) {
+    if(identical(this, other)) {
       return true;
     }
-    if (other.runtimeType != runtimeType) {
+    if(other.runtimeType != runtimeType) {
       return false;
     }
 
-    final UpdateProjectStatusProjectUpdate otherTyped =
-        other as UpdateProjectStatusProjectUpdate;
+    final UpdateProjectStatusProjectUpdate otherTyped = other as UpdateProjectStatusProjectUpdate;
     return id == otherTyped.id;
+    
   }
-
   @override
   int get hashCode => id.hashCode;
+  
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
@@ -61,69 +47,73 @@ class UpdateProjectStatusProjectUpdate {
     return json;
   }
 
-  const UpdateProjectStatusProjectUpdate({required this.id});
+  UpdateProjectStatusProjectUpdate({
+    required this.id,
+  });
 }
 
 @immutable
 class UpdateProjectStatusData {
-  final UpdateProjectStatusProjectUpdate? projectUpdate;
-  UpdateProjectStatusData.fromJson(dynamic json)
-    : projectUpdate = json['project_update'] == null
-          ? null
-          : UpdateProjectStatusProjectUpdate.fromJson(json['project_update']);
+  final UpdateProjectStatusProjectUpdate? project_update;
+  UpdateProjectStatusData.fromJson(dynamic json):
+  
+  project_update = json['project_update'] == null ? null : UpdateProjectStatusProjectUpdate.fromJson(json['project_update']);
   @override
   bool operator ==(Object other) {
-    if (identical(this, other)) {
+    if(identical(this, other)) {
       return true;
     }
-    if (other.runtimeType != runtimeType) {
+    if(other.runtimeType != runtimeType) {
       return false;
     }
 
     final UpdateProjectStatusData otherTyped = other as UpdateProjectStatusData;
-    return projectUpdate == otherTyped.projectUpdate;
+    return project_update == otherTyped.project_update;
+    
   }
-
   @override
-  int get hashCode => projectUpdate.hashCode;
+  int get hashCode => project_update.hashCode;
+  
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
-    if (projectUpdate != null) {
-      json['project_update'] = projectUpdate!.toJson();
+    if (project_update != null) {
+      json['project_update'] = project_update!.toJson();
     }
     return json;
   }
 
-  const UpdateProjectStatusData({this.projectUpdate});
+  UpdateProjectStatusData({
+    this.project_update,
+  });
 }
 
 @immutable
 class UpdateProjectStatusVariables {
   final String id;
   final String status;
-  @Deprecated(
-    'fromJson is deprecated for Variable classes as they are no longer required for deserialization.',
-  )
-  UpdateProjectStatusVariables.fromJson(Map<String, dynamic> json)
-    : id = nativeFromJson<String>(json['id']),
-      status = nativeFromJson<String>(json['status']);
+  @Deprecated('fromJson is deprecated for Variable classes as they are no longer required for deserialization.')
+  UpdateProjectStatusVariables.fromJson(Map<String, dynamic> json):
+  
+  id = nativeFromJson<String>(json['id']),
+  status = nativeFromJson<String>(json['status']);
   @override
   bool operator ==(Object other) {
-    if (identical(this, other)) {
+    if(identical(this, other)) {
       return true;
     }
-    if (other.runtimeType != runtimeType) {
+    if(other.runtimeType != runtimeType) {
       return false;
     }
 
-    final UpdateProjectStatusVariables otherTyped =
-        other as UpdateProjectStatusVariables;
-    return id == otherTyped.id && status == otherTyped.status;
+    final UpdateProjectStatusVariables otherTyped = other as UpdateProjectStatusVariables;
+    return id == otherTyped.id && 
+    status == otherTyped.status;
+    
   }
-
   @override
   int get hashCode => Object.hashAll([id.hashCode, status.hashCode]);
+  
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
@@ -132,5 +122,9 @@ class UpdateProjectStatusVariables {
     return json;
   }
 
-  const UpdateProjectStatusVariables({required this.id, required this.status});
+  UpdateProjectStatusVariables({
+    required this.id,
+    required this.status,
+  });
 }
+
