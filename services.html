@@ -1,155 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore our comprehensive construction and engineering services - Building, Project Management, Real Estate Development, and more.">
-    <meta name="keywords" content="services, construction, engineering, real estate, project management, Nigeria">
-    <meta property="og:title" content="Our Services - Cordon Blue Global Services">
-    <meta property="og:description" content="Building & Civil Engineering, Project Management, Real Estate Development, and comprehensive construction services.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cordonblueglobal.com/services.html">
-    <meta property="og:image" content="images/logo-premium.png">
-    <title>Our Services - Cordon Blue Global Services</title>
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="canonical" href="https://cordonblueglobal.com/services.html">
-    <link rel="stylesheet" href="css/styles.css">
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0091ea", // More vibrant sky blue
+                        "off-white": "#f8fafc",
+                        "background-light": "#f1f5f9",
+                        "background-dark": "#0a0c10", // Deeper, premium charcoal
+                        "surface-dark": "#111827", // Rich navy-charcoal surface
+                        "accent-dark": "#1f2937",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Services - Cordon Blue Global Services Ltd</title>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo-container">
-                <div class="logo-box nav-logo">
-                    <img src="images/logo-premium.svg" alt="Cordon Blue Logo" class="logo">
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link active">Services</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="contact.html" class="nav-quote">Get a Quote</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Services Section -->
-    <section class="services-section">
-        <div class="container">
-            <h1 class="section-title">CORE SERVICES</h1>
-            <p class="section-subtitle">Comprehensive construction and engineering solutions tailored to your needs</p>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">&#x1F3D7;</div>
-                    <h3>Building & Civil Engineering</h3>
-                    <p>Complete construction solutions for residential, commercial, and industrial projects from design to completion.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">&#x1F4CB;</div>
-                    <h3>Project Management</h3>
-                    <p>Full project management services from inception to completion and closing out, ensuring on-time and on-budget delivery.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">&#x1F3D8;</div>
-                    <h3>Real Estate Development</h3>
-                    <p>Comprehensive real estate consultancy and development services for residential and commercial properties.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">&#x1F528;</div>
-                    <h3>Renovation & Remodeling</h3>
-                    <p>Expert renovation of existing structures to suit new purposes with modern design and quality finishes.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">&#x1F6E3;</div>
-                    <h3>Infrastructure Works</h3>
-                    <p>Highways, drains, pavements, water storage tanks, pipe works, and other civil infrastructure projects.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">&#x1F3A8;</div>
-                    <h3>Interior Design</h3>
-                    <p>Professional interior design and decoration services combining aesthetics with functionality.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">&#x1F69B;</div>
-                    <h3>Haulage & Logistics</h3>
-                    <p>Reliable transportation and logistics services for construction materials and equipment.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">&#x1F527;</div>
-                    <h3>Facility Maintenance</h3>
-                    <p>Comprehensive maintenance services including plumbing, electrical, carpentry, and general repairs.</p>
-                </div>
-            </div>
-
-            <div class="additional-services">
-                <h2>Additional Services</h2>
-                <div class="services-list">
-                    <ul>
-                        <li>Plumbing Repair & Installation</li>
-                        <li>Electrical Installation & Maintenance</li>
-                        <li>Drywall Installation & Repair</li>
-                        <li>Carpentry Services</li>
-                        <li>Appliance Installation</li>
-                        <li>Flooring Installation</li>
-                    </ul>
-                    <ul>
-                        <li>Roofing Repair & Replacement</li>
-                        <li>Kitchen & Bathroom Remodeling</li>
-                        <li>Door & Fence Installation</li>
-                        <li>Swimming Pool Construction</li>
-                        <li>Woodworks & Custom Furniture</li>
-                        <li>Borehole Drilling</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="images/logo-premium.svg" alt="Cordon Blue Global Services" class="footer-logo">
-                <p class="footer-tagline">Built on integrity. Delivered with excellence.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <p>Ikorodu Road, Aladiye Bus Stop<br>Onipanu, Shomolu, Lagos</p>
-                <p><a href="tel:+2347075803337">+234 707 580 3337</a></p>
-                <p><a href="mailto:support@cordonblueglobal.com">support@cordonblueglobal.com</a></p>
-            </div>
-            <div class="footer-legal">
-                <p>RC: 1941741 | TAX ID: 14259515-0001</p>
-                <p>&copy; 2026 Cordon Blue Global Services Ltd. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Variant Switcher -->
+<div class="fixed bottom-4 right-4 z-50 flex flex-col gap-2 bg-white/80 dark:bg-surface-dark/90 backdrop-blur-md p-3 rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl">
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 px-2 mb-1">Theme Variants</p>
+<button class="text-xs px-3 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium hover:bg-slate-50 transition-all text-left" onclick="document.documentElement.classList.remove('dark')">Variant 1: Light</button>
+<button class="text-xs px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-slate-100 font-medium hover:bg-black transition-all text-left" onclick="document.documentElement.classList.add('dark')">Variant 2: Premium Dark</button>
+</div>
+<!-- Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-20 items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center bg-primary p-2 rounded-lg shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-2xl">architecture</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue Global Services Ltd.</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-400 dark:hover:text-primary" href="index.html" href="index.html">Home</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-400 dark:hover:text-primary" href="index.html">About Us</a>
+<a class="text-primary text-sm font-bold transition-colors" href="index.html" href="services.html">Services</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-400 dark:hover:text-primary" href="index.html" href="projects.html">Projects</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-400 dark:hover:text-primary" href="index.html">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="hidden sm:flex items-center justify-center rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary/90 transition-all shadow-lg shadow-primary/20" href="index.html">
+                    Get a Quote
+                </a>
+<button class="md:hidden text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-16 md:py-24 px-4 md:px-10 lg:px-20">
+<div class="layout-content-container flex flex-col max-w-6xl flex-1">
+<!-- Page Header -->
+<div class="flex flex-col gap-4 mb-16 md:mb-24">
+<h1 class="text-slate-900 dark:text-white text-4xl md:text-6xl font-black leading-tight tracking-tight">Our Professional Services</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl font-normal max-w-3xl leading-relaxed">
+                We provide comprehensive, end-to-end solutions for the built environment, combining technical excellence with innovative engineering to deliver lasting value.
+            </p>
+</div>
+<!-- Services Grid -->
+<div class="grid grid-cols-1 gap-12 md:gap-20">
+<!-- 1. Residential Construction -->
+<div class="group @container">
+<div class="flex flex-col items-stretch justify-start rounded-2xl @xl:flex-row @xl:items-center shadow-2xl bg-white dark:bg-surface-dark overflow-hidden border border-slate-200 dark:border-white/5 transition-transform duration-500 hover:shadow-primary/5">
+<div class="w-full @xl:w-1/2 bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern luxury residential villa architecture" style='background-image: url("./assets/images/studio-design.jpg");'></div>
+<div class="flex w-full @xl:w-1/2 grow flex-col items-start justify-center gap-6 p-8 md:p-14">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">home_work</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold leading-tight">Residential Construction</h3>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-base md:text-lg font-normal leading-relaxed">
+                            From high-end custom homes to sustainable residential complexes, we focus on craftsmanship and attention to detail. We manage every phase of the build, ensuring your vision is realized.
+                        </p>
+<ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm md:text-base">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Custom Villa Development</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Sustainable Housing Solutions</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Interior &amp; Landscape Integration</li>
+</ul>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all">
+                            Request a Quote
+                        </button>
+</div>
+</div>
+</div>
+<!-- 2. Commercial Building -->
+<div class="group @container">
+<div class="flex flex-col items-stretch justify-start rounded-2xl @xl:flex-row-reverse @xl:items-center shadow-2xl bg-white dark:bg-surface-dark overflow-hidden border border-slate-200 dark:border-white/5 transition-transform duration-500 hover:shadow-primary/5">
+<div class="w-full @xl:w-1/2 bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern glass skyscraper commercial office building" style='background-image: url("./assets/images/admin-tower.jpg");'></div>
+<div class="flex w-full @xl:w-1/2 grow flex-col items-start justify-center gap-6 p-8 md:p-14">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">corporate_fare</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold leading-tight">Commercial Building</h3>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-base md:text-lg font-normal leading-relaxed">
+                            We design and construct functional, inspiring commercial spaces that drive business growth. Our expertise covers corporate offices, retail centers, and hospitality projects.
+                        </p>
+<ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm md:text-base">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Office Park Construction</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Retail Hubs &amp; Shopping Malls</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Industrial &amp; Logistics Facilities</li>
+</ul>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all">
+                            Request a Quote
+                        </button>
+</div>
+</div>
+</div>
+<!-- 3. Civil Engineering -->
+<div class="group @container">
+<div class="flex flex-col items-stretch justify-start rounded-2xl @xl:flex-row @xl:items-center shadow-2xl bg-white dark:bg-surface-dark overflow-hidden border border-slate-200 dark:border-white/5 transition-transform duration-500 hover:shadow-primary/5">
+<div class="w-full @xl:w-1/2 bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Civil engineering infrastructure road and bridge construction" style='background-image: url("./assets/images/civil-works.jpg");'></div>
+<div class="flex w-full @xl:w-1/2 grow flex-col items-start justify-center gap-6 p-8 md:p-14">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">engineering</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold leading-tight">Civil Engineering</h3>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-base md:text-lg font-normal leading-relaxed">
+                            Developing the backbone of modern society. Our engineering team specializes in complex infrastructure projects, ensuring structural integrity and safety.
+                        </p>
+<ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm md:text-base">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Road &amp; Bridge Infrastructure</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Water Management Systems</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Land Reclamation &amp; Foundation</li>
+</ul>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all">
+                            Request a Quote
+                        </button>
+</div>
+</div>
+</div>
+<!-- 4. Project Management -->
+<div class="group @container">
+<div class="flex flex-col items-stretch justify-start rounded-2xl @xl:flex-row-reverse @xl:items-center shadow-2xl bg-white dark:bg-surface-dark overflow-hidden border border-slate-200 dark:border-white/5 transition-transform duration-500 hover:shadow-primary/5">
+<div class="w-full @xl:w-1/2 bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Professional project management team meeting around blue prints" style='background-image: url("./assets/images/hotel-design.jpg");'></div>
+<div class="flex w-full @xl:w-1/2 grow flex-col items-start justify-center gap-6 p-8 md:p-14">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">assignment_turned_in</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold leading-tight">Project Management</h3>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-base md:text-lg font-normal leading-relaxed">
+                            Precision planning and execution. We take the complexity out of construction by managing timelines, vendors, costs, and quality control from inception to handover.
+                        </p>
+<ul class="space-y-3 text-slate-600 dark:text-slate-400 text-sm md:text-base">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Budgeting &amp; Cost Control</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Quality Assurance Protocols</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Risk Assessment &amp; Mitigation</li>
+</ul>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all">
+                            Request a Quote
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer CTA -->
+<div class="mt-24 md:mt-32 p-12 md:p-20 rounded-3xl bg-primary/5 dark:bg-white/[0.03] text-center border border-primary/20 dark:border-white/5 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none"></div>
+<h2 class="text-slate-900 dark:text-white text-3xl md:text-5xl font-bold mb-6 relative z-10">Ready to start your next project?</h2>
+<p class="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto text-lg relative z-10">
+                Contact our expert team today for a comprehensive consultation and tailored quote for your construction needs.
+            </p>
+<div class="flex flex-col md:flex-row gap-5 justify-center relative z-10">
+<button class="flex min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-primary text-white text-base font-bold transition-all shadow-xl shadow-primary/30 hover:scale-105">
+                    Contact Sales
+                </button>
+<button class="flex min-w-[220px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base font-bold border border-slate-200 dark:border-white/10 transition-all hover:bg-slate-50 dark:hover:bg-slate-700">
+                    View Portfolio
+                </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Banner Image Section (Using requested IMAGE_4) -->
+<div class="w-full overflow-hidden">
+<img alt="Cordon Blue Banner" class="w-full h-auto object-cover grayscale opacity-80 dark:opacity-40" src="./assets/logo.jpg"/>
+</div>
+<!-- Footer -->
+<footer class="bg-slate-950 text-slate-300 pt-20 pb-10 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 lg:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="flex items-center justify-center bg-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-white text-xl">architecture</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-white uppercase">Cordon Blue Global Services Ltd.</span>
+</div>
+<p class="text-primary font-bold tracking-widest text-[10px] uppercase mb-4">IMAGINE. BUILD. SUCCEED.</p>
+<p class="text-slate-400 mb-8 leading-relaxed text-sm">
+                    Excellence in construction and engineering services. We bring your architectural visions to life with precision and expertise.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all group" href="index.html">
+<span class="material-symbols-outlined text-xl group-hover:text-white transition-colors">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all group" href="index.html">
+<span class="material-symbols-outlined text-xl group-hover:text-white transition-colors">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all group" href="index.html">
+<span class="material-symbols-outlined text-xl group-hover:text-white transition-colors">groups</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold text-sm mb-6 uppercase tracking-widest">Quick Links</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors text-slate-400" href="index.html" href="index.html">Home</a></li>
+<li><a class="hover:text-primary transition-colors text-slate-400" href="index.html">About Us</a></li>
+<li><a class="hover:text-primary transition-colors text-slate-400" href="index.html">Our Services</a></li>
+<li><a class="hover:text-primary transition-colors text-slate-400" href="index.html">Latest Projects</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold text-sm mb-6 uppercase tracking-widest" href="services.html">Services</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors text-slate-400" href="index.html">Civil Construction</a></li>
+<li><a class="hover:text-primary transition-colors text-slate-400" href="index.html">Structural Engineering</a></li>
+<li><a class="hover:text-primary transition-colors text-slate-400" href="index.html">Project Consultation</a></li>
+<li><a class="hover:text-primary transition-colors text-slate-400" href="index.html">Estate Management</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold text-sm mb-6 uppercase tracking-widest">Contact Info</h4>
+<ul class="space-y-4 text-sm">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+<span class="text-slate-400">Lagos, Nigeria</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">phone</span>
+<span class="text-slate-400">+234 812 414 1514</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">mail</span>
+<span class="break-all text-slate-400">cordonblueglobal@gmail.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 text-center text-[11px] font-medium tracking-widest uppercase text-slate-600">
+<p>© 2026 Cordon Blue Global Services Ltd. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

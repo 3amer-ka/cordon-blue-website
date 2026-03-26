@@ -7,9 +7,8 @@
 From your provided files, you need to:
 
 **A. Logo Setup:**
-- Save the logo image (IMG_3BE0728A5B0C-1.jpeg) to `images/`
-- Rename to `logo.png`
-- Create a copy and rename to `logo-large.png`
+- Save the approved logo image to `images/`
+- Rename to `brand-mark.svg`
 
 **B. Project Photos Setup:**
 Create `images/projects/` folder and extract images from your PDF:

@@ -27,8 +27,7 @@ cordon-blue-website/
 ├── js/
 │   └── main.js
 ├── images/
-│   ├── logo.png (your logo)
-│   ├── logo-large.png (larger version for cover)
+│   ├── brand-mark.svg (active site logo)
 │   └── projects/ (project photos)
 └── README.md
 ```
@@ -46,11 +45,9 @@ cordon-blue-website/
 
 ### Step 1: Add Your Logo
 
-1. Save your logo image from the provided files
-2. Create two versions:
-   - `logo.png` (approximately 200x50px) for navigation
-   - `logo-large.png` (approximately 600x200px) for cover page
-3. Place both in the `images/` folder
+1. Save your approved logo image as `brand-mark.svg`
+2. Place it in the `images/` folder
+3. Keep this as the single source logo used across all pages
 
 ### Step 2: Add Project Images
 

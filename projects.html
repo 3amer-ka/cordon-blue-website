@@ -1,283 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore our project portfolio - Industrial, Commercial, Residential, and Infrastructure projects across Nigeria.">
-    <meta name="keywords" content="projects, portfolio, construction, engineering, industrial, commercial, Nigeria">
-    <meta property="og:title" content="Our Projects - Cordon Blue Global Services">
-    <meta property="og:description" content="View our completed projects showcasing engineering excellence and construction capabilities.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cordonblueglobal.com/projects.html">
-    <meta property="og:image" content="images/logo-premium.png">
-    <title>Our Projects - Cordon Blue Global Services</title>
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="canonical" href="https://cordonblueglobal.com/projects.html">
-    <link rel="stylesheet" href="css/styles.css">
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Gallery - Cordon Blue Global Services Ltd.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0ea5e9", // Vibrant Sky Blue for contrast
+                        "off-white": "#f9f9f9",
+                        "background-light": "#f9f9f9",
+                        "background-dark": "#0f1115", // Rich charcoal
+                        "surface-dark": "#1a1d23", // Deep grey
+                        "border-dark": "#2d323b",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo-container">
-                <div class="logo-box nav-logo">
-                    <img src="images/logo-premium.svg" alt="Cordon Blue Logo" class="logo">
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="projects.html" class="nav-link active">Projects</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="contact.html" class="nav-quote">Get a Quote</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Projects Header -->
-    <section class="projects-section projects-header">
-        <div class="container">
-            <h1 class="section-title">OUR PROJECTS</h1>
-            <p class="section-subtitle">A showcase of our engineering excellence and construction capabilities</p>
-        </div>
-    </section>
-
-    <!-- Portfolio Grid (Visual Highlight) -->
-    <section class="portfolio-section">
-        <div class="container">
-            <div class="portfolio-grid">
-                <div class="project-item">
-                    <img src="images/projects/hotel-design/IMG_5423.JPG" alt="Hotel Design">
-                    <h3>Hotel & Resort</h3>
-                    <p>Modern resort design with pool, cabanas, and tropical landscaping.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/projects/admin-tower/IMG_5419.JPG" alt="Admin Tower">
-                    <h3>Commercial Tower</h3>
-                    <p>High-rise commercial building with modern design elements.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/projects/polivard-city/IMG_5425.JPG" alt="Polivard City Design">
-                    <h3>Polivard City Design</h3>
-                    <p>Large-scale city design and planning project.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/projects/resort-design/IMG_5430.JPG" alt="Waterfront Resort">
-                    <h3>Waterfront Entertainment</h3>
-                    <p>Recreational facility featuring a marina and playground.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/projects/studio-design/IMG_5414.JPG" alt="Studio Bedroom Design">
-                    <h3>Luxury Studio</h3>
-                    <p>Modern interior design of a luxury studio bedroom.</p>
-                </div>
-                <div class="project-item">
-                    <img src="images/projects/karameh-industrial/IMG_5439.JPG" alt="Industrial Project">
-                    <h3>Karameh Industrial Site</h3>
-                    <p>Industrial facility construction project.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Detailed Projects Section -->
-    <section class="projects-section">
-        <div class="container">
-
-            <!-- Gastech CNG (Featured) -->
-            <div class="featured-project featured-project--blue">
-                <h2>Featured Infrastructure: Gastech CNG Mother Station</h2>
-                <div class="project-hero">
-                    <img src="images/projects/gastech/PHOTO-2024-05-09-17-47-50.jpg" alt="Gastech CNG Mother Station">
-                </div>
-                <div class="project-details">
-                    <p><strong>Client:</strong> Gastech | <strong>Role:</strong> Civil Works Participant</p>
-                    <p><strong>Scope:</strong> Specialized participation in the civil engineering works for the CNG Mother Station infrastructure, including site preparation and structural foundations.</p>
-                </div>
-                <div class="project-gallery">
-                    <img src="images/projects/gastech/PHOTO-2024-05-04-10-52-47.jpg" alt="Gastech Site Progress">
-                    <img src="images/projects/gastech/PHOTO-2025-04-15-18-02-02.jpg" alt="Infrastructure Detail">
-                </div>
-            </div>
-
-            <!-- Karameh Industrial City (Featured) -->
-            <div class="featured-project featured-project--gold">
-                <h2>Karameh Industrial City</h2>
-                <div class="project-hero">
-                    <img src="images/projects/karameh-industrial/IMG_5439.JPG" alt="Karameh Industrial City Overview">
-                </div>
-                <div class="project-details">
-                    <p><strong>Project Type:</strong> Civil Engineering Works</p>
-                    <p><strong>Scope:</strong> Participation was focused exclusively on the civil engineering works, including fundamental road infrastructure, drainage systems, and site preparation for the industrial facility.</p>
-                </div>
-                <div class="project-gallery">
-                    <img src="images/projects/karameh-industrial/IMG_5434.JPG" alt="Industrial Site View">
-                    <img src="images/projects/karameh-industrial/63c73623-2350-4d1d-855b-99b8cefc7301.jpg" alt="Construction Phase">
-                    <img src="images/projects/karameh-industrial/e01fe91e-4b83-4a02-9a83-68af2cfad738.jpg" alt="Engineering Details">
-                    <img src="images/projects/karameh-industrial/IMG_5438.JPG" alt="Site Progress">
-                    <img src="images/projects/karameh-industrial/IMG_5439.JPG" alt="Completed Structure">
-                </div>
-            </div>
-
-            <!-- Lekki Flats -->
-            <div class="featured-project">
-                <h2>Lekki Serviced Flats</h2>
-                <div class="project-hero">
-                    <img src="images/projects/civil-works/project_p1_i3.jpeg" alt="Lekki Serviced Flats Completed">
-                </div>
-                <div class="project-details">
-                    <p><strong>Location:</strong> Lekki Phase 1, Lagos</p>
-                    <p><strong>Scope:</strong> Construction of 6 serviced flats with luxury finish.</p>
-                </div>
-                <div class="project-gallery">
-                    <img src="images/projects/civil-works/project_p1_i4.jpeg" alt="Construction Stage 1">
-                    <img src="images/projects/civil-works/project_p1_i5.jpeg" alt="Construction Stage 2">
-                    <img src="images/projects/civil-works/project_p1_i6.jpeg" alt="Construction Stage 3">
-                </div>
-            </div>
-
-            <!-- Nigerian Army Projects -->
-            <div class="project-category">
-                <h2>Nigerian Army Engineers Projects</h2>
-                <div class="project-grid">
-                    <div class="project-item">
-                        <div class="project-img-wrapper">
-                            <img src="images/projects/civil-works/project_p2_i3.jpeg" alt="Officers Lodge">
-                            <div class="project-overlay"></div>
-                        </div>
-                        <h3>Officer's Lodge - Sappers Club</h3>
-                        <p>Construction of multi-story officer accommodation with modern amenities.</p>
-                        <div class="project-thumbnail-gallery">
-                            <img src="images/projects/civil-works/project_p2_i4.jpeg" alt="Project Gallery 1" class="project-thumbnail">
-                            <img src="images/projects/civil-works/project_p2_i5.jpeg" alt="Project Gallery 2" class="project-thumbnail">
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-img-wrapper">
-                            <img src="images/projects/civil-works/project_p3_i4.jpeg" alt="Mini-Flats">
-                            <div class="project-overlay"></div>
-                        </div>
-                        <h3>18 Units Mini-Flats</h3>
-                        <p>Residential housing complex for Nigerian Army personnel.</p>
-                        <div class="project-thumbnail-gallery">
-                            <img src="images/projects/civil-works/project_p3_i5.jpeg" alt="Project Gallery 1" class="project-thumbnail">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Infrastructure Works -->
-            <div class="project-category">
-                <h2>Infrastructure Works</h2>
-                <div class="before-after">
-                    <div class="ba-item">
-                        <img src="images/projects/civil-works/project_p4_i4.jpeg" alt="Drainage Works">
-                        <p class="ba-label">Site</p>
-                    </div>
-                    <div class="ba-item">
-                        <img src="images/projects/civil-works/project_p4_i5.jpeg" alt="Drainage Construction">
-                        <p class="ba-label">Construction</p>
-                    </div>
-                </div>
-                <div class="project-gallery">
-                    <img src="images/projects/civil-works/project_p4_i6.jpeg" alt="Gallery Image 1" class="gallery-image">
-                    <img src="images/projects/civil-works/project_p4_i7.jpeg" alt="Gallery Image 2" class="gallery-image">
-                </div>
-                <p class="project-caption">Drain duct construction at Obasanjo Junction, Ota, Ogun State</p>
-
-                <div class="project-grid">
-                    <div class="project-item">
-                        <div class="project-img-wrapper">
-                            <img src="images/projects/civil-works/project_p5_i3.jpeg" alt="Infrastructure Project">
-                            <div class="project-overlay"></div>
-                        </div>
-                        <h3>General Infrastructure & Fabrication</h3>
-                        <p>Water storage tanks and structural fabrication works.</p>
-                        <div class="project-thumbnail-gallery project-thumbnail-gallery--flex">
-                            <img src="images/projects/civil-works/project_p5_i4.jpeg" alt="Project Gallery 1" class="project-thumbnail">
-                            <img src="images/projects/civil-works/project_p5_i5.jpeg" alt="Project Gallery 2" class="project-thumbnail">
-                            <img src="images/projects/civil-works/project_p5_i6.jpeg" alt="Project Gallery 3" class="project-thumbnail">
-                            <img src="images/projects/civil-works/project_p5_i7.jpeg" alt="Project Gallery 4" class="project-thumbnail">
-                            <img src="images/projects/civil-works/project_p5_i8.jpeg" alt="Project Gallery 5" class="project-thumbnail">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Interior & Renovation -->
-            <div class="project-category">
-                <h2>Interior & Renovation</h2>
-                <div class="project-grid">
-                    <div class="project-item">
-                        <div class="project-img-wrapper">
-                            <img src="images/projects/hotel-design/IMG_5421.JPG" alt="RCCG Auditorium Before">
-                            <div class="project-overlay"></div>
-                        </div>
-                        <h3>RCCG Jesus Embassy</h3>
-                        <p>Complete interior finishing and decoration.</p>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-img-wrapper">
-                            <img src="images/projects/hotel-design/IMG_5424.JPG" alt="RCCG Auditorium After">
-                            <div class="project-overlay"></div>
-                        </div>
-                        <h3>Completed Auditorium</h3>
-                        <p>Location: Rimax Estate, Meiran, Lagos.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Large Scale Housing -->
-            <div class="featured-project">
-                <h2>Large-Scale Housing: Minimah Estate</h2>
-                <div class="project-hero">
-                    <img src="images/projects/polivard-city/IMG_5426.JPG" alt="Minimah Estate">
-                </div>
-                <div class="project-details">
-                    <p><strong>Location:</strong> Airport Bus Stop, Ikeja, Lagos</p>
-                    <p><strong>Scope:</strong> Labour-only post housing development for Nigerian Army. Multiple residential units with internal road infrastructure.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="images/logo-premium.svg" alt="Cordon Blue Global Services" class="footer-logo">
-                <p class="footer-tagline">Built on integrity. Delivered with excellence.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <p>Ikorodu Road, Aladiye Bus Stop<br>Onipanu, Shomolu, Lagos</p>
-                <p><a href="tel:+2347075803337">+234 707 580 3337</a></p>
-                <p><a href="mailto:support@cordonblueglobal.com">support@cordonblueglobal.com</a></p>
-            </div>
-            <div class="footer-legal">
-                <p>RC: 1941741 | TAX ID: 14259515-0001</p>
-                <p>&copy; 2026 Cordon Blue Global Services Ltd. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Variant Toggle (For demo purposes) -->
+<div class="fixed bottom-6 right-6 z-[100] flex flex-col gap-2 bg-white/90 dark:bg-surface-dark/90 p-3 rounded-2xl shadow-2xl border border-slate-200 dark:border-border-dark backdrop-blur">
+<p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Theme Variants</p>
+<button class="px-3 py-1.5 text-xs font-semibold bg-slate-100 dark:bg-slate-700 rounded-md hover:bg-primary hover:text-white transition-all" onclick="document.documentElement.classList.remove('dark');">Soft Off-White</button>
+<button class="px-3 py-1.5 text-xs font-semibold bg-slate-100 dark:bg-slate-700 rounded-md hover:bg-primary hover:text-white transition-all" onclick="document.documentElement.classList.add('dark');">Deep Dark</button>
+</div>
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-border-dark bg-off-white/80 dark:bg-background-dark/80 backdrop-blur-md" id="main-nav">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<img alt="Cordon Blue Logo" class="rounded-lg" data-alt="Cordon Blue Global Services company logo" src="./assets/logo.jpg"/>
+</div>
+<div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Cordon Blue Global Services Ltd.</h2>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Global Services Ltd.</p>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html" href="index.html">Home</a>
+<a class="text-sm font-bold text-primary border-b-2 border-primary pb-1" href="index.html" href="projects.html">Projects</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">About Us</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="rounded-lg p-2 hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">search</span>
+</button>
+<button class="md:hidden rounded-lg p-2 bg-slate-200 dark:bg-surface-dark">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden sm:block size-10 rounded-full bg-primary/10 border border-primary/20 bg-cover bg-center" data-alt="User profile avatar placeholder" style="background-image: url('./assets/images/civil-works.jpg')"></div>
+</div>
+</div>
+</header>
+<main class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4 text-slate-900 dark:text-white">Project Gallery</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400">Discover our portfolio of landmark construction projects across West Africa, from luxury residences to state-of-the-art commercial hubs.</p>
+</div>
+<div class="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 bg-white dark:bg-surface-dark px-4 py-2 rounded-full border border-slate-200 dark:border-border-dark shadow-sm">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span>Active in 5 Countries</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-10 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-6 py-2 rounded-full bg-primary text-white font-semibold shadow-lg shadow-primary/30 transition-all">All Projects</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Residential</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Commercial</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Ongoing</button>
+<button class="px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Industrial</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+<div class="relative aspect-[16/10] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Modern glass skyscraper office building exterior" style="background-image: url('./assets/images/civil-works.jpg')"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-white/90 dark:bg-background-dark/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Commercial</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900 dark:text-slate-100">Luxe Heights Office Complex</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base text-primary">location_on</span>
+<span>Lagos, Nigeria</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+<div class="relative aspect-[16/10] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Luxury residential villa with swimming pool" style="background-image: url('./assets/images/civil-works.jpg')"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-white/90 dark:bg-background-dark/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Residential</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900 dark:text-slate-100">Emerald Gardens Estate</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base text-primary">location_on</span>
+<span>Abuja, Nigeria</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+<div class="relative aspect-[16/10] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Active construction site with crane and steel structure" style="background-image: url('./assets/images/civil-works.jpg')"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-primary text-white rounded text-xs font-bold uppercase tracking-wider shadow-md">Ongoing</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900 dark:text-slate-100">Metropolitan Business Hub</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base text-primary">location_on</span>
+<span>Accra, Ghana</span>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+<div class="relative aspect-[16/10] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Modern indoor shopping mall atrium" style="background-image: url('./assets/images/civil-works.jpg')"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-white/90 dark:bg-background-dark/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Commercial</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900 dark:text-slate-100">Modern Retail Plaza</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base text-primary">location_on</span>
+<span>Port Harcourt, Nigeria</span>
+</div>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+<div class="relative aspect-[16/10] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="High-rise apartment building at sunset" style="background-image: url('./assets/images/civil-works.jpg')"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-white/90 dark:bg-background-dark/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Residential</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900 dark:text-slate-100">Starlight Residences</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base text-primary">location_on</span>
+<span>Lagos, Nigeria</span>
+</div>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden border border-slate-200 dark:border-border-dark transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+<div class="relative aspect-[16/10] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Beachfront luxury villas row" style="background-image: url('./assets/images/civil-works.jpg')"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-white/90 dark:bg-background-dark/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Residential</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900 dark:text-slate-100">Coastal View Villas</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base text-primary">location_on</span>
+<span>Enugu, Nigeria</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 flex flex-col items-center border-t border-slate-200 dark:border-border-dark pt-16">
+<div class="text-center max-w-xl mb-8">
+<h2 class="text-3xl font-bold mb-3 text-slate-900 dark:text-white">Have a project in mind?</h2>
+<p class="text-slate-600 dark:text-slate-400">Let's build something exceptional together. Our team is ready to bring your vision to life.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                    Contact Us Today
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-slate-200 dark:bg-surface-dark hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-8 py-3 rounded-lg font-bold transition-all border border-transparent dark:border-border-dark">
+                    Download Brochure
+                </button>
+</div>
+</div>
+</main>
+<footer class="bg-off-white dark:bg-surface-dark border-t border-slate-200 dark:border-border-dark py-16">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<!-- Footer Branding Section with Requested Image -->
+<div class="mb-16 overflow-hidden rounded-2xl border border-slate-200 dark:border-border-dark shadow-xl">
+<img alt="Cordon Blue Branding" class="w-full object-cover h-auto" src="./assets/logo.jpg"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">architecture</span>
+</div>
+<span class="font-bold text-lg dark:text-white">Cordon Blue Global Services Ltd.</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                        Leading construction and engineering services in West Africa, delivering excellence through innovation and integrity since 2005.
+                    </p>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-slate-900 dark:text-white">Quick Links</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="index.html">Our Projects</a></li>
+<li><a class="hover:text-primary transition-colors" href="index.html" href="services.html">Services</a></li>
+<li><a class="hover:text-primary transition-colors" href="index.html">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="index.html">News &amp; Press</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-slate-900 dark:text-white" href="services.html">Services</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="index.html">Civil Engineering</a></li>
+<li><a class="hover:text-primary transition-colors" href="index.html">Interior Design</a></li>
+<li><a class="hover:text-primary transition-colors" href="index.html">Project Management</a></li>
+<li><a class="hover:text-primary transition-colors" href="index.html">Real Estate</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-slate-900 dark:text-white">Contact</h4>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+<span>123 Victoria Island,<br/>Lagos, Nigeria</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg">mail</span>
+<span>info@cordonblue.com.ng</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-slate-200 dark:border-border-dark flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+<p>© 2026 Cordon Blue Global Services Ltd. All Rights Reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="index.html">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="index.html">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
