@@ -32,6 +32,7 @@
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
+    <script src="navbar.js" defer></script>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
 <div class="relative flex min-h-screen w-full flex-col">
@@ -41,34 +42,7 @@
 <button class="px-3 py-1.5 text-xs font-semibold bg-slate-100 dark:bg-slate-700 rounded-md hover:bg-primary hover:text-white transition-all" onclick="document.documentElement.classList.remove('dark');">Soft Off-White</button>
 <button class="px-3 py-1.5 text-xs font-semibold bg-slate-100 dark:bg-slate-700 rounded-md hover:bg-primary hover:text-white transition-all" onclick="document.documentElement.classList.add('dark');">Deep Dark</button>
 </div>
-<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-border-dark bg-off-white/80 dark:bg-background-dark/80 backdrop-blur-md" id="main-nav">
-<div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
-<div class="flex items-center gap-3">
-<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
-<img alt="Cordon Blue Logo" class="rounded-lg" data-alt="Cordon Blue Global Services company logo" src="./assets/logo.jpg"/>
-</div>
-<div>
-<h2 class="text-lg font-bold leading-tight tracking-tight">Cordon Blue Global Services Ltd.</h2>
-<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Global Services Ltd.</p>
-</div>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html" href="index.html">Home</a>
-<a class="text-sm font-bold text-primary border-b-2 border-primary pb-1" href="index.html" href="projects.html">Projects</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">About Us</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="rounded-lg p-2 hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors">
-<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">search</span>
-</button>
-<button class="md:hidden rounded-lg p-2 bg-slate-200 dark:bg-surface-dark">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<div class="hidden sm:block size-10 rounded-full bg-primary/10 border border-primary/20 bg-cover bg-center" data-alt="User profile avatar placeholder" style="background-image: url('./assets/images/civil-works.jpg')"></div>
-</div>
-</div>
-</header>
+<main-header class="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl block"></main-header>
 <main class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
 <div class="max-w-2xl">
