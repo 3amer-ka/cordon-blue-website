@@ -1,0 +1,11 @@
+🔒 Ensure App Check is configured for abuse prevention
+
+As noted in the review, Firebase Data Connect handles Firebase App Check
+enforcement natively at the service/infrastructure level rather than
+via a CEL expression in the schema.
+
+The `CreateInquiry` mutation remains configured as `@auth(level: PUBLIC)`
+to correctly allow unauthenticated website users to submit the form,
+relying on the globally enabled App Check enforcement (configured in
+the Firebase Console UI) to reject requests from automated bots and
+unverified environments.
