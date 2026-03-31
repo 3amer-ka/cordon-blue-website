@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-85CYWW5KTX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-85CYWW5KTX');
-</script>
-
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Project Gallery - Cordon Blue Global Services Ltd.</title>
@@ -36,7 +26,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <button class="px-3 py-1.5 text-xs font-semibold bg-slate-100 dark:bg-slate-700 rounded-md hover:bg-primary hover:text-white transition-all" onclick="document.documentElement.classList.remove('dark');">Soft Off-White</button>
 <button class="px-3 py-1.5 text-xs font-semibold bg-slate-100 dark:bg-slate-700 rounded-md hover:bg-primary hover:text-white transition-all" onclick="document.documentElement.classList.add('dark');">Deep Dark</button>
 </div>
-<main-header class="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl block"></main-header>
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-border-dark bg-off-white/80 dark:bg-background-dark/80 backdrop-blur-md" id="main-nav">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 bg-white rounded-2xl flex items-center justify-center overflow-hidden shrink-0 shadow-sm border border-slate-200/50">
+<img alt="Cordon Blue Logo" class="w-full h-full object-cover p-1" src="./assets/logo.jpg"/>
+</div>
+<div class="flex flex-col">
+<h2 class="text-xl md:text-2xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">Cordon Blue</h2>
+<p class="text-[13px] md:text-sm text-slate-500 dark:text-slate-400 font-semibold leading-tight mt-0.5">Global Services Ltd.</p>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="text-sm font-bold text-primary border-b-2 border-primary pb-1" href="projects.html">Projects</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">About Us</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="rounded-lg p-2 hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">search</span>
+</button>
+<button class="md:hidden rounded-lg p-2 bg-slate-200 dark:bg-surface-dark">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden sm:block size-10 rounded-full bg-primary/10 border border-primary/20 bg-cover bg-center" data-alt="User profile avatar placeholder" style="background-image: url('./assets/images/civil-works.jpg')"></div>
+</div>
+</div>
+</header>
 <main class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
 <div class="max-w-2xl">
