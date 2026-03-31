@@ -1,0 +1,13 @@
+#!/bin/bash
+sed -i 's/href="index.html" href="projects.html"/href="projects.html"/g' projects.html
+sed -i 's/href="index.html" href="services.html"/href="services.html"/g' projects.html
+sed -i 's/<h4 class="font-bold mb-6 text-slate-900 dark:text-white" href="services.html">/<h4 class="font-bold mb-6 text-slate-900 dark:text-white">/g' projects.html
+sed -i 's/href="index.html" href="index.html"/href="index.html"/g' projects.html
+sed -i 's/url('\''\.\/assets\/images\/hotel-design.jpg'\'')/url('\''\.\/assets\/images\/resort-design.jpg'\'')/g' projects.html
+sed -i 's/<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Luxury Hotel Design<\/h3>/<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Hotel \& Resort Masterplan<\/h3>/g' projects.html
+sed -i 's/<div class="flex flex-wrap gap-2 mb-10 overflow-x-auto pb-2 scrollbar-hide">/<div id="project-filters" class="flex flex-wrap gap-2 mb-10 overflow-x-auto pb-2 scrollbar-hide">/g' projects.html
+sed -i 's/<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">/<div id="project-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">/g' projects.html
+sed -i 's/<button class="bg-primary hover:bg-primary\/90 text-white px-8 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary\/20">/<button onclick="alert('\''Contact action triggered'\'')" class="bg-primary hover:bg-primary\/90 text-white px-8 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary\/20">/g' projects.html
+sed -i 's/<button class="bg-slate-200 dark:bg-surface-dark hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-8 py-3 rounded-lg font-bold transition-all border border-transparent dark:border-border-dark">/<button onclick="alert('\''Download action triggered'\'')" class="bg-slate-200 dark:bg-surface-dark hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-8 py-3 rounded-lg font-bold transition-all border border-transparent dark:border-border-dark">/g' projects.html
+sed -i 's/<button class="p-2 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">/<button onclick="alert('\''Action triggered'\'')" class="p-2 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">/g' projects.html
+sed -i 's/<button class="md:hidden p-2 text-slate-600 dark:text-slate-300">/<button onclick="alert('\''Menu opened'\'')" class="md:hidden p-2 text-slate-600 dark:text-slate-300">/g' projects.html
