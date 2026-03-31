@@ -19,6 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="assets/tailwind-config.js"></script>
 <title>Services - Cordon Blue Global Services Ltd</title>
+<script src="navbar.js" defer></script>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
 <!-- Google Tag Manager (noscript) -->
@@ -34,33 +35,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <button class="text-xs px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-slate-100 font-medium hover:bg-black transition-all text-left" onclick="document.documentElement.classList.add('dark')">Variant 2: Premium Dark</button>
 </div>
 <!-- Navigation Bar -->
-<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex h-20 items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="flex items-center justify-center bg-primary p-2 rounded-lg shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined text-white text-2xl">architecture</span>
-</div>
-<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue Global Services Ltd.</span>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-400 dark:hover:text-primary" href="index.html" href="index.html">Home</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-400 dark:hover:text-primary" href="index.html">About Us</a>
-<a class="text-primary text-sm font-bold transition-colors" href="index.html" href="services.html">Services</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-400 dark:hover:text-primary" href="index.html" href="projects.html">Projects</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-400 dark:hover:text-primary" href="index.html">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<a class="hidden sm:flex items-center justify-center rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary/90 transition-all shadow-lg shadow-primary/20" href="index.html">
-                    Get a Quote
-                </a>
-<button class="md:hidden text-slate-900 dark:text-white">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</div>
-</header>
+<main-header class="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl block"></main-header>
 <main class="flex flex-1 justify-center py-16 md:py-24 px-4 md:px-10 lg:px-20">
 <div class="layout-content-container flex flex-col max-w-6xl flex-1">
 <!-- Page Header -->

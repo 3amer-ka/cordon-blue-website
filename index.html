@@ -27,6 +27,7 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
+    <script src="navbar.js" defer></script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-200 font-display transition-colors duration-300">
 <!-- Google Tag Manager (noscript) -->
@@ -39,33 +40,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <button class="p-2.5 bg-slate-800 text-white rounded-lg shadow-lg text-xs font-bold uppercase hover:bg-slate-700 transition-colors" onclick="document.documentElement.className='dark'">Dark</button>
 </div>
 <!-- Top Navigation Bar -->
-<header class="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex h-20 items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="flex items-center justify-center bg-primary p-2 rounded-xl shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined text-white text-2xl">architecture</span>
-</div>
-<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue Global Services Ltd.</span>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-300 dark:hover:text-white" href="index.html" href="index.html">Home</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-300 dark:hover:text-white" href="#about">About Us</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-300 dark:hover:text-white" href="services.html" href="services.html">Services</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-300 dark:hover:text-white" href="projects.html" href="projects.html">Projects</a>
-<a class="text-sm font-semibold hover:text-primary transition-colors text-slate-600 dark:text-slate-300 dark:hover:text-white" href="#contact">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<a class="hidden sm:flex items-center justify-center rounded-xl bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20" href="#contact">
-                    Get a Quote
-                </a>
-<button class="md:hidden text-slate-900 dark:text-white p-2">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</div>
-</header>
+<main-header class="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl block"></main-header>
 <main>
 <!-- Hero Section -->
 <section class="relative h-[650px] md:h-[850px] flex items-center justify-center overflow-hidden">
