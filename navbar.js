@@ -28,7 +28,7 @@ class MainHeader extends HTMLElement {
 
         this.innerHTML = `
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex h-20 items-center justify-between">
+    <div class="flex h-16 items-center justify-between">
         <div class="flex items-center gap-3">
             <div class="flex items-center justify-center bg-primary p-2 rounded-xl shadow-lg shadow-primary/20">
                 <span class="material-symbols-outlined text-white text-2xl">architecture</span>
