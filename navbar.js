@@ -5,6 +5,19 @@ class MainHeader extends HTMLElement {
 
     connectedCallback() {
         this.render();
+        this.setupMobileMenu();
+    }
+
+    setupMobileMenu() {
+        const menuToggle = this.querySelector('#menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = menuToggle.querySelector('span');
+                icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+            });
+        }
     }
 
     render() {
@@ -35,7 +48,7 @@ class MainHeader extends HTMLElement {
             <a href="index.html#contact" class="hidden sm:flex items-center justify-center rounded-xl bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
                 Get a Quote
             </a>
-            <button class="md:hidden text-slate-900 dark:text-white p-2">
+            <button id="menu-toggle" class="md:hidden text-slate-900 dark:text-white p-2">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
