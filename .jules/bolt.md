@@ -1,0 +1,3 @@
+## 2024-04-02 - Image Lazy Loading Optimization
+**Learning:** Legacy template code extensively used CSS background images in `<div>`s for displaying hero and section images, preventing the browser from native lazy-loading and unnecessarily blocking page load. Using semantic `<img>` tags handles layout identically given correct Tailwind utility classes (`object-cover` vs `bg-cover`) while unlocking native `loading="lazy"` benefits.
+**Action:** Always scan older or boilerplate-based HTML codebases for `background-image` abuse, especially for large, below-the-fold images, and migrate them to semantic `<img>` tags with `loading="lazy"` and proper object-fit styles.
