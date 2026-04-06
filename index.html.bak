@@ -20,7 +20,7 @@
 
 <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .variant-indicator { position: fixed; bottom: -100px; right: -100px; z-index: 100; }
+        .variant-indicator { position: fixed; bottom: 20px; right: 20px; z-index: 100; }
         .glass-dark {
             background: rgba(26, 29, 35, 0.6);
             backdrop-filter: blur(12px);
