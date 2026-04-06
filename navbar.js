@@ -28,14 +28,14 @@ class MainHeader extends HTMLElement {
 
         this.innerHTML = `
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex h-20 items-center justify-between">
+    <div class="flex h-16 items-center justify-between">
         <div class="flex items-center gap-3">
             <a href="index.html" class="flex items-center gap-3">
                 <div class="size-12 bg-white rounded-2xl flex items-center justify-center overflow-hidden shrink-0 shadow-sm border border-slate-200/50">
                     <img alt="Cordon Blue Logo" class="w-full h-full object-cover p-1" src="./assets/logo.jpg"/>
                 </div>
                 <div class="flex flex-col">
-                    <h2 class="text-xl md:text-2xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">Cordon Blue</h2>
+                    <h2 class="text-lg md:text-xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">Cordon Blue</h2>
                     <p class="text-[13px] md:text-sm text-slate-500 dark:text-slate-400 font-semibold leading-tight mt-0.5">Global Services Ltd.</p>
                 </div>
             </a>
