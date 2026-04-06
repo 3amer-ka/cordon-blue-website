@@ -153,6 +153,12 @@ class MainFooter extends HTMLElement {
                         <span class="material-symbols-outlined text-primary text-xl">mail</span>
                         <span class="break-all text-slate-500 dark:text-slate-400">admin@cordonblueglobal.com</span>
                     </li>
+                    <li class="flex items-start gap-3">
+                        <a href="https://www.linkedin.com/company/cordon-blue-global-services-ltd" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-primary text-xl">share</span>
+                            <span class="text-slate-500 dark:text-slate-400">LinkedIn</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
