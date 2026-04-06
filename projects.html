@@ -26,34 +26,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <button class="px-3 py-1.5 text-xs font-semibold bg-slate-100 dark:bg-slate-700 rounded-md hover:bg-primary hover:text-white transition-all" onclick="document.documentElement.classList.remove('dark');">Soft Off-White</button>
 <button class="px-3 py-1.5 text-xs font-semibold bg-slate-100 dark:bg-slate-700 rounded-md hover:bg-primary hover:text-white transition-all" onclick="document.documentElement.classList.add('dark');">Deep Dark</button>
 </div>
-<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-border-dark bg-off-white/80 dark:bg-background-dark/80 backdrop-blur-md" id="main-nav">
-<div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
-<div class="flex items-center gap-3">
-<div class="size-12 bg-white rounded-2xl flex items-center justify-center overflow-hidden shrink-0 shadow-sm border border-slate-200/50">
-<img alt="Cordon Blue Logo" class="w-full h-full object-cover p-1" src="./assets/logo.jpg"/>
-</div>
-<div class="flex flex-col">
-<h2 class="text-xl md:text-2xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">Cordon Blue</h2>
-<p class="text-[13px] md:text-sm text-slate-500 dark:text-slate-400 font-semibold leading-tight mt-0.5">Global Services Ltd.</p>
-</div>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
-<a class="text-sm font-bold text-primary border-b-2 border-primary pb-1" href="projects.html">Projects</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">About Us</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="rounded-lg p-2 hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors">
-<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">search</span>
-</button>
-<button class="md:hidden rounded-lg p-2 bg-slate-200 dark:bg-surface-dark">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<div class="hidden sm:block size-10 rounded-full bg-primary/10 border border-primary/20 bg-cover bg-center" data-alt="User profile avatar placeholder" style="background-image: url('./assets/images/civil-works.jpg')"></div>
-</div>
-</div>
-</header>
+<main-header class="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl block"></main-header>
 <main class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
 <div class="max-w-2xl">
@@ -66,19 +39,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 <div id="project-filters" class="flex flex-wrap gap-2 mb-10 overflow-x-auto pb-2 scrollbar-hide">
-<button class="px-6 py-2 rounded-full bg-primary text-white font-semibold shadow-lg shadow-primary/30 transition-all">All Projects</button>
-<button class="px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Residential</button>
-<button class="px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Commercial</button>
-<button class="px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Ongoing</button>
-<button class="px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Industrial</button>
+<button data-filter="all" class="filter-btn px-6 py-2 rounded-full bg-primary text-white font-semibold shadow-lg shadow-primary/30 transition-all">All Projects</button>
+<button data-filter="residential" class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Residential</button>
+<button data-filter="commercial" class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Commercial</button>
+<button data-filter="civil" class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Civil</button>
+<button data-filter="interior" class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Interior</button>
+<button data-filter="hospitality" class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Hospitality</button>
+<button data-filter="industrial" class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark font-semibold hover:border-primary dark:hover:border-primary transition-all">Industrial</button>
 </div>
 <div id="project-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+                <div data-category="residential" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('./assets/images/studio-design.jpg')"></div>
                         <div class="absolute top-4 left-4">
-                            <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Architecture</span>
+                            <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Residential</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -90,7 +65,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+                <div data-category="commercial" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('./assets/images/admin-tower.jpg')"></div>
                         <div class="absolute top-4 left-4">
@@ -106,7 +81,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+                <div data-category="hospitality" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('./assets/images/resort-design.jpg')"></div>
                         <div class="absolute top-4 left-4">
@@ -122,11 +97,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+                <div data-category="civil" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('./assets/images/polivard-city.jpg')"></div>
                         <div class="absolute top-4 left-4">
-                            <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Urban Planning</span>
+                            <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Civil</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -138,7 +113,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+                <div data-category="hospitality" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
                         <picture class="absolute inset-0">
                           <source srcset="./assets/images/resort-design-2560w.webp 2560w,
@@ -165,11 +140,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+                <div data-category="interior" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('./assets/images/lagos-gaming.jpg')"></div>
                         <div class="absolute top-4 left-4">
-                            <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Interior Fit-Out</span>
+                            <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Interior</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -181,11 +156,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+                <div data-category="civil" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('./assets/images/civil-works.jpg')"></div>
                         <div class="absolute top-4 left-4">
-                            <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Construction</span>
+                            <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Civil</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -197,7 +172,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             
-                <div class="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
+                <div data-category="industrial" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('./assets/images/karameh-industrial.jpg')"></div>
                         <div class="absolute top-4 left-4">
@@ -220,74 +195,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p class="text-slate-600 dark:text-slate-400">Let's build something exceptional together. Our team is ready to bring your vision to life.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<button onclick="alert('Contact action triggered')" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+<button onclick="window.location.href='contact.html'" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
                     Contact Us Today
                     <span class="material-symbols-outlined">arrow_forward</span>
 </button>
-<button onclick="alert('Download action triggered')" class="bg-slate-200 dark:bg-surface-dark hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-8 py-3 rounded-lg font-bold transition-all border border-transparent dark:border-border-dark">
+<button onclick="window.location.href='assets/brochure.pdf'" class="bg-slate-200 dark:bg-surface-dark hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-8 py-3 rounded-lg font-bold transition-all border border-transparent dark:border-border-dark">
                     Download Brochure
                 </button>
 </div>
 </div>
 </main>
-<footer class="bg-off-white dark:bg-surface-dark border-t border-slate-200 dark:border-border-dark py-16">
-<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-<!-- Footer Branding Section with Requested Image -->
-<div class="mb-16 overflow-hidden rounded-2xl border border-slate-200 dark:border-border-dark shadow-xl">
-<img alt="Cordon Blue Branding" class="w-full object-cover h-auto" src="./assets/logo.jpg"/>
+<main-footer></main-footer>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-<div class="col-span-1 md:col-span-1">
-<div class="flex items-center gap-2 mb-6">
-<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-sm">architecture</span>
-</div>
-<span class="font-bold text-lg dark:text-white">Cordon Blue Global Services Ltd.</span>
-</div>
-<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                        Leading construction and engineering services in West Africa, delivering excellence through innovation and integrity since 2005.
-                    </p>
-</div>
-<div>
-<h4 class="font-bold mb-6 text-slate-900 dark:text-white">Quick Links</h4>
-<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
-<li><a class="hover:text-primary transition-colors" href="index.html">Our Projects</a></li>
-<li><a class="hover:text-primary transition-colors" href="services.html">Services</a></li>
-<li><a class="hover:text-primary transition-colors" href="index.html">Careers</a></li>
-<li><a class="hover:text-primary transition-colors" href="index.html">News &amp; Press</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold mb-6 text-slate-900 dark:text-white">Services</h4>
-<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
-<li><a class="hover:text-primary transition-colors" href="index.html">Civil Engineering</a></li>
-<li><a class="hover:text-primary transition-colors" href="index.html">Interior Design</a></li>
-<li><a class="hover:text-primary transition-colors" href="index.html">Project Management</a></li>
-<li><a class="hover:text-primary transition-colors" href="index.html">Real Estate</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold mb-6 text-slate-900 dark:text-white">Contact</h4>
-<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary text-lg">location_on</span>
-<span>123 Victoria Island,<br/>Lagos, Nigeria</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-lg">mail</span>
-<span>info@cordonblue.com.ng</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="mt-12 pt-8 border-t border-slate-200 dark:border-border-dark flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
-<p>© 2022 Cordon Blue Global Services Ltd. All Rights Reserved.</p>
-<div class="flex gap-6">
-<a class="hover:text-primary transition-colors" href="index.html">Privacy Policy</a>
-<a class="hover:text-primary transition-colors" href="index.html">Terms of Service</a>
-</div>
-</div>
-</div>
-</footer>
-</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+
+                // Update button styles
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/30');
+                    b.classList.add('bg-white', 'dark:bg-surface-dark', 'border', 'border-slate-200', 'dark:border-border-dark');
+                });
+                btn.classList.add('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/30');
+                btn.classList.remove('bg-white', 'dark:bg-surface-dark', 'border', 'border-slate-200', 'dark:border-border-dark');
+
+                // Filter cards
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                        // Add animation or transition if desired
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    });
+</script>
 </body></html>
