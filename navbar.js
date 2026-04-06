@@ -16,6 +16,7 @@ class MainHeader extends HTMLElement {
         const isProjects = currentPath.endsWith('projects.html');
         const isWhyChooseUs = currentPath.endsWith('why-choose-us.html');
         const isContact = currentPath.endsWith('contact.html');
+        const isClients = currentPath.endsWith('clients.html');
 
         const navLinks = [
             { name: 'Home', href: 'index.html', active: isHome },
@@ -23,7 +24,8 @@ class MainHeader extends HTMLElement {
             { name: 'Services', href: 'services.html', active: isServices },
             { name: 'Projects', href: 'projects.html', active: isProjects },
             { name: 'Why Choose Us', href: 'why-choose-us.html', active: isWhyChooseUs },
-            { name: 'Contact', href: 'contact.html', active: isContact }
+            { name: 'Contact', href: 'contact.html', active: isContact },
+            { name: 'Clients', href: 'clients.html', active: isClients }
         ];
 
         this.innerHTML = `
@@ -151,7 +153,7 @@ class MainFooter extends HTMLElement {
                     </li>
                     <li class="flex items-start gap-3">
                         <span class="material-symbols-outlined text-primary text-xl">mail</span>
-                        <span class="break-all text-slate-500 dark:text-slate-400">admin@cordonblueglobal.com</span>
+                        <span class="break-all text-slate-500 dark:text-slate-400">info@cordonblueglobal.com</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <a href="https://www.linkedin.com/company/cordon-blue-global-services-ltd" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-primary transition-colors">
