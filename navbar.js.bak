@@ -157,7 +157,7 @@ class MainFooter extends HTMLElement {
             </div>
         </div>
         <div class="mt-16 pt-8 border-t border-slate-200 dark:border-white/5 text-center text-sm text-slate-500 dark:text-slate-500">
-            <p>© 2026 Cordon Blue Global Services Ltd. All Rights Reserved.</p>
+            <p>© 2022 Cordon Blue Global Services Ltd. All Rights Reserved.</p>
         </div>
     </div>
 </footer>
