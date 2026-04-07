@@ -12,16 +12,19 @@ new_header = """<div class="flex items-center gap-3">
 </div>
 </div>"""
 
+regex_projects = re.compile(r'(<div class="flex items-center gap-3">\s*<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">\s*<img[^>]*>\s*</div>\s*<div>\s*<h2[^>]*>Cordon Blue Global Services Ltd\.</h2>\s*<p[^>]*>Global Services Ltd\.</p>\s*</div>\s*</div>)', re.DOTALL)
+regex_other = re.compile(r'(<div class="flex items-center gap-3">\s*<div class="flex items-center justify-center bg-primary.*?</div>\s*<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue Global Services Ltd\.</span>\s*</div>)', re.DOTALL)
+
 for filepath in files:
     with open(filepath, 'r') as f:
         content = f.read()
 
     if filepath == "projects.html":
         # Look for the specific part to replace in projects.html
-        old_div_match = re.search(r'(<div class="flex items-center gap-3">\s*<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">\s*<img[^>]*>\s*</div>\s*<div>\s*<h2[^>]*>Cordon Blue Global Services Ltd\.</h2>\s*<p[^>]*>Global Services Ltd\.</p>\s*</div>\s*</div>)', content, re.DOTALL)
+        old_div_match = regex_projects.search(content)
     else:
         # Look for the specific part to replace in index.html and services.html
-        old_div_match = re.search(r'(<div class="flex items-center gap-3">\s*<div class="flex items-center justify-center bg-primary.*?</div>\s*<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue Global Services Ltd\.</span>\s*</div>)', content, re.DOTALL)
+        old_div_match = regex_other.search(content)
 
     if old_div_match:
         content = content.replace(old_div_match.group(1), new_header)
