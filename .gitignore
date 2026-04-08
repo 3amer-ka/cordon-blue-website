@@ -32,3 +32,5 @@ dataconnect/.dataconnect/
 # Temp
 *.tmp
 *.temp
+__pycache__/
+*.pyc
