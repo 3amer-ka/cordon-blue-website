@@ -107,7 +107,8 @@ class MainFooter extends HTMLElement {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative w-full rounded-3xl overflow-hidden shadow-2xl ring-1 ring-slate-200 dark:ring-white/10 mb-20">
             <div class="bg-white dark:bg-surface-dark overflow-hidden">
-                <img alt="Cordon Blue Global Services" class="w-full h-auto object-cover block" src="./assets/logo.jpg"/>
+                <!-- Bolt: added loading="lazy" for performance -->
+                <img alt="Cordon Blue Global Services" loading="lazy" class="w-full h-auto object-cover block" src="./assets/logo.jpg"/>
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-t border-slate-200 dark:border-white/5 pt-16">
