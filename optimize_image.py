@@ -1,6 +1,5 @@
 from PIL import Image
 import os
-import time
 
 input_path = './assets/images/resort-design.jpg'
 output_dir = './assets/images/'
