@@ -1,11 +1,16 @@
-🔒 Ensure App Check is configured for abuse prevention
+🧹 [code health] Deduplicate performance measurement scripts
 
-As noted in the review, Firebase Data Connect handles Firebase App Check
-enforcement natively at the service/infrastructure level rather than
-via a CEL expression in the schema.
+🎯 What:
+Combined identical logic from `measure_perf_new.py` into `measure_perf.py`. Used `argparse` to allow specifying `--port` and `--image` dynamically, defaulting to previous `measure_perf.py` values.
 
-The `CreateInquiry` mutation remains configured as `@auth(level: PUBLIC)`
-to correctly allow unauthenticated website users to submit the form,
-relying on the globally enabled App Check enforcement (configured in
-the Firebase Console UI) to reject requests from automated bots and
-unverified environments.
+💡 Why:
+Removes duplicate code, reducing maintenance overhead. Allows flexibility without needing separate scripts for every configuration. Re-wrapped logic in `if __name__ == '__main__':` to allow server classes to be imported.
+
+✅ Verification:
+Confirmed the refactored script functions correctly via:
+- `python3 measure_perf.py` defaults
+- `python3 measure_perf.py --port 8001 --image /assets/images/resort-design-optimized.jpg`
+Ran `python3 test.py` suite.
+
+✨ Result:
+Cleaner repository and improved robustness. Deleted `measure_perf_new.py`.
