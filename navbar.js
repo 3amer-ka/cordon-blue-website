@@ -33,8 +33,8 @@ class MainHeader extends HTMLElement {
     <div class="flex h-16 items-center justify-between">
         <div class="flex items-center gap-3">
             <a href="index.html" class="flex items-center gap-3">
-                <div class="size-12 bg-white rounded-2xl flex items-center justify-center overflow-hidden shrink-0 shadow-sm border border-slate-200/50">
-                    <img alt="Cordon Blue Logo" class="w-full h-full object-cover p-1" src="./assets/logo.jpg"/>
+                <div class="size-10 bg-white rounded-xl flex items-center justify-center overflow-hidden shrink-0 shadow-sm border border-slate-200/50">
+                    <img alt="Cordon Blue Logo" class="w-full h-full object-contain p-0.5" src="./assets/logo_header.png"/>
                 </div>
                 <div class="flex flex-col">
                     <h2 class="text-lg md:text-xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">Cordon Blue</h2>
