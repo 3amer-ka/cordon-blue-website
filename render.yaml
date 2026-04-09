@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: cordon-blue-website
+    env: static
+    # Use NODE_ENV=development to ensure devDependencies (like tailwindcss) are installed for the build
+    buildCommand: NODE_ENV=development npm install && npx tailwindcss -i ./input.css -o ./assets/output.css --minify
+    staticPublishPath: .
