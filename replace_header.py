@@ -12,12 +12,18 @@ new_header = """<div class="flex items-center gap-3">
 </div>
 </div>"""
 
+# ⚡ Bolt Optimization: Pre-compile regular expressions outside of the loop
+# This avoids redundant regex compilation overhead on each iteration, improving execution performance.
+header_pattern = re.compile(r'<header.*?</header>', re.DOTALL)
+projects_div_pattern = re.compile(r'<div class="flex items-center gap-3">\s*<div class="size-10 bg-primary.*?</div>\s*</div>', re.DOTALL)
+other_div_pattern = re.compile(r'<div class="flex items-center gap-3">\s*<div class="flex items-center justify-center bg-primary.*?</div>\s*<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue Global Services Ltd.</span>\s*</div>', re.DOTALL)
+
 for filepath in files:
     with open(filepath, 'r') as f:
         content = f.read()
 
     # Find the header section to restrict search
-    header_match = re.search(r'<header.*?</header>', content, re.DOTALL)
+    header_match = header_pattern.search(content)
     if not header_match:
         print(f"Could not find header in {filepath}")
         continue
@@ -27,9 +33,9 @@ for filepath in files:
     # Let's match it precisely
 
     if filepath == "projects.html":
-        old_div = re.search(r'<div class="flex items-center gap-3">\s*<div class="size-10 bg-primary.*?</div>\s*</div>', header_content, re.DOTALL)
+        old_div = projects_div_pattern.search(header_content)
     else:
-        old_div = re.search(r'<div class="flex items-center gap-3">\s*<div class="flex items-center justify-center bg-primary.*?</div>\s*<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue Global Services Ltd.</span>\s*</div>', header_content, re.DOTALL)
+        old_div = other_div_pattern.search(header_content)
 
     if old_div:
         new_header_content = header_content.replace(old_div.group(0), new_header)
