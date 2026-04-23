@@ -4,7 +4,9 @@
   "description": "A professional, modern website for Cordon Blue Global Services Ltd, a leading construction and engineering company in Lagos, Nigeria.",
   "main": "index.js",
   "scripts": {
-    "test": "node navbar.test.js"
+    "test": "node navbar.test.js",
+    "build:css": "tailwindcss -i ./input.css -o ./assets/output.css --minify",
+    "watch:css": "tailwindcss -i ./input.css -o ./assets/output.css --watch"
   },
   "repository": {
     "type": "git",

@@ -105,11 +105,8 @@ class MainFooter extends HTMLElement {
         this.innerHTML = `
 <footer class="bg-white dark:bg-background-dark py-20 border-t border-slate-200 dark:border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative w-full rounded-3xl overflow-hidden shadow-2xl ring-1 ring-slate-200 dark:ring-white/10 mb-20">
-            <div class="bg-white dark:bg-surface-dark overflow-hidden">
-                <!-- Bolt: added loading="lazy" for performance -->
-                <img alt="Cordon Blue Global Services" loading="lazy" class="w-full h-auto object-cover block" src="./assets/logo.jpg"/>
-            </div>
+        <div class="inline-block bg-white p-2 rounded-xl shadow-sm border border-slate-200/50 mb-12">
+            <img alt="Cordon Blue Global Services" loading="lazy" class="h-12 w-auto object-contain" src="./assets/logo_header.png"/>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-t border-slate-200 dark:border-white/5 pt-16">
             <div class="space-y-6">
@@ -124,7 +121,7 @@ class MainFooter extends HTMLElement {
                 </p>
             </div>
             <div>
-                <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Quick Links</h4>
+                <h3 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Quick Links</h3>
                 <ul class="space-y-4 text-sm font-medium">
                     <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="index.html">Home</a></li>
                     <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="about.html">About Us</a></li>
@@ -133,7 +130,7 @@ class MainFooter extends HTMLElement {
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Company</h4>
+                <h3 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Company</h3>
                 <ul class="space-y-4 text-sm font-medium">
                     <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="why-choose-us.html">Why Choose Us</a></li>
                     <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="contact.html">Contact Us</a></li>
@@ -142,7 +139,7 @@ class MainFooter extends HTMLElement {
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Contact Info</h4>
+                <h3 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Contact Info</h3>
                 <ul class="space-y-4 text-sm">
                     <li class="flex items-start gap-3">
                         <span class="material-symbols-outlined text-primary text-xl">location_on</span>
@@ -166,7 +163,7 @@ class MainFooter extends HTMLElement {
             </div>
         </div>
         <div class="mt-16 pt-8 border-t border-slate-200 dark:border-white/5 text-center text-sm text-slate-500 dark:text-slate-500">
-            <p>© 2026 Cordon Blue Global Services Ltd. All Rights Reserved.</p>
+            <p>&copy; 2026 Cordon Blue Global Services Ltd. All Rights Reserved.</p>
         </div>
     </div>
 </footer>

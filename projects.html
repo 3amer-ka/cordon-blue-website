@@ -1,36 +1,10 @@
 <!DOCTYPE html>
 
 <html class="light" lang="en"><head>
-<meta charset="utf-8"/>
+<meta charset="UTF-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Project Gallery - Cordon Blue Global Services Ltd.</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        darkMode: "class",
-        theme: {
-            extend: {
-                colors: {
-                    "primary": "#0ea5e9",
-                    "background-light": "#f8fafc",
-                    "background-dark": "#0f1115",
-                    "surface-dark": "#1a1d23",
-                },
-                fontFamily: {
-                    "display": ["Inter", "sans-serif"]
-                },
-                borderRadius: {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "2xl": "1rem",
-                    "3xl": "1.5rem",
-                    "full": "9999px"
-                },
-            },
-        },
-    }
-</script>
+<link href="./assets/output.css" rel="stylesheet">
 <style>
     @media (min-width: 1536px) {
         .max-w-7xl {
@@ -38,10 +12,8 @@
         }
     }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet"/>
 
 <style>
         .scrollbar-hide::-webkit-scrollbar { display: none; }
@@ -86,13 +58,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <div data-category="residential" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
-                        <img src="./assets/images/studio-design.jpg" alt="" loading="lazy" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
+                        <img src="./assets/images/studio-design.jpg" alt="Modern Studio Design" width="800" height="500" fetchpriority="high" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
                         <div class="absolute top-4 left-4">
                             <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Residential</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Modern Studio Design</h3>
+                        <h2 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Modern Studio Design</h2>
                         <div class="flex items-center gap-2 text-slate-500 text-sm">
                             <span class="material-symbols-outlined text-base text-primary">location_on</span>
                             <span>Design Phase</span>
@@ -102,13 +74,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
                 <div data-category="commercial" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
-                        <img src="./assets/images/admin-tower.jpg" alt="" loading="lazy" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
+                        <img src="./assets/images/admin-tower.jpg" alt="Administrative Tower" width="800" height="500" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
                         <div class="absolute top-4 left-4">
                             <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Commercial</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Administrative Tower</h3>
+                        <h2 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Administrative Tower</h2>
                         <div class="flex items-center gap-2 text-slate-500 text-sm">
                             <span class="material-symbols-outlined text-base text-primary">location_on</span>
                             <span>Concept</span>
@@ -116,31 +88,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             
-                <div data-category="hospitality" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
-                    <div class="relative aspect-[16/10] overflow-hidden">
-                        <img src="./assets/images/resort-design.jpg" alt="" loading="lazy" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
-                        <div class="absolute top-4 left-4">
-                            <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Hospitality</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Hotel & Resort Masterplan</h3>
-                        <div class="flex items-center gap-2 text-slate-500 text-sm">
-                            <span class="material-symbols-outlined text-base text-primary">location_on</span>
-                            <span>Design Phase</span>
-                        </div>
-                    </div>
-                </div>
+
             
                 <div data-category="civil" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
-                        <img src="./assets/images/polivard-city.jpg" alt="" loading="lazy" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
+                        <img src="./assets/images/polivard-city.jpg" alt="Polivard City Design" width="800" height="500" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
                         <div class="absolute top-4 left-4">
                             <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Civil</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Polivard City Design</h3>
+                        <h2 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Polivard City Design</h2>
                         <div class="flex items-center gap-2 text-slate-500 text-sm">
                             <span class="material-symbols-outlined text-base text-primary">location_on</span>
                             <span>Masterplan</span>
@@ -159,6 +117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                   type="image/webp">
                           <img src="./assets/images/resort-design-optimized.jpg"
                                alt="Resort Masterplan"
+                               width="800" height="500"
                                class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                                loading="lazy">
                         </picture>
@@ -167,7 +126,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Resort Masterplan</h3>
+                        <h2 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Resort Masterplan</h2>
                         <div class="flex items-center gap-2 text-slate-500 text-sm">
                             <span class="material-symbols-outlined text-base text-primary">location_on</span>
                             <span>Design Phase</span>
@@ -177,13 +136,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
                 <div data-category="interior" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
-                        <img src="./assets/images/lagos-gaming.jpg" alt="" loading="lazy" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
+                        <img src="./assets/images/lagos-gaming.jpg" alt="Gaming Bar" width="800" height="500" loading="lazy" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
                         <div class="absolute top-4 left-4">
                             <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Interior</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Center Gaming Bar</h3>
+                        <h2 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Center Gaming Bar</h2>
                         <div class="flex items-center gap-2 text-slate-500 text-sm">
                             <span class="material-symbols-outlined text-base text-primary">location_on</span>
                             <span>Lagos Club</span>
@@ -193,13 +152,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
                 <div data-category="civil" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
-                        <img src="./assets/images/civil-works.jpg" alt="" loading="lazy" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
+                        <img src="./assets/images/civil-works.jpg" alt="Civil Works" width="800" height="500" loading="lazy" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
                         <div class="absolute top-4 left-4">
                             <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Civil</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Civil Works Contracting</h3>
+                        <h2 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Civil Works Contracting</h2>
                         <div class="flex items-center gap-2 text-slate-500 text-sm">
                             <span class="material-symbols-outlined text-base text-primary">location_on</span>
                             <span>Various Sites</span>
@@ -209,13 +168,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
                 <div data-category="industrial" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
-                        <img src="./assets/images/karameh-industrial.jpg" alt="" loading="lazy" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
+                        <img src="./assets/images/karameh-industrial.jpg" alt="Karameh Industrial" width="800" height="500" loading="lazy" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
                         <div class="absolute top-4 left-4">
                             <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Industrial</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Karameh Industrial City</h3>
+                        <h2 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-900">Karameh Industrial City</h2>
                         <div class="flex items-center gap-2 text-slate-500 text-sm">
                             <span class="material-symbols-outlined text-base text-primary">location_on</span>
                             <span>Civil Works</span>
@@ -226,8 +185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <div class="mt-16 flex flex-col items-center border-t border-slate-200 dark:border-border-dark pt-16">
 <div class="text-center max-w-xl mb-8">
-<h2 class="text-3xl font-bold mb-3 text-slate-900 dark:text-white">Have a project in mind?</h2>
-<p class="text-slate-600 dark:text-slate-400">Let's build something exceptional together. Our team is ready to bring your vision to life.</p>
+<h2 class="text-3xl font-bold mb-3 text-slate-900 dark:text-white">Have a project in mind?</h2><p class="text-slate-600 dark:text-slate-400">Let's build something exceptional together. Our team is ready to bring your vision to life.</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
 <button onclick="window.location.href='contact.html'" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">

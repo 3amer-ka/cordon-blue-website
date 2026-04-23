@@ -1,16 +1,16 @@
 module.exports = {
   darkMode: "class",
-  content: ["./*.html"],
+  content: ["./*.html", "./navbar.js"],
   theme: {
       extend: {
           colors: {
-              "primary": "#0ea5e9",
+              "primary": "#0369a1",
               "background-light": "#f8fafc",
               "background-dark": "#0f1115",
               "surface-dark": "#1a1d23",
           },
           fontFamily: {
-              "display": ["Inter", "sans-serif"]
+              "display": ["Inter", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"]
           },
           borderRadius: {
               "DEFAULT": "0.25rem",
