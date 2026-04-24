@@ -1,20 +1,22 @@
 from playwright.sync_api import sync_playwright
 import os
 
-os.makedirs("/home/jules/verification/videos", exist_ok=True)
-os.makedirs("/home/jules/verification/screenshots", exist_ok=True)
+# Use current directory for verification output
+VERIFICATION_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "verification")
+os.makedirs(os.path.join(VERIFICATION_DIR, "videos"), exist_ok=True)
+os.makedirs(os.path.join(VERIFICATION_DIR, "screenshots"), exist_ok=True)
 
 def run_cuj(page, url, name):
     page.goto(url, wait_until='domcontentloaded')
     page.wait_for_timeout(1000)
-    page.screenshot(path=f"/home/jules/verification/screenshots/{name}.png")
+    page.screenshot(path=os.path.join(VERIFICATION_DIR, "screenshots", f"{name}.png"))
     page.wait_for_timeout(500)
 
 if __name__ == "__main__":
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(
-            record_video_dir="/home/jules/verification/videos"
+            record_video_dir=os.path.join(VERIFICATION_DIR, "videos")
         )
 
         # Block external resources to avoid timeouts
