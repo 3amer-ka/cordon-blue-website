@@ -10,3 +10,7 @@
 ## 2026-04-25 - Fixing Render Deployment `vite: not found` and `tsc: not found` errors
 **Learning:** Render sets `NODE_ENV=production` by default during the build step. Because of this, `npm install` skips installing `devDependencies`. If the `buildCommand` requires tools like `tailwindcss`, `vite`, or `tsc` that are listed in `devDependencies`, the build will fail with "command not found".
 **Action:** When configuring static sites or Node.js apps on Render, move the build tools (e.g., `tailwindcss`, `@tailwindcss/forms`) from `devDependencies` to `dependencies` in `package.json` to ensure they are installed during the production build, or prepend `NODE_ENV=development` to the install command. Also ensure that a valid `build` script is defined in `package.json` if relying on standard commands like `npm run build`.
+
+## 2026-04-25 - Fixing Silent Hangs in CI due to Playwright Post-Install
+**Learning:** During deployment (like on Render), `npm install` runs and executes post-install scripts. Heavy testing tools like `playwright` or `puppeteer` download large browser binaries in their post-install phases, which can cause cloud builders to silently hang, timeout, or run out of memory.
+**Action:** Always ensure large testing frameworks (`playwright`, `puppeteer`, `cypress`) are strictly in `devDependencies`. Because cloud platforms usually run builds with `NODE_ENV=production`, this prevents `npm install` from attempting to download massive binaries on the production build server.
