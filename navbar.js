@@ -148,7 +148,7 @@ class MainFooter extends HTMLElement {
                         <div class="space-y-6">
                             <div class="flex items-center gap-3">
                                 <div class="flex items-center justify-center bg-primary p-1.5 rounded-lg" aria-hidden="true">
-                                    <span class="material-symbols-outlined text-white text-xl">architecture</span>
+                                    <span class="material-symbols-outlined text-white text-xl">business</span>
                                 </div>
                                 <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue</span>
                             </div>
