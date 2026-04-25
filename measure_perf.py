@@ -6,14 +6,29 @@ from http.server import SimpleHTTPRequestHandler
 import socketserver
 import threading
 
+import socket
+
+def wait_for_server(port):
+    start_time = time.time()
+    while time.time() - start_time < 5.0:
+        try:
+            with socket.create_connection(("localhost", port), timeout=0.1):
+                return
+        except OSError:
+            time.sleep(0.01)
+
 PORT = 8000
 Handler = SimpleHTTPRequestHandler
 
 class MyServer(threading.Thread):
+    def __init__(self):
+        super().__init__()
+        socketserver.TCPServer.allow_reuse_address = True
+        self.httpd = socketserver.TCPServer(("", PORT), Handler)
+
     def run(self):
-        with socketserver.TCPServer(("", PORT), Handler) as httpd:
-            self.httpd = httpd
-            httpd.serve_forever()
+        self.httpd.serve_forever()
+
     def stop(self):
         self.httpd.shutdown()
         self.httpd.server_close()
@@ -21,8 +36,8 @@ class MyServer(threading.Thread):
 server = MyServer()
 server.start()
 
-# wait for server to start
-time.sleep(1)
+# wait for server to start using socket polling
+wait_for_server(PORT)
 
 try:
     start_time = time.time()
