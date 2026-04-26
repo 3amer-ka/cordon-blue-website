@@ -5,3 +5,7 @@
 ## 2026-04-26 - Add lazy loading to below-the-fold logo images
 **Learning:** Adding the `loading="lazy"` native attribute to images that are visually below-the-fold significantly reduces initial page payload and the number of HTTP requests on load without altering the visual experience. In static HTML files with several small images (like a client logos marquee/grid), this simple string replace provides an immediate performance boost.
 **Action:** When inspecting static HTML pages with image grids or lists, look for missing `loading="lazy"` attributes on non-hero `<img ...>` tags.
+
+## 2026-04-26 - Render Build Fallback
+**Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
+**Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
