@@ -7,7 +7,8 @@
     "start": "concurrently \"npm run watch:css\" \"http-server -c-1 -o\"",
     "test": "node navbar.test.js",
     "build:css": "tailwindcss -i ./input.css -o ./assets/output.css --minify",
-    "watch:css": "tailwindcss -i ./input.css -o ./assets/output.css --watch"
+    "watch:css": "tailwindcss -i ./input.css -o ./assets/output.css --watch",
+    "build": "npm run build:css"
   },
   "repository": {
     "type": "git",
