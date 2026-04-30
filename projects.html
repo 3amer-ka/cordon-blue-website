@@ -133,7 +133,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
                 <div data-category="interior" class="project-card group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                     <div class="relative aspect-[16/10] overflow-hidden">
-                        <img src="./assets/images/lagos-gaming.jpg" alt="Gaming Bar" width="800" height="500" loading="lazy" class="absolute inset-0 object-cover object-center transition-transform duration-500 group-hover:scale-110" />
+                        <picture class="absolute inset-0">
+                          <source srcset="./assets/images/lagos-gaming-1920w.webp 1920w,
+                                          ./assets/images/lagos-gaming-1280w.webp 1280w,
+                                          ./assets/images/lagos-gaming-640w.webp 640w"
+                                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                  type="image/webp">
+                          <img src="./assets/images/lagos-gaming-1280w.webp"
+                               alt="Gaming Bar"
+                               width="800" height="500"
+                               class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                               loading="lazy">
+                        </picture>
                         <div class="absolute top-4 left-4">
                             <span class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold uppercase tracking-wider text-primary border border-primary/20">Interior</span>
                         </div>
