@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-05-02 - Local Server Testing Reliability
+**Learning:** In Python performance testing scripts (like `measure_perf.py`), using `time.sleep(1)` to wait for a background `socketserver.TCPServer` to start adds unnecessary overhead and doesn't guarantee the server is actually ready. Furthermore, instantiating the server inside the `run` method of a `threading.Thread` creates race conditions where `stop()` might be called before `self.httpd` exists, throwing an `AttributeError`. Lastly, failing to set `allow_reuse_address = True` on the TCP server causes `OSError: [Errno 98] Address already in use` upon rapid script re-executions.
+**Action:** Replace synchronous `time.sleep()` with a socket polling loop using `socket.create_connection` to proceed immediately when the port opens. Refactor `threading.Thread` server mocks to instantiate the `socketserver.TCPServer` inside `__init__` and set `socketserver.TCPServer.allow_reuse_address = True` prior to instantiation.

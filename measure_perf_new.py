@@ -1,6 +1,7 @@
 import urllib.request
 import time
 
+import socket
 from http.server import SimpleHTTPRequestHandler
 import socketserver
 import threading
@@ -8,11 +9,18 @@ import threading
 PORT = 8001
 Handler = SimpleHTTPRequestHandler
 
+# ⚡ Bolt Optimization: Use socketserver.TCPServer with allow_reuse_address and socket polling
+# This avoids OSError: Address already in use, fixes AttributeError race conditions,
+# and significantly reduces script execution time by avoiding static time.sleep().
 class MyServer(threading.Thread):
+    def __init__(self):
+        super().__init__()
+        socketserver.TCPServer.allow_reuse_address = True
+        self.httpd = socketserver.TCPServer(("", PORT), Handler)
+
     def run(self):
-        with socketserver.TCPServer(("", PORT), Handler) as httpd:
-            self.httpd = httpd
-            httpd.serve_forever()
+        self.httpd.serve_forever()
+
     def stop(self):
         self.httpd.shutdown()
         self.httpd.server_close()
@@ -20,8 +28,16 @@ class MyServer(threading.Thread):
 server = MyServer()
 server.start()
 
-# wait for server to start
-time.sleep(1)
+# Wait for server to start using socket polling instead of slow time.sleep()
+start_wait = time.time()
+while True:
+    try:
+        with socket.create_connection(("localhost", PORT), timeout=0.1):
+            break
+    except OSError:
+        time.sleep(0.01)
+        if time.time() - start_wait > 5:
+            raise RuntimeError("Server failed to start")
 
 try:
     start_time = time.time()
