@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Contact Us - Cordon Blue Global Services Ltd</title>
+    <link href="./assets/output.css" rel="stylesheet">
+<style>
+    @media (min-width: 1536px) {
+        .max-w-7xl {
+            max-width: 1600px !important;
+        }
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+    <script src="navbar.js" defer></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-200 font-display transition-colors duration-300">
+    <main-header class="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl block"></main-header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 bg-slate-50 dark:bg-surface-dark/30 border-b border-slate-200 dark:border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Contact Us</h1>
+                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                    Have a project in mind? Let's discuss how we can bring your vision to life.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-20">
+                    <!-- Contact Form -->
+                    <div class="bg-white dark:bg-surface-dark p-10 rounded-3xl border border-slate-200 dark:border-white/5 shadow-2xl">
+                        <h2 class="text-3xl font-bold mb-8 text-slate-900 dark:text-white uppercase tracking-tight">Send Us a Message</h2>
+                        <form action="https://formsubmit.co/info@cordonblueglobal.com" method="POST" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="first_name" class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">First Name</label>
+                                    <input type="text" id="first_name" name="first_name" required class="w-full px-4 py-3 bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="last_name" class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">Last Name</label>
+                                    <input type="text" id="last_name" name="last_name" required class="w-full px-4 py-3 bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="email" class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="phone" class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="service" class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">Service of Interest</label>
+                                <select id="service" name="service" class="w-full px-4 py-3 bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white">
+                                    <option value="Residential Construction">Residential Construction</option>
+                                    <option value="Commercial Building">Commercial Building</option>
+                                    <option value="Civil Engineering">Civil Engineering</option>
+                                    <option value="Project Management">Project Management</option>
+                                    <option value="Interior Design">Interior Design</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="message" class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">Your Message</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:scale-[1.02] active:scale-95 transition-all text-lg shadow-xl shadow-primary/20">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="space-y-12">
+                        <div class="space-y-6">
+                            <h2 class="text-3xl font-bold text-slate-900 dark:text-white uppercase tracking-tight">Our Information</h2>
+                            <p class="text-lg text-slate-600 dark:text-slate-400">Feel free to reach out to us via any of the channels below or visit our office for a face-to-face consultation.</p>
+                        </div>
+
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-6 group">
+                                <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-3xl">location_on</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Office Address</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-lg">174, Ikorodu Road, Onipanu, Lagos, Nigeria</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6 group">
+                                <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-3xl">phone</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Phone Numbers</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-lg">+234 812 414 1514</p>
+                                    <p class="text-slate-600 dark:text-slate-400 text-lg">+234 803 123 4567</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6 group">
+                                <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-3xl">mail</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Email Address</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-lg">info@cordonblueglobal.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6 group">
+                                <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-3xl">schedule</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Business Hours</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-lg">Monday – Friday: 8:00 AM – 6:00 PM</p>
+                                    <p class="text-slate-600 dark:text-slate-400 text-lg">Saturday: 10:00 AM – 2:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Google Maps Section -->
+        <section class="py-16 bg-slate-100 dark:bg-surface-dark">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">Find Us</h2>
+                <div class="rounded-2xl overflow-hidden shadow-xl">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3!2d3.379!3d6.535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sIkorodu+Road+Onipanu+Lagos!5e0!3m2!1sen!2sng!4v1"
+                        width="100%"
+                        height="400"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="dark:brightness-75">
+                    </iframe>
+                </div>
+                <p class="text-center mt-4 text-slate-600 dark:text-slate-400">174, Ikorodu Road, Onipanu, Lagos, Nigeria</p>
+            </div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/2348035058660" target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110"
+       aria-label="Chat on WhatsApp">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+</body>
+</html>
