@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-05-04 - Fast Server Startup Polling
+**Learning:** In performance testing scripts using Python's `http.server` or `socketserver` (e.g. `measure_perf.py`), using `time.sleep(1)` to wait for server initialization artificially inflates execution time and may lead to port conflicts or race conditions. Instantiating the server in the `__init__` method on the main thread and replacing the sleep with a socket connection polling loop significantly speeds up test execution and prevents arbitrary waiting.
+**Action:** Replace `time.sleep()` blocks intended for server waiting with a loop that checks socket availability (e.g., `socket.create_connection`) to reduce test overhead.

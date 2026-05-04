@@ -10,10 +10,14 @@ PORT = 8000
 Handler = SimpleHTTPRequestHandler
 
 class MyServer(threading.Thread):
+    def __init__(self):
+        super().__init__()
+        socketserver.TCPServer.allow_reuse_address = True
+        self.httpd = socketserver.TCPServer(("", PORT), Handler)
+
     def run(self):
-        with socketserver.TCPServer(("", PORT), Handler) as httpd:
-            self.httpd = httpd
-            httpd.serve_forever()
+        self.httpd.serve_forever()
+
     def stop(self):
         self.httpd.shutdown()
         self.httpd.server_close()
@@ -21,8 +25,16 @@ class MyServer(threading.Thread):
 server = MyServer()
 server.start()
 
+import socket
+# ⚡ Bolt Optimization: Replace synchronous time.sleep(1) with a socket polling loop.
+# This prevents artificially inflating test execution time by waiting only as long as necessary for the server to bind and start.
 # wait for server to start
-time.sleep(1)
+for _ in range(20):
+    try:
+        socket.create_connection(("localhost", PORT), timeout=0.1)
+        break
+    except OSError:
+        time.sleep(0.05)
 
 try:
     start_time = time.time()
