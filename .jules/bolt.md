@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-05-10 - DOM Attribute Access Performance
+**Learning:** While `dataset` provides a convenient API for accessing `data-*` attributes, modifying logic that already uses the native `getAttribute` method to use `dataset` for "performance" is incorrect. `getAttribute` is a direct native method and is generally faster than `dataset`, which has the overhead of instantiating and going through a `DOMStringMap` proxy. This attempt at micro-optimization was fundamentally flawed and slower.
+**Action:** Do not replace `getAttribute` with `dataset` in the name of performance. Only consider replacing `querySelector` or similar heavy traversal methods with data attributes or other more direct access patterns.
