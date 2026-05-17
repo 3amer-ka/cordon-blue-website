@@ -6,6 +6,3 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
-## 2026-05-17 - Render Deployment Fallback due to devDependencies
-**Learning:** Render defaults to `NODE_ENV=production` during deployments. This causes `npm install` (or `npm ci`) to prune any packages listed under `devDependencies`. If the build script (`npm run build`) depends on CLI tools like `tailwindcss`, `vite`, or `tsc` that are placed in `devDependencies`, the deployment will fail immediately when the command executes because those tools are absent in the production environment.
-**Action:** When build tools are required for the server's build step in a PaaS like Render that enforces production environments, move them from `devDependencies` to `dependencies` in `package.json` to ensure they are available, or configure the PaaS via environment variable explicitly.
