@@ -6,3 +6,6 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+## 2026-05-17 - Avoid Out-Of-Scope Unrelated Test Modfications
+**Learning:** Even if a test has a pre-existing flaw or weakness (e.g., a loose query selector that could technically fail), modifying it when implementing a distinct performance optimization is considered out of scope and introduces unnecessary risk and noise to the pull request. A strict adherence to "only necessary, in-scope changes" must be maintained.
+**Action:** When implementing performance improvements, strictly limit changes to the target optimization. Do not "fix" or alter unrelated tests or files, even if minor flaws are noticed, unless they directly block the verification of the current optimization.
