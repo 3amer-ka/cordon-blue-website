@@ -6,3 +6,6 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+## 2026-05-17 - Render deployment fallback override
+**Learning:** Render defaults to `npm run build` with `NODE_ENV=production` if `render.yaml` isn't utilized correctly, pruning `devDependencies`. By updating `npm run build` inside `package.json` to be `NODE_ENV=development npm install && npm run build:css`, we ensure that the required build dependencies (like tailwindcss) are always installed and available immediately before the CSS build step runs, acting as a foolproof safety net against `tailwindcss: not found` errors.
+**Action:** When a static site relies on CLI tools that might get pruned by PaaS environments enforcing `NODE_ENV=production`, directly override the `build` script in `package.json` to reinstall dependencies in development mode prior to running the actual build command.
