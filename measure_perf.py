@@ -1,6 +1,7 @@
 import urllib.request
 import time
 import os
+import socket
 
 from http.server import SimpleHTTPRequestHandler
 import socketserver
@@ -9,20 +10,29 @@ import threading
 PORT = 8000
 Handler = SimpleHTTPRequestHandler
 
+class ReuseTCPServer(socketserver.TCPServer):
+    allow_reuse_address = True
+
 class MyServer(threading.Thread):
+    def __init__(self, port):
+        super().__init__()
+        self.httpd = ReuseTCPServer(("", port), Handler)
     def run(self):
-        with socketserver.TCPServer(("", PORT), Handler) as httpd:
-            self.httpd = httpd
-            httpd.serve_forever()
+        self.httpd.serve_forever()
     def stop(self):
         self.httpd.shutdown()
         self.httpd.server_close()
 
-server = MyServer()
+server = MyServer(PORT)
 server.start()
 
 # wait for server to start
-time.sleep(1)
+for _ in range(50):
+    try:
+        socket.create_connection(("localhost", PORT), timeout=0.1).close()
+        break
+    except OSError:
+        time.sleep(0.05)
 
 try:
     start_time = time.time()
