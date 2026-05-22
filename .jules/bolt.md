@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-05-22 - Preloading Critical Resources
+**Learning:** Adding `<link rel="preconnect">` for Google Fonts (`fonts.googleapis.com`, `fonts.gstatic.com`) speeds up TCP/TLS handshakes, significantly accelerating font loading and preventing FOUT/FOIT. Similarly, adding a `<link rel="preload" as="image" fetchpriority="high">` tag in `<head>` for critical above-the-fold images drastically improves the Largest Contentful Paint (LCP) by telling the browser to fetch the image immediately before parsing the full HTML.
+**Action:** When evaluating frontend performance, ensure any external CDNs or API domains have `preconnect` tags in the `<head>`, and always evaluate if the hero image/LCP element can be `preload`ed.
