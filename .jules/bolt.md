@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-05-30 - Eagerly loading below-the-fold images in project gallery
+**Learning:** Native `loading="lazy"` on semantic `<img>` tags is highly effective for heavy image galleries. In `projects.html`, several heavy below-the-fold project images (`studio-design.jpg`, `admin-tower.jpg`, `polivard-city.jpg`) were lacking this attribute, causing the browser to eagerly download them on initial page load, which impacts initial payload and page load speed.
+**Action:** Add `loading="lazy"` to below-the-fold `<img>` tags in galleries to defer loading until they are about to enter the viewport.

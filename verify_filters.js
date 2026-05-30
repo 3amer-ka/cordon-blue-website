@@ -33,8 +33,8 @@ const path = require('path');
     await hospitalityButton.click();
     console.log('Clicked "Hospitality" filter.');
 
-    // Wait for a brief moment for DOM update
-    await page.waitForTimeout(100);
+    // Wait for the animation to finish
+    await page.waitForTimeout(400);
 
     // Check visible cards
     const visibleCards = await page.$$eval('#project-grid > .group.flex.flex-col', cards => cards.filter(c => c.style.display !== 'none').length);
@@ -59,7 +59,7 @@ const path = require('path');
   if (await allButton.count() > 0) {
     await allButton.click();
     console.log('Clicked "All Projects" filter.');
-    await page.waitForTimeout(100);
+    await page.waitForTimeout(400);
     const allVisibleCards = await page.$$eval('#project-grid > .group.flex.flex-col', cards => cards.filter(c => c.style.display !== 'none').length);
     console.log(`Visible cards after 'All Projects' filter: ${allVisibleCards}`);
 
