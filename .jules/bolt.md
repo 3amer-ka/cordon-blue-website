@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-06-09 - LCP Hero Image Preloading with srcset
+**Learning:** When using `<picture>` tags with `srcset` for responsive hero images to optimize payload size, the browser's preload scanner cannot discover these images as early as a simple `<img src="...">`. This can significantly delay the Largest Contentful Paint (LCP) metric.
+**Action:** Always pair responsive hero images (using `<picture>` or `srcset`) with a corresponding `<link rel="preload" as="image" imagesrcset="..." imagesizes="..." fetchpriority="high">` in the `<head>` to ensure early discovery and prioritize LCP image loading.
