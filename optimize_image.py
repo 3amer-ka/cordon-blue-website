@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 import os
 
 def optimize_image(input_path, output_dir):
@@ -6,6 +6,9 @@ def optimize_image(input_path, output_dir):
         img = Image.open(input_path)
     except FileNotFoundError:
         print(f"Error: Image at {input_path} not found.")
+        return False
+    except UnidentifiedImageError:
+        print(f"Error: Image at {input_path} is corrupt or unrecognized.")
         return False
 
     widths = [640, 1280, 1920, 2560]

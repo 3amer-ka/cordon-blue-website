@@ -7,6 +7,20 @@ class TestOptimizeImage(unittest.TestCase):
 
     @patch('optimize_image.Image.open')
     @patch('sys.stdout', new_callable=MagicMock)
+    def test_corrupt_image(self, mock_stdout, mock_open):
+        from PIL import UnidentifiedImageError
+        # Arrange
+        mock_open.side_effect = UnidentifiedImageError()
+
+        # Act
+        result = optimize_image('corrupt.jpg', './test_dir/')
+
+        # Assert
+        self.assertFalse(result)
+        mock_open.assert_called_once_with('corrupt.jpg')
+
+    @patch('optimize_image.Image.open')
+    @patch('sys.stdout', new_callable=MagicMock)
     def test_missing_image(self, mock_stdout, mock_open):
         # Arrange
         mock_open.side_effect = FileNotFoundError()
