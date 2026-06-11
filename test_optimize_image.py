@@ -25,6 +25,7 @@ class TestOptimizeImage(unittest.TestCase):
         mock_img = MagicMock()
         mock_img.width = 1920
         mock_img.height = 1080
+        mock_img.mode = 'RGB'
         mock_resized = MagicMock()
         mock_img.resize.return_value = mock_resized
         mock_open.return_value = mock_img
