@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-05-15 - Preloading Responsive LCP Images
+**Learning:** The browser's preload scanner cannot easily discover responsive image sources within a `<picture>` tag until it parses the DOM and evaluates the element. This delays the download of the Largest Contentful Paint (LCP) element.
+**Action:** Always add a corresponding `<link rel="preload" as="image" imagesrcset="..." imagesizes="..." fetchpriority="high" />` to the HTML `<head>` for the LCP image. This makes the asset discoverable early by the preload scanner, avoiding waterfall delays and significantly improving the LCP metric.
