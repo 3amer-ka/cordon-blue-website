@@ -1,5 +1,5 @@
-🔒 Fix missing sandbox attribute on Google Maps iframe
+🧪 [test] Add unit test for verify_frontend.py
 
-🎯 What: Added `sandbox="allow-scripts allow-same-origin"` to the Google Maps iframe in `contact.html`.
-⚠️ Risk: If left unfixed, embedded third-party content without sandbox restrictions could execute scripts with the same privileges as the parent page, potentially leading to Cross-Site Scripting (XSS), phishing, or clickjacking if the third-party source is compromised.
-🛡️ Solution: The `sandbox` attribute restricts the capabilities of the embedded content, while `allow-scripts` and `allow-same-origin` are sufficient to maintain map functionality while minimizing risk.
+🎯 What: Added a unit test (`test_verify_frontend.py`) for the `run_cuj` function in `verify_frontend.py`.
+📊 Coverage: Tests the "happy path" of `run_cuj`, verifying that all Playwright interactions (`goto`, `wait_for_timeout`, `screenshot`) occur exactly as expected with proper mock arguments.
+✨ Result: Reliable validation of our UI testing utility logic without the overhead and complexity of spawning nested headless browser instances.
