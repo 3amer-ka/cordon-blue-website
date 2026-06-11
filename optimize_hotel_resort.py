@@ -7,6 +7,9 @@ def optimize_image(input_path, output_dir, base_name):
     except FileNotFoundError:
         print(f"Error: Image at {input_path} not found.")
         return False
+    except Exception as e:
+        print(f"Error processing image {input_path}: {e}")
+        return False
 
     widths = [640, 1280]
 
