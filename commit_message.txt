@@ -1,16 +1,5 @@
-🧹 [Consolidate measure_perf scripts and fix server race conditions]
+🧪 [test] Add unit test for verify_frontend.py
 
-🎯 Why
-The codebase had duplicate performance measurement scripts (`measure_perf.py` and `measure_perf_new.py`). Removing the dead code and consolidating the functionality improves maintainability. Additionally, the existing script used a fragile `time.sleep()` for server startup and had potential race conditions in thread initialization.
-
-💡 What
-- Deleted `measure_perf_new.py` and merged its optimized image URL check into `measure_perf.py`.
-- Refactored `MyServer` to instantiate `socketserver.TCPServer` in `__init__` and enabled `allow_reuse_address`.
-- Replaced synchronous `time.sleep()` with a robust `wait_for_port` socket polling mechanism.
-- Wrapped the execution logic in a `main()` function.
-
-✅ Verification
-Ran `python3 measure_perf.py` to ensure it still successfully measures HTML and image load times without errors. Discarded unrelated test environment modifications to keep the PR focused.
-
-✨ Result
-A single, robust performance measurement script that starts up reliably without race conditions and avoids port conflicts on repeated runs.
+🎯 What: Added a unit test (`test_verify_frontend.py`) for the `run_cuj` function in `verify_frontend.py`.
+📊 Coverage: Tests the "happy path" of `run_cuj`, verifying that all Playwright interactions (`goto`, `wait_for_timeout`, `screenshot`) occur exactly as expected with proper mock arguments.
+✨ Result: Reliable validation of our UI testing utility logic without the overhead and complexity of spawning nested headless browser instances.

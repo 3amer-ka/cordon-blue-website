@@ -256,14 +256,3 @@ Your website is production-ready. Follow the Firebase deployment steps above for
 **Questions?** All the technical details are in the main README.md file.
 
 **Good luck with your launch! 🚀**
-
-## Render Dashboard Troubleshooting
-If you encounter a deployment failure with logs like:
-`==> Empty build command; skipping build`
-`==> Publish directory build does not exist!`
-
-This means your Render Dashboard settings are overriding the `render.yaml` configuration.
-To fix this, you MUST manually update the settings in the Render Dashboard:
-1. Go to **Settings → Build & Deploy** for your static site in Render.
-2. Set **Build Command** to: `npm install && npm run build` (or leave it blank if you really don't want a build step, but you probably need it to build Tailwind CSS).
-3. Set **Publish Directory** to: `.` (a single dot, meaning the root directory).
