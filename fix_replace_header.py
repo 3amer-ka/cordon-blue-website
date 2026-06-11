@@ -1,8 +1,8 @@
 import re
 
-files = ["index.html", "projects.html", "services.html"]
+FILES = ["index.html", "projects.html", "services.html"]
 
-new_header = """<div class="flex items-center gap-3">
+NEW_HEADER = """<div class="flex items-center gap-3">
 <div class="size-12 bg-white rounded-2xl flex items-center justify-center overflow-hidden shrink-0 shadow-sm border border-slate-200/50">
 <img alt="Cordon Blue Logo" class="w-full h-full object-cover p-1" src="./assets/logo.jpg"/>
 </div>
@@ -12,24 +12,37 @@ new_header = """<div class="flex items-center gap-3">
 </div>
 </div>"""
 
-regex_projects = re.compile(r'(<div class="flex items-center gap-3">\s*<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">\s*<img[^>]*>\s*</div>\s*<div>\s*<h2[^>]*>Cordon Blue Global Services Ltd\.</h2>\s*<p[^>]*>Global Services Ltd\.</p>\s*</div>\s*</div>)', re.DOTALL)
-regex_other = re.compile(r'(<div class="flex items-center gap-3">\s*<div class="flex items-center justify-center bg-primary.*?</div>\s*<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue Global Services Ltd\.</span>\s*</div>)', re.DOTALL)
+REGEX_PROJECTS = re.compile(r'(<div class="flex items-center gap-3">\s*<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">\s*<img[^>]*>\s*</div>\s*<div>\s*<h2[^>]*>Cordon Blue Global Services Ltd\.</h2>\s*<p[^>]*>Global Services Ltd\.</p>\s*</div>\s*</div>)', re.DOTALL)
+REGEX_OTHER = re.compile(r'(<div class="flex items-center gap-3">\s*<div class="flex items-center justify-center bg-primary.*?</div>\s*<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue Global Services Ltd\.</span>\s*</div>)', re.DOTALL)
 
-for filepath in files:
-    with open(filepath, 'r') as f:
-        content = f.read()
-
+def replace_header_content(filepath, content):
     if filepath == "projects.html":
         # Look for the specific part to replace in projects.html
-        old_div_match = regex_projects.search(content)
+        old_div_match = REGEX_PROJECTS.search(content)
     else:
         # Look for the specific part to replace in index.html and services.html
-        old_div_match = regex_other.search(content)
+        old_div_match = REGEX_OTHER.search(content)
 
     if old_div_match:
-        content = content.replace(old_div_match.group(1), new_header)
-        with open(filepath, 'w') as f:
-            f.write(content)
-        print(f"Successfully updated {filepath}")
-    else:
-        print(f"Could not find matching div in {filepath}")
+        return content.replace(old_div_match.group(1), NEW_HEADER), True
+    return content, False
+
+def main():
+    for filepath in FILES:
+        try:
+            with open(filepath, 'r') as f:
+                content = f.read()
+
+            new_content, changed = replace_header_content(filepath, content)
+
+            if changed:
+                with open(filepath, 'w') as f:
+                    f.write(new_content)
+                print(f"Successfully updated {filepath}")
+            else:
+                print(f"Could not find matching div in {filepath}")
+        except FileNotFoundError:
+            print(f"File not found: {filepath}")
+
+if __name__ == '__main__':
+    main()
