@@ -1,6 +1,6 @@
 import urllib.request
 import time
-import os
+import socket
 
 from http.server import SimpleHTTPRequestHandler
 import socketserver
@@ -10,36 +10,54 @@ PORT = 8000
 Handler = SimpleHTTPRequestHandler
 
 class MyServer(threading.Thread):
+    def __init__(self):
+        super().__init__()
+        socketserver.TCPServer.allow_reuse_address = True
+        self.httpd = socketserver.TCPServer(("", PORT), Handler)
+
     def run(self):
-        with socketserver.TCPServer(("", PORT), Handler) as httpd:
-            self.httpd = httpd
-            httpd.serve_forever()
+        self.httpd.serve_forever()
+
     def stop(self):
         self.httpd.shutdown()
         self.httpd.server_close()
 
-server = MyServer()
-server.start()
-
-# wait for server to start
-time.sleep(1)
-
-try:
+def wait_for_port(port, timeout=5.0):
     start_time = time.time()
-    response = urllib.request.urlopen(f'http://localhost:{PORT}/index.html')
-    html = response.read()
+    while time.time() - start_time < timeout:
+        try:
+            with socket.create_connection(("localhost", port), timeout=0.1):
+                return True
+        except OSError:
+            time.sleep(0.05)
+    return False
 
-    # fetch the main image
-    img_start = time.time()
-    img_response = urllib.request.urlopen(f'http://localhost:{PORT}/assets/images/resort-design.jpg')
-    img_data = img_response.read()
-    img_end = time.time()
+def main():
+    server = MyServer()
+    server.start()
 
-    end_time = time.time()
+    # wait for server to start using socket polling
+    wait_for_port(PORT)
 
-    print(f"HTML size: {len(html)} bytes")
-    print(f"Image size: {len(img_data) / 1024 / 1024:.2f} MB")
-    print(f"Image load time: {img_end - img_start:.3f} seconds")
-    print(f"Total basic load time: {end_time - start_time:.3f} seconds")
-finally:
-    server.stop()
+    try:
+        start_time = time.time()
+        response = urllib.request.urlopen(f'http://localhost:{PORT}/index.html')
+        html = response.read()
+
+        # fetch the main image fallback (as the python script won't parse srcset)
+        img_start = time.time()
+        img_response = urllib.request.urlopen(f'http://localhost:{PORT}/assets/images/resort-design-optimized.jpg')
+        img_data = img_response.read()
+        img_end = time.time()
+
+        end_time = time.time()
+
+        print(f"HTML size: {len(html)} bytes")
+        print(f"Image size: {len(img_data) / 1024 / 1024:.2f} MB")
+        print(f"Image load time: {img_end - img_start:.3f} seconds")
+        print(f"Total basic load time: {end_time - start_time:.3f} seconds")
+    finally:
+        server.stop()
+
+if __name__ == '__main__':
+    main()
