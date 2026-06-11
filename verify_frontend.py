@@ -12,7 +12,13 @@ def run_cuj(page, url, name):
     page.screenshot(path=os.path.join(VERIFICATION_DIR, "screenshots", f"{name}.png"))
     page.wait_for_timeout(500)
 
-if __name__ == "__main__":
+def block_external_resources(route):
+    if not any(x in route.request.url for x in ["fonts.googleapis.com", "cdn.tailwindcss.com"]):
+        route.continue_()
+    else:
+        route.abort()
+
+def main():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(
@@ -20,7 +26,7 @@ if __name__ == "__main__":
         )
 
         # Block external resources to avoid timeouts
-        context.route("**/*", lambda route: route.continue_() if not any(x in route.request.url for x in ["fonts.googleapis.com", "cdn.tailwindcss.com"]) else route.abort())
+        context.route("**/*", block_external_resources)
 
         page = context.new_page()
         try:
@@ -30,3 +36,6 @@ if __name__ == "__main__":
         finally:
             context.close()
             browser.close()
+
+if __name__ == "__main__":
+    main()
