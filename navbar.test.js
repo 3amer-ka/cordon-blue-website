@@ -30,7 +30,7 @@ async function runTests() {
         let document = dom.window.document;
         let mainHeader = document.querySelector('main-header');
 
-        let activeLinks = mainHeader.querySelectorAll('nav a.text-primary');
+        let activeLinks = mainHeader.querySelectorAll('header nav a.text-primary');
         assert.strictEqual(activeLinks.length, 1, "There should be exactly 1 active link");
         assert.strictEqual(activeLinks[0].textContent.trim(), 'Home', "Active link should be Home");
         console.log("✅ Test 1 Passed: Home page active link");
@@ -40,7 +40,7 @@ async function runTests() {
         document = dom.window.document;
         mainHeader = document.querySelector('main-header');
 
-        activeLinks = mainHeader.querySelectorAll('nav a.text-primary');
+        activeLinks = mainHeader.querySelectorAll('header nav a.text-primary');
         assert.strictEqual(activeLinks.length, 1, "There should be exactly 1 active link");
         assert.strictEqual(activeLinks[0].textContent.trim(), 'About Us', "Active link should be About Us");
         console.log("✅ Test 2 Passed: About page active link");
@@ -65,6 +65,21 @@ async function runTests() {
         assert.ok(menu.classList.contains('hidden'), "Menu should be hidden after second click");
 
         console.log("✅ Test 3 Passed: Mobile menu toggling");
+
+        // Test 4: Mobile menu escape key closing
+        // Open menu first
+        button.click();
+        assert.ok(!menu.classList.contains('hidden'), "Menu should not be hidden after click");
+
+        // Simulate Escape key press
+        const escapeEvent = new dom.window.KeyboardEvent('keydown', { key: 'Escape' });
+        document.dispatchEvent(escapeEvent);
+
+        assert.ok(menu.classList.contains('hidden'), "Menu should be hidden after pressing Escape");
+        assert.strictEqual(button.getAttribute('aria-expanded'), 'false', "Aria-expanded should be false after closing");
+
+        console.log("✅ Test 4 Passed: Mobile menu escape key closing");
+
 
     } catch (error) {
         console.error("❌ Test failed:", error);
