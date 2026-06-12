@@ -21,8 +21,10 @@ class TestVerifyFrontend(unittest.TestCase):
         mock_page.wait_for_timeout.assert_any_call(1000)
         mock_page.wait_for_timeout.assert_any_call(500)
 
-        # screenshot should be called with the correct path (absolute path)
-        expected_path = f"/Users/amerkarameh/Projects/cordon-blue-website/verification/screenshots/{name}.png"
+        # screenshot should be called with the correct path
+        import os
+        from verify_frontend import VERIFICATION_DIR
+        expected_path = os.path.join(VERIFICATION_DIR, "screenshots", f"{name}.png")
         mock_page.screenshot.assert_called_once_with(path=expected_path)
 
 if __name__ == '__main__':
