@@ -1,6 +1,11 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import os
+import sys
+
+# Mock PIL module since it's not available in this environment
+sys.modules['PIL'] = MagicMock()
+
 from optimize_image import optimize_image
 
 class TestOptimizeImage(unittest.TestCase):
