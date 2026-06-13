@@ -6,3 +6,6 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+## 2026-06-13 - Dashboard settings override render.yaml
+**Learning:** Render Dashboard settings (like Build Command and Publish Directory) override what is specified in `render.yaml`. If you encounter an 'Empty build command' error but the command is clearly defined in `render.yaml`, the dashboard has likely been configured to override it.
+**Action:** Tell the user to manually update their Render dashboard settings to match the intended configuration in `render.yaml`. We cannot fix this directly via code.
