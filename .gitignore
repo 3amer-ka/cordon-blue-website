@@ -34,3 +34,5 @@ dataconnect/.dataconnect/
 *.temp
 __pycache__/
 *.pyc
+
+build/
