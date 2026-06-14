@@ -1,3 +1,6 @@
+import sys
+from unittest.mock import MagicMock
+sys.modules["PIL"] = MagicMock()
 import unittest
 from unittest.mock import patch, MagicMock
 import os
