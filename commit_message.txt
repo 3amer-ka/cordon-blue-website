@@ -1,5 +1,13 @@
-🧪 [test] Add unit test for verify_frontend.py
+⚡ Bolt: Add preload for LCP hero image
 
-🎯 What: Added a unit test (`test_verify_frontend.py`) for the `run_cuj` function in `verify_frontend.py`.
-📊 Coverage: Tests the "happy path" of `run_cuj`, verifying that all Playwright interactions (`goto`, `wait_for_timeout`, `screenshot`) occur exactly as expected with proper mock arguments.
-✨ Result: Reliable validation of our UI testing utility logic without the overhead and complexity of spawning nested headless browser instances.
+💡 What
+Added a `<link rel="preload" as="image">` tag in the `<head>` of `index.html` to preload the hero image using its responsive `imagesrcset` and `imagesizes`. Added `fetchpriority="high"` for optimization.
+
+🎯 Why
+The Lighthouse report indicated that the LCP (Largest Contentful Paint) image could be loaded earlier to improve the perceived page load time. Specifically, it highlighted an opportunity in LCP Request Discovery by moving the asset out of the critical rendering block.
+
+📊 Impact
+This reduces the discovery delay for the LCP resource, which is expected to shave off precious milliseconds by allowing the browser's preload scanner to start fetching the correctly sized hero image immediately, resulting in a faster rendering of the hero section.
+
+🔬 Measurement
+Can be verified by running the Lighthouse audit tool again and observing improvements in the LCP and LCP Request Discovery metrics. Network timing tools should show the LCP image loading concurrently with early CSS/JS resources.
