@@ -4,23 +4,31 @@ import os
 def optimize_image(input_path, output_dir, base_name):
     try:
         img = Image.open(input_path)
-    except FileNotFoundError:
-        print(f"Error: Image at {input_path} not found.")
+    except Exception as e:
+        print(f"Error opening image at {input_path}: {e}")
         return False
 
     widths = [640, 1280]
+    # ⚡ Bolt: Cache resized images by dimension to avoid redundant computations later
+    resized_cache = {}
 
     for w in widths:
         h = int((w / img.width) * img.height)
         print(f"Resizing to {w}x{h}...")
         resized = img.resize((w, h), Image.Resampling.LANCZOS)
+        resized_cache[(w, h)] = resized
         resized.save(os.path.join(output_dir, f'{base_name}-{w}w.webp'), 'WEBP', quality=80)
 
     # Fallback optimized jpeg
     # We will just save it optimized with its original size or max 1280 width to save space
     w_fallback = min(img.width, 1280)
     h_fallback = int((w_fallback / img.width) * img.height)
-    resized_jpg = img.resize((w_fallback, h_fallback), Image.Resampling.LANCZOS)
+    # ⚡ Bolt: Reuse cached image if we already resized to these dimensions
+    if (w_fallback, h_fallback) in resized_cache:
+        resized_jpg = resized_cache[(w_fallback, h_fallback)]
+    else:
+        resized_jpg = img.resize((w_fallback, h_fallback), Image.Resampling.LANCZOS)
+
     if img.mode != 'RGB':
         resized_jpg = resized_jpg.convert('RGB')
     resized_jpg.save(os.path.join(output_dir, f'{base_name}.jpg'), 'JPEG', quality=80)
