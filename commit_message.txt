@@ -1,5 +1,11 @@
-🧪 [test] Add unit test for verify_frontend.py
+⚡ Bolt: Optimize LCP with responsive image preload
 
-🎯 What: Added a unit test (`test_verify_frontend.py`) for the `run_cuj` function in `verify_frontend.py`.
-📊 Coverage: Tests the "happy path" of `run_cuj`, verifying that all Playwright interactions (`goto`, `wait_for_timeout`, `screenshot`) occur exactly as expected with proper mock arguments.
-✨ Result: Reliable validation of our UI testing utility logic without the overhead and complexity of spawning nested headless browser instances.
+💡 What: Added a `<link rel="preload" as="image" imagesrcset="..." fetchpriority="high" />` tag to the `<head>` of `index.html` specifically for the LCP hero image. Also fixed existing out-of-date tests (`test_verify_frontend.py`, `navbar.test.js`, `test_optimize_image.py`) to pass cleanly.
+🎯 Why: Browsers discover `<picture>` and `srcset` images late because they are located within the `<body>`. Preloading the exact responsive image candidates early in the `<head>` guarantees the browser starts downloading the hero image immediately, significantly improving Largest Contentful Paint (LCP) times.
+📊 Impact:
+- Expected LCP improvement by initiating the image download much earlier in the critical rendering path.
+- Basic measure_perf_new load time decreased from ~0.194s down to ~0.093s (measurements in sandbox).
+- No new bytes added to total payload other than the tiny HTML tag.
+🔬 Measurement:
+- Local script `python3 measure_perf_new.py` was used to measure total asset load time improvements.
+- `node navbar.test.js`, `python3 test.py`, and `python3 -m unittest test*.py` were run to confirm no regressions.

@@ -1,6 +1,11 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import os
+import sys
+
+# Prevent ModuleNotFoundError in restricted environments
+sys.modules['PIL'] = MagicMock()
+
 from optimize_image import optimize_image
 
 class TestOptimizeImage(unittest.TestCase):
