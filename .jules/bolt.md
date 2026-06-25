@@ -6,3 +6,10 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+## 2026-04-27 - Caching Intermediate Resized Pillow Images
+**Learning:** In batch image processing scripts using  (Pillow), when an image needs to be resized to multiple targets (e.g., creating WEBP responsive sizes + a fallback JPEG), the same intermediate dimensions are often required. If caching is omitted, the expensive Lanczos resizing algorithm runs redundantly for the same target dimensions.
+**Action:** Always maintain a  dictionary keyed by  when processing multiple sizes of the same image in a loop. Before calling , check if the dimensions already exist in the cache to avoid redundant computation.
+
+## 2026-04-27 - Caching Intermediate Resized Pillow Images
+**Learning:** In batch image processing scripts using `PIL` (Pillow), when an image needs to be resized to multiple targets (e.g., creating WEBP responsive sizes + a fallback JPEG), the same intermediate dimensions are often required. If caching is omitted, the expensive Lanczos resizing algorithm runs redundantly for the same target dimensions.
+**Action:** Always maintain a `cache = {}` dictionary keyed by `(width, height)` when processing multiple sizes of the same image in a loop. Before calling `img.resize()`, check if the dimensions already exist in the cache to avoid redundant computation.

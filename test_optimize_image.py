@@ -35,7 +35,7 @@ class TestOptimizeImage(unittest.TestCase):
         # Assert
         self.assertTrue(result)
         mock_open.assert_called_once_with('valid.jpg')
-        self.assertEqual(mock_img.resize.call_count, 5) # 4 widths + 1 fallback
+        self.assertEqual(mock_img.resize.call_count, 4) # 4 widths, fallback is cached
         self.assertEqual(mock_resized.save.call_count, 5) # 4 webp + 1 jpg
 
 if __name__ == '__main__':
