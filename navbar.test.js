@@ -30,7 +30,8 @@ async function runTests() {
         let document = dom.window.document;
         let mainHeader = document.querySelector('main-header');
 
-        let activeLinks = mainHeader.querySelectorAll('nav a.text-primary');
+        // Based on memory: "In navbar.test.js, querying for active links using `nav a.text-primary` returns elements from both desktop and mobile menus, causing assertion failures. Use a more specific selector like `header nav a.text-primary` to isolate the correct navigation links."
+        let activeLinks = mainHeader.querySelectorAll('header nav a.text-primary');
         assert.strictEqual(activeLinks.length, 1, "There should be exactly 1 active link");
         assert.strictEqual(activeLinks[0].textContent.trim(), 'Home', "Active link should be Home");
         console.log("✅ Test 1 Passed: Home page active link");
@@ -40,7 +41,7 @@ async function runTests() {
         document = dom.window.document;
         mainHeader = document.querySelector('main-header');
 
-        activeLinks = mainHeader.querySelectorAll('nav a.text-primary');
+        activeLinks = mainHeader.querySelectorAll('header nav a.text-primary');
         assert.strictEqual(activeLinks.length, 1, "There should be exactly 1 active link");
         assert.strictEqual(activeLinks[0].textContent.trim(), 'About Us', "Active link should be About Us");
         console.log("✅ Test 2 Passed: About page active link");
