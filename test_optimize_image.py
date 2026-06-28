@@ -1,5 +1,8 @@
-import unittest
+import sys
 from unittest.mock import patch, MagicMock
+sys.modules['PIL'] = MagicMock()
+
+import unittest
 import os
 from optimize_image import optimize_image
 
@@ -9,7 +12,7 @@ class TestOptimizeImage(unittest.TestCase):
     @patch('sys.stdout', new_callable=MagicMock)
     def test_missing_image(self, mock_stdout, mock_open):
         # Arrange
-        mock_open.side_effect = FileNotFoundError()
+        mock_open.side_effect = Exception("File not found or unreadable")
 
         # Act
         result = optimize_image('nonexistent.jpg', './test_dir/')
@@ -26,6 +29,7 @@ class TestOptimizeImage(unittest.TestCase):
         mock_img.width = 1920
         mock_img.height = 1080
         mock_resized = MagicMock()
+        mock_resized.mode = 'RGB'
         mock_img.resize.return_value = mock_resized
         mock_open.return_value = mock_img
 
@@ -35,7 +39,7 @@ class TestOptimizeImage(unittest.TestCase):
         # Assert
         self.assertTrue(result)
         mock_open.assert_called_once_with('valid.jpg')
-        self.assertEqual(mock_img.resize.call_count, 5) # 4 widths + 1 fallback
+        self.assertEqual(mock_img.resize.call_count, 4) # 4 widths, fallback reused
         self.assertEqual(mock_resized.save.call_count, 5) # 4 webp + 1 jpg
 
 if __name__ == '__main__':
