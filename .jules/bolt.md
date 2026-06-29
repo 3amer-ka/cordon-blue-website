@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-05-15 - Optimizing Pillow Image Processing Loops
+**Learning:** In Pillow (PIL) image processing loops, repeatedly resizing images to the same dimensions (like a fallback matching an already generated responsive size) is computationally expensive. Caching intermediate resized `Image` objects in a dictionary keyed by dimensions `(w, h)` avoids redundant `.resize()` operations. Additionally, when saving images as JPEG, non-RGB modes (like RGBA) will crash the save operation; always ensure images are converted to RGB (`img.convert('RGB')`). Finally, robust handling of unreadable or corrupt files requires a broad `Exception` handler around `Image.open()` (catching cases like `UnidentifiedImageError`), rather than just checking for `FileNotFoundError`.
+**Action:** When implementing or optimizing image processing with Pillow, cache intermediate resized images by their dimensions. Always convert images to 'RGB' before saving as JPEG, and wrap file opening in a broad exception handler.
