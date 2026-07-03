@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-05-18 - Caching Pillow Image Resizing
+**Learning:** In Pillow (PIL) image processing loops, resizing operations (especially with high-quality resampling like LANCZOS) are computationally expensive. When generating responsive images or multiple formats, redundant resizes for the same dimensions frequently occur (e.g., generating both a 1920w WEBP and a 1920w fallback JPEG). Additionally, tests checking mock properties (e.g., `if mock_img.mode != 'RGB'`) must explicitly set those properties on the mock, otherwise the comparison fails or triggers unintended method calls.
+**Action:** Cache intermediate resized `Image` objects in a dictionary keyed by dimensions `(width, height)` to avoid redundant computations. Ensure you add `mock_resized.mode = 'RGB'` to mocked images during tests to bypass conversion logic if necessary.

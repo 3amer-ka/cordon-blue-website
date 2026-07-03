@@ -4,21 +4,34 @@ import os
 def optimize_image(input_path, output_dir):
     try:
         img = Image.open(input_path)
-    except FileNotFoundError:
-        print(f"Error: Image at {input_path} not found.")
+    except Exception as e:
+        print(f"Error: Image at {input_path} could not be opened. {e}")
         return False
 
     widths = [640, 1280, 1920, 2560]
 
+    # ⚡ Bolt Optimization: Cache resized images by dimension
+    # Avoids redundant resize operations for fallback images
+    resize_cache = {}
+
     for w in widths:
         h = int((w / img.width) * img.height)
         print(f"Resizing to {w}x{h}...")
-        resized = img.resize((w, h), Image.Resampling.LANCZOS)
+        if (w, h) not in resize_cache:
+            resize_cache[(w, h)] = img.resize((w, h), Image.Resampling.LANCZOS)
+        resized = resize_cache[(w, h)]
         resized.save(os.path.join(output_dir, f'resort-design-{w}w.webp'), 'WEBP', quality=80)
 
     # Fallback optimized jpeg
     h_fallback = int((1920 / img.width) * img.height)
-    resized_jpg = img.resize((1920, h_fallback), Image.Resampling.LANCZOS)
+    if (1920, h_fallback) not in resize_cache:
+        resize_cache[(1920, h_fallback)] = img.resize((1920, h_fallback), Image.Resampling.LANCZOS)
+
+    resized_jpg = resize_cache[(1920, h_fallback)]
+
+    if resized_jpg.mode != 'RGB':
+        resized_jpg = resized_jpg.convert('RGB')
+
     resized_jpg.save(os.path.join(output_dir, 'resort-design-optimized.jpg'), 'JPEG', quality=80)
 
     return True
