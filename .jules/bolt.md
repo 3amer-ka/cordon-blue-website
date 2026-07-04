@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-07-04 - PIL Image intermediate caching
+**Learning:** In Pillow (PIL) image processing loops, intermediate resized `Image` objects can be redundantly computed if the same dimensions are requested multiple times. This uses unnecessary CPU and memory during build/processing scripts. Caching intermediate images by their target dimensions helps to prevent these redundant operations.
+**Action:** When resizing images to multiple target widths, use a dictionary caching mechanism keyed by target dimensions `(width, height)` to skip re-running `.resize()` for repeated sizes (e.g. sharing dimensions with a fallback size). Also always convert `Image` mode to 'RGB' when saving JPEGs to prevent unexpected build failures.
