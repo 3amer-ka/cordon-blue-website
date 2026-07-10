@@ -1,17 +1,27 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import os
-from optimize_image import optimize_image
+import sys
 
 class TestOptimizeImage(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        sys.modules['PIL'] = MagicMock()
+
+    @classmethod
+    def tearDownClass(cls):
+        if 'PIL' in sys.modules:
+            del sys.modules['PIL']
 
     @patch('optimize_image.Image.open')
     @patch('sys.stdout', new_callable=MagicMock)
     def test_missing_image(self, mock_stdout, mock_open):
         # Arrange
-        mock_open.side_effect = FileNotFoundError()
+        mock_open.side_effect = Exception("File is corrupt or missing")
 
         # Act
+        from optimize_image import optimize_image
         result = optimize_image('nonexistent.jpg', './test_dir/')
 
         # Assert
@@ -26,16 +36,18 @@ class TestOptimizeImage(unittest.TestCase):
         mock_img.width = 1920
         mock_img.height = 1080
         mock_resized = MagicMock()
+        mock_resized.mode = 'RGB'
         mock_img.resize.return_value = mock_resized
         mock_open.return_value = mock_img
 
         # Act
+        from optimize_image import optimize_image
         result = optimize_image('valid.jpg', './test_dir/')
 
         # Assert
         self.assertTrue(result)
         mock_open.assert_called_once_with('valid.jpg')
-        self.assertEqual(mock_img.resize.call_count, 5) # 4 widths + 1 fallback
+        self.assertEqual(mock_img.resize.call_count, 4) # 4 widths + 1 fallback (which should be cached!)
         self.assertEqual(mock_resized.save.call_count, 5) # 4 webp + 1 jpg
 
 if __name__ == '__main__':
