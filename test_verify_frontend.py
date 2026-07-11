@@ -1,6 +1,7 @@
 import unittest
 from unittest.mock import MagicMock
-from verify_frontend import run_cuj
+from verify_frontend import run_cuj, VERIFICATION_DIR
+import os
 
 class TestVerifyFrontend(unittest.TestCase):
     def test_run_cuj(self):
@@ -22,7 +23,7 @@ class TestVerifyFrontend(unittest.TestCase):
         mock_page.wait_for_timeout.assert_any_call(500)
 
         # screenshot should be called with the correct path (absolute path)
-        expected_path = f"/Users/amerkarameh/Projects/cordon-blue-website/verification/screenshots/{name}.png"
+        expected_path = os.path.join(VERIFICATION_DIR, "screenshots", f"{name}.png")
         mock_page.screenshot.assert_called_once_with(path=expected_path)
 
 if __name__ == '__main__':
