@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-06-25 - Python unittest teardown and global states
+**Learning:** Modifying global module structures such as `sys.modules` to inject mocks (e.g. `sys.modules['PIL'] = MagicMock()`) in `unittest` class-level fixtures can inadvertently poison or crash subsequent test cases if not safely restored. Unconditionally deleting a mocked global module in `tearDownClass` when the real module might be expected by other scripts is highly unsafe.
+**Action:** Always capture the original module state (e.g., `cls.original = sys.modules.get('TARGET')`) in `setUpClass` before mocking. In `tearDownClass`, conditionally restore the original reference instead of indiscriminately calling `del sys.modules['TARGET']`.
