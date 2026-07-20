@@ -8,7 +8,7 @@
     "test": "node navbar.test.js",
     "build:css": "tailwindcss -i ./input.css -o ./assets/output.css --minify",
     "watch:css": "tailwindcss -i ./input.css -o ./assets/output.css --watch",
-    "build": "npm run build:css"
+    "build": "npm run build:css && rm -rf build && mkdir -p build && cp -r *.html *.js *.txt *.xml assets build/ 2>/dev/null || true"
   },
   "repository": {
     "type": "git",
