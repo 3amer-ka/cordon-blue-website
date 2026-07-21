@@ -6,3 +6,7 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-05-18 - PIL Redundant Resampling Optimization
+**Learning:** In Pillow (PIL) image processing loops, resizing an image to the exact same dimensions multiple times (e.g. for different formats like WEBP and JPEG) using `Image.Resampling.LANCZOS` is incredibly CPU intensive and redundant. Caching intermediate resized `Image` objects in a dictionary keyed by dimensions completely bypasses these duplicate computations. Also, attempting to save images with an alpha channel (like RGBA) as JPEG causes fatal crashes, so a `if img.mode != 'RGB': img.convert('RGB')` step is a critical safety check for JPEG fallback generations.
+**Action:** Always cache intermediate resized `Image` objects keyed by `(width, height)` when generating multiple formats of the same size. Always convert to RGB before saving as JPEG.
