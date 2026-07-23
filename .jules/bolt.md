@@ -6,3 +6,8 @@
 ## 2026-04-26 - Render Build Fallback
 **Learning:** Render defaults to calling `npm run build` if the deployment environment is Node.js, even if `render.yaml` specifies a custom `buildCommand`. If a `package.json` file is present but lacks a `"build"` script, the deployment will fail immediately with "Empty build command; skipping build" and a missing publish directory error.
 **Action:** When working with custom static build commands, always map them to a `"build"` script in `package.json` to ensure compatibility with PaaS defaults.
+
+## 2026-04-26 - PIL/Pillow Image Resizing Loop Optimization
+**Learning:** In image optimization scripts using PIL (Pillow), generating multiple responsive image sizes (e.g., WebP at 640w, 1280w, etc.) and then generating a fallback JPEG of the same size as one of the WebP targets causes redundant `.resize()` computations. Lanczos resampling is CPU-intensive. By caching intermediate `resized` image objects in a dictionary keyed by dimensions (or width), we can reuse the cached object for the fallback JPEG, avoiding an expensive recalculation. We also learned that `img.mode != 'RGB'` checks in Python unit tests on `MagicMock` objects require explicitly setting the `.mode` property on the mock to avoid unexpected equality check results.
+
+**Action:** In Pillow (PIL) image processing loops, cache intermediate resized `Image` objects in a dictionary keyed by dimensions to avoid redundant `.resize()` computations for fallback images that share the same dimensions. Use `.copy()` when reusing the cached object if subsequent operations might mutate it. Explicitly set properties like `.mode` on MagicMocks in unit tests.
