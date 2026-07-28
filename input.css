@@ -22,3 +22,86 @@
         -webkit-font-smoothing: antialiased;
     }
 }
+
+@layer components {
+    .client-logo-marquee {
+        display: flex;
+        width: max-content;
+        animation: client-logo-scroll 32s linear infinite;
+    }
+
+    .client-logo-marquee:hover {
+        animation-play-state: paused;
+    }
+
+    .client-logo-group {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        gap: 1rem;
+        padding-right: 1rem;
+    }
+
+    .client-logo-frame {
+        display: flex;
+        height: 6.5rem;
+        width: 10rem;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(226 232 240);
+        border-radius: 0.75rem;
+        background: white;
+        padding: 1rem 1.25rem;
+        box-shadow: 0 1px 2px rgb(15 23 42 / 0.05);
+    }
+
+    .client-logo-frame img,
+    .client-card-logo img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .client-card {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .client-card-logo {
+        display: flex;
+        height: 7rem;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(226 232 240);
+        border-radius: 0.75rem;
+        background: white;
+        padding: 1.25rem 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+        .client-logo-group {
+            gap: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .client-logo-frame {
+            width: 12rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .client-logo-marquee {
+            animation: none;
+        }
+    }
+}
+
+@keyframes client-logo-scroll {
+    to {
+        transform: translateX(-50%);
+    }
+}
