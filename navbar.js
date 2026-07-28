@@ -3,6 +3,24 @@
  * Modern Web Components with semantic HTML and accessibility
  */
 
+
+/**
+ * Safely escape HTML to prevent XSS.
+ */
+function escapeHTML(str) {
+    if (typeof str !== 'string') return str;
+    return str.replace(/[&<>'"]/g,
+        tag => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            "'": '&#39;',
+            '"': '&quot;'
+        }[tag])
+    );
+}
+
+
 class MainHeader extends HTMLElement {
     constructor() {
         super();
@@ -31,22 +49,20 @@ class MainHeader extends HTMLElement {
             { name: 'Clients', href: 'clients.html', active: isActive('clients.html') }
         ];
     }
-
     /** Render navigation link */
     renderNavLink = (link) => `
-        <a href="${link.href}" 
+        <a href="${escapeHTML(link.href)}"
            class="text-sm font-semibold transition-colors ${link.active ? 'text-primary' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'}"
            ${link.active ? 'aria-current="page"' : ''}>
-            ${link.name}
+            ${escapeHTML(link.name)}
         </a>
     `;
-
     /** Render mobile navigation link */
     renderMobileNavLink = (link) => `
-        <a href="${link.href}" 
+        <a href="${escapeHTML(link.href)}"
            class="text-base font-semibold px-4 py-2 rounded-lg transition-colors ${link.active ? 'bg-primary/10 text-primary' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-surface-dark'}"
            ${link.active ? 'aria-current="page"' : ''}>
-            ${link.name}
+            ${escapeHTML(link.name)}
         </a>
     `;
 
