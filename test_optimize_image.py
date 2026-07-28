@@ -1,6 +1,12 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import os
+import sys
+
+# Mock PIL for restricted environment testing before importing the target module
+sys.modules['PIL'] = MagicMock()
+sys.modules['PIL.Image'] = MagicMock()
+
 from optimize_image import optimize_image
 
 class TestOptimizeImage(unittest.TestCase):
@@ -28,6 +34,7 @@ class TestOptimizeImage(unittest.TestCase):
         mock_resized = MagicMock()
         mock_img.resize.return_value = mock_resized
         mock_open.return_value = mock_img
+        mock_resized.mode = 'RGB'
 
         # Act
         result = optimize_image('valid.jpg', './test_dir/')
@@ -35,7 +42,7 @@ class TestOptimizeImage(unittest.TestCase):
         # Assert
         self.assertTrue(result)
         mock_open.assert_called_once_with('valid.jpg')
-        self.assertEqual(mock_img.resize.call_count, 5) # 4 widths + 1 fallback
+        self.assertEqual(mock_img.resize.call_count, 4) # 4 widths, fallback reuses 1920 cache
         self.assertEqual(mock_resized.save.call_count, 5) # 4 webp + 1 jpg
 
 if __name__ == '__main__':
