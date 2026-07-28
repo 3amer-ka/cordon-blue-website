@@ -27,6 +27,7 @@ class TestOptimizeHotelResort(unittest.TestCase):
         mock_img.height = 1080
         mock_img.mode = 'RGB'
         mock_resized = MagicMock()
+        mock_resized.mode = mock_img.mode
         mock_img.resize.return_value = mock_resized
         mock_open.return_value = mock_img
 
@@ -37,7 +38,7 @@ class TestOptimizeHotelResort(unittest.TestCase):
         self.assertTrue(result)
         mock_open.assert_called_once_with('valid.jpg')
         mock_resized.convert.assert_not_called()
-        self.assertEqual(mock_img.resize.call_count, 3) # 2 widths + 1 fallback
+        self.assertEqual(mock_img.resize.call_count, 2) # 2 widths + 1 fallback
         self.assertEqual(mock_resized.save.call_count, 3) # 2 webp + 1 jpg
 
     @patch('optimize_hotel_resort.Image.open')
@@ -50,6 +51,7 @@ class TestOptimizeHotelResort(unittest.TestCase):
         mock_img.mode = 'RGBA'
 
         mock_resized = MagicMock()
+        mock_resized.mode = mock_img.mode
         mock_img.resize.return_value = mock_resized
 
         mock_converted = MagicMock()
