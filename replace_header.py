@@ -1,4 +1,5 @@
 import re
+import concurrent.futures
 
 files = ["index.html", "projects.html", "services.html"]
 
@@ -18,7 +19,7 @@ header_pattern = re.compile(r'<header.*?</header>', re.DOTALL)
 projects_div_pattern = re.compile(r'<div class="flex items-center gap-3">\s*<div class="size-10 bg-primary.*?</div>\s*</div>', re.DOTALL)
 other_div_pattern = re.compile(r'<div class="flex items-center gap-3">\s*<div class="flex items-center justify-center bg-primary.*?</div>\s*<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue Global Services Ltd.</span>\s*</div>', re.DOTALL)
 
-for filepath in files:
+def process_file(filepath):
     with open(filepath, 'r') as f:
         content = f.read()
 
@@ -26,7 +27,7 @@ for filepath in files:
     header_match = header_pattern.search(content)
     if not header_match:
         print(f"Could not find header in {filepath}")
-        continue
+        return
     header_content = header_match.group(0)
 
     # We want to replace the FIRST <div class="flex items-center gap-3"> ... </div>
@@ -46,3 +47,9 @@ for filepath in files:
         print(f"Successfully updated {filepath}")
     else:
         print(f"Could not find matching div in {filepath}")
+
+if __name__ == '__main__':
+    # ⚡ Bolt Optimization: Process files concurrently
+    # Reading and processing files using ThreadPoolExecutor reduces sequential I/O blocking.
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        list(executor.map(process_file, files))
