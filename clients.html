@@ -31,24 +31,35 @@
                     businesses and organizations across construction, engineering, and industrial sectors.</p>
             </div>
 
-            <!-- Marquee Section -->
-            <!-- ⚡ Bolt: Added loading="lazy" to logos below the fold to reduce initial page payload -->
-            <div class="relative overflow-hidden bg-slate-100 dark:bg-surface-dark rounded-2xl py-20 mb-20">
-                <div class="animate-marquee flex gap-20 items-center whitespace-nowrap">
-                    <img loading="lazy" src="./assets/images/mikano-logo.png" alt="Mikano International Ltd"
-                        class="h-28 mx-5 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                    <img loading="lazy" src="./assets/images/gastech-logo.png" alt="Gastech International Ltd"
-                        class="h-16 mx-5 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                    <img loading="lazy" src="./assets/images/mtn-logo.png" alt="MTN Nigeria"
-                        class="h-28 mx-5 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                    <img loading="lazy" src="./assets/images/unitrust-logo.png" alt="UNITRUST Insurance"
-                        class="h-28 mx-5 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                    <img loading="lazy" src="./assets/images/rccg-logo.png" alt="RCCG"
-                        class="h-16 mx-5 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                    <img loading="lazy" src="./assets/images/army-logo.png" alt="Nigerian Army Engineers"
-                        class="h-14 mx-5 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                    <img loading="lazy" src="./assets/images/koko-logo.png" alt="Koko Beach Hotels & Resorts"
-                        class="h-12 mx-5 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+            <!-- Client Logo Marquee -->
+            <div class="relative overflow-hidden bg-slate-100 dark:bg-surface-dark rounded-2xl py-8 sm:py-10 mb-14 md:mb-20"
+                aria-label="Featured client logos">
+                <div class="client-logo-marquee">
+                    <div class="client-logo-group">
+                        <div class="client-logo-frame"><img src="./assets/images/mikano-logo.png"
+                                alt="Mikano Construction Ltd logo"></div>
+                        <div class="client-logo-frame"><img src="./assets/images/gastech-logo.png"
+                                alt="Gastech International Ltd logo"></div>
+                        <div class="client-logo-frame"><img src="./assets/images/mtn-logo.png" alt="MTN Nigeria logo">
+                        </div>
+                        <div class="client-logo-frame"><img src="./assets/images/unitrust-logo.png"
+                                alt="UNITRUST Insurance logo"></div>
+                        <div class="client-logo-frame"><img src="./assets/images/rccg-logo.png"
+                                alt="Redeemed Christian Church of God logo"></div>
+                        <div class="client-logo-frame"><img src="./assets/images/army-logo.png"
+                                alt="Nigerian Army Engineers logo"></div>
+                        <div class="client-logo-frame"><img src="./assets/images/koko-logo.png"
+                                alt="Koko Beach Hotels and Resorts logo"></div>
+                    </div>
+                    <div class="client-logo-group" aria-hidden="true">
+                        <div class="client-logo-frame"><img src="./assets/images/mikano-logo.png" alt=""></div>
+                        <div class="client-logo-frame"><img src="./assets/images/gastech-logo.png" alt=""></div>
+                        <div class="client-logo-frame"><img src="./assets/images/mtn-logo.png" alt=""></div>
+                        <div class="client-logo-frame"><img src="./assets/images/unitrust-logo.png" alt=""></div>
+                        <div class="client-logo-frame"><img src="./assets/images/rccg-logo.png" alt=""></div>
+                        <div class="client-logo-frame"><img src="./assets/images/army-logo.png" alt=""></div>
+                        <div class="client-logo-frame"><img src="./assets/images/koko-logo.png" alt=""></div>
+                    </div>
                 </div>
             </div>
 
@@ -56,9 +67,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Mikano Construction -->
                 <div
-                    class="bg-white dark:bg-surface-dark rounded-2xl p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 rounded-xl flex items-center justify-center mb-6">
-                        <img loading="lazy" src="./assets/images/mikano-logo.png" alt="Mikano" class="w-16 h-16 object-contain">
+                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="client-card-logo mb-6">
+                        <img loading="lazy" src="./assets/images/mikano-logo.png" alt="Mikano Construction Ltd logo">
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Mikano Construction Ltd</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm">Industrial and manufacturing facility
@@ -67,9 +78,9 @@
 
                 <!-- Gastech -->
                 <div
-                    class="bg-white dark:bg-surface-dark rounded-2xl p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 rounded-xl flex items-center justify-center mb-6">
-                        <img loading="lazy" src="./assets/images/gastech-logo.png" alt="Gastech" class="w-16 h-16 object-contain">
+                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="client-card-logo mb-6">
+                        <img loading="lazy" src="./assets/images/gastech-logo.png" alt="Gastech International Ltd logo">
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Gastech International Ltd</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm">CNG infrastructure and energy sector
@@ -78,9 +89,9 @@
 
                 <!-- MTN -->
                 <div
-                    class="bg-white dark:bg-surface-dark rounded-2xl p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 rounded-xl flex items-center justify-center mb-6">
-                        <img loading="lazy" src="./assets/images/mtn-logo.png" alt="MTN" class="w-16 h-16 object-contain">
+                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="client-card-logo mb-6">
+                        <img loading="lazy" src="./assets/images/mtn-logo.png" alt="MTN Nigeria logo">
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">MTN Nigeria</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm">Telecommunications infrastructure and site
@@ -89,9 +100,9 @@
 
                 <!-- UNITRUST -->
                 <div
-                    class="bg-white dark:bg-surface-dark rounded-2xl p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 rounded-xl flex items-center justify-center mb-6">
-                        <img loading="lazy" src="./assets/images/unitrust-logo.png" alt="UNITRUST" class="w-16 h-16 object-contain">
+                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="client-card-logo mb-6">
+                        <img loading="lazy" src="./assets/images/unitrust-logo.png" alt="UNITRUST Insurance logo">
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">UNITRUST Insurance</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm">Commercial and industrial insurance
@@ -100,9 +111,10 @@
 
                 <!-- RCCG -->
                 <div
-                    class="bg-white dark:bg-surface-dark rounded-2xl p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 rounded-xl flex items-center justify-center mb-6">
-                        <img loading="lazy" src="./assets/images/rccg-logo.png" alt="RCCG" class="w-16 h-16 object-contain">
+                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="client-card-logo mb-6">
+                        <img loading="lazy" src="./assets/images/rccg-logo.png"
+                            alt="Redeemed Christian Church of God logo">
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">RCCG</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm">Church infrastructure and fellowship center
@@ -111,9 +123,9 @@
 
                 <!-- Nigerian Army -->
                 <div
-                    class="bg-white dark:bg-surface-dark rounded-2xl p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="w-20 h-20 rounded-xl flex items-center justify-center mb-6">
-                        <img loading="lazy" src="./assets/images/army-logo.png" alt="Nigerian Army" class="w-16 h-16 object-contain">
+                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="client-card-logo mb-6">
+                        <img loading="lazy" src="./assets/images/army-logo.png" alt="Nigerian Army Engineers logo">
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Nigerian Army Engineers</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm">Defense and military engineering
@@ -136,25 +148,6 @@
 
     <main-footer></main-footer>
 
-    <style>
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .animate-marquee {
-            animation: marquee 30s linear infinite;
-        }
-
-        .animate-marquee:hover {
-            animation-play-state: paused;
-        }
-    </style>
 </body>
 
 </html>
