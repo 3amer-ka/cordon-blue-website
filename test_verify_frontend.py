@@ -16,10 +16,8 @@ class TestVerifyFrontend(unittest.TestCase):
         # Verify the expected interactions with the mock
         mock_page.goto.assert_called_once_with(url, wait_until='domcontentloaded')
 
-        # wait_for_timeout should be called twice (1000 and 500)
-        self.assertEqual(mock_page.wait_for_timeout.call_count, 2)
-        mock_page.wait_for_timeout.assert_any_call(1000)
-        mock_page.wait_for_timeout.assert_any_call(500)
+        # wait_for_load_state should be called with 'networkidle'
+        mock_page.wait_for_load_state.assert_called_once_with('networkidle')
 
         # screenshot should be called with the correct path (absolute path)
         import os
