@@ -8,9 +8,8 @@ os.makedirs(os.path.join(VERIFICATION_DIR, "screenshots"), exist_ok=True)
 
 def run_cuj(page, url, name):
     page.goto(url, wait_until='domcontentloaded')
-    page.wait_for_timeout(1000)
+    page.wait_for_load_state('networkidle')
     page.screenshot(path=os.path.join(VERIFICATION_DIR, "screenshots", f"{name}.png"))
-    page.wait_for_timeout(500)
 
 if __name__ == "__main__":
     with sync_playwright() as p:
