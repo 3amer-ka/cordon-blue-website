@@ -116,6 +116,29 @@ async function runTests() {
         assert.ok(contactInfo.textContent.includes('info@cordonblueglobal.com'), "Email should be present");
         console.log("✅ Test 9 Passed: Contact information accuracy");
 
+
+        // Test 10: MainFooter company links
+        let companyLinks = footerElement.querySelectorAll('nav[aria-label="Company Links"] a');
+        let expectedCompanyLinks = ['Why Choose Us', 'Contact Us', 'Privacy Policy', 'Terms of Service'];
+        assert.strictEqual(companyLinks.length, 4, "There should be exactly 4 company links");
+        for (let i = 0; i < expectedCompanyLinks.length; i++) {
+            assert.strictEqual(companyLinks[i].textContent.trim(), expectedCompanyLinks[i], `Company link ${i} should be ${expectedCompanyLinks[i]}`);
+        }
+        console.log("✅ Test 10 Passed: Company links");
+
+        // Test 11: MainFooter LinkedIn external link
+        let linkedinLink = footerElement.querySelector('a[href="https://www.linkedin.com/company/cordon-blue-global-services-ltd"]');
+        assert.ok(linkedinLink, "LinkedIn link should be present");
+        assert.strictEqual(linkedinLink.getAttribute('target'), '_blank', "LinkedIn link should open in a new tab");
+        assert.strictEqual(linkedinLink.getAttribute('rel'), 'noopener noreferrer', "LinkedIn link should have secure rel attributes");
+        console.log("✅ Test 11 Passed: LinkedIn external link attributes");
+
+        // Test 12: MainFooter company description
+        let companyDesc = footerElement.querySelector('p.text-slate-500');
+        assert.ok(companyDesc, "Company description should be present");
+        assert.ok(companyDesc.textContent.includes('A premier construction firm dedicated to transforming architectural visions'), "Company description text should match");
+        console.log("✅ Test 12 Passed: Company description text");
+
     } catch (error) {
 
         console.error("❌ Test failed:", error);
