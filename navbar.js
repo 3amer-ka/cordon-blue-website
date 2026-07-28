@@ -199,11 +199,13 @@ class MainFooter extends HTMLElement {
                         </address>
                     </div>
                     <div class="mt-16 pt-8 border-t border-slate-200 dark:border-white/5 text-center text-sm text-slate-500 dark:text-slate-500">
-                        <p>&copy; ${currentYear} Cordon Blue Global Services Ltd. All Rights Reserved.</p>
+                        <p>&copy; <span id="copyright-year"></span> Cordon Blue Global Services Ltd. All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>
         `;
+
+        this.querySelector('#copyright-year').textContent = currentYear;
     }
 }
 
