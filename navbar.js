@@ -77,7 +77,7 @@ class MainHeader extends HTMLElement {
                             Get a Quote
                         </a>
                         <button id="mobile-menu-button" class="md:hidden text-slate-900 dark:text-white p-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-                            <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+                            <span class="material-symbols-outlined" aria-hidden="true">&#xE5D2;</span>
                         </button>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ class MainHeader extends HTMLElement {
 
                 const icon = button.querySelector('.material-symbols-outlined');
                 if (icon) {
-                    icon.textContent = isHidden ? 'menu' : 'close';
+                    icon.textContent = isHidden ? '\uE5D2' : '\uE5CD';
                 }
             });
 
@@ -116,7 +116,7 @@ class MainHeader extends HTMLElement {
                     menu.classList.add('hidden');
                     button.setAttribute('aria-expanded', 'false');
                     const icon = button.querySelector('.material-symbols-outlined');
-                    if (icon) icon.textContent = 'menu';
+                    if (icon) icon.textContent = '\uE5D2';
                     button.focus();
                 }
             });
@@ -148,7 +148,7 @@ class MainFooter extends HTMLElement {
                         <div class="space-y-6">
                             <div class="flex items-center gap-3">
                                 <div class="flex items-center justify-center bg-primary p-1.5 rounded-lg" aria-hidden="true">
-                                    <span class="material-symbols-outlined text-white text-xl">business</span>
+                                    <span class="material-symbols-outlined text-white text-xl">&#xE7EE;</span>
                                 </div>
                                 <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue</span>
                             </div>
@@ -178,20 +178,20 @@ class MainFooter extends HTMLElement {
                             <h3 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Contact Info</h3>
                             <ul class="space-y-4 text-sm">
                                 <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">location_on</span>
+                                    <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">&#xF1DB;</span>
                                     <span class="text-slate-500 dark:text-slate-400">174, Ikorodu Road, Onipanu, Lagos, Nigeria</span>
                                 </li>
                                 <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">phone</span>
+                                    <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">&#xF0D4;</span>
                                     <a href="tel:+2348124141514" class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">+234 812 414 1514</a>
                                 </li>
                                 <li class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">mail</span>
+                                    <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">&#xE159;</span>
                                     <a href="mailto:info@cordonblueglobal.com" class="break-all text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">info@cordonblueglobal.com</a>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <a href="https://www.linkedin.com/company/cordon-blue-global-services-ltd" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-primary transition-colors">
-                                        <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">share</span>
+                                        <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">&#xE80D;</span>
                                         <span class="text-slate-500 dark:text-slate-400">LinkedIn</span>
                                     </a>
                                 </li>
