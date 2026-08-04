@@ -17,3 +17,6 @@
 ## 2024-07-28 - Swallowed Exceptions in ThreadPoolExecutor
 **Learning:** When using `executor.map()` with Python's `concurrent.futures.ThreadPoolExecutor`, it returns an iterator. If the iterator is not consumed, exceptions raised within the worker threads (like `FileNotFoundError`) are silently swallowed, causing scripts to exit successfully even when errors occurred.
 **Action:** Always consume the generator returned by `executor.map()` (e.g., by wrapping the call in `list()`) to ensure exceptions bubble up to the main thread appropriately, maintaining robust error handling.
+## 2026-08-04 - Unintended CSS changes from npm start
+**Learning:** In this repository, running the local development server (`npm start`) triggers a Tailwind CSS watch process (`npm run watch:css`) that overwrites the minified `assets/output.css` with an unminified version. This can inadvertently pollute Pull Requests with large, unintended CSS file size regressions.
+**Action:** Always restore `assets/output.css` or explicitly rebuild it in minified mode (via `npm run build:css` or `npm run build`) before committing and submitting Pull Requests if the development server was run.
