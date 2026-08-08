@@ -17,3 +17,7 @@
 ## 2024-07-28 - Swallowed Exceptions in ThreadPoolExecutor
 **Learning:** When using `executor.map()` with Python's `concurrent.futures.ThreadPoolExecutor`, it returns an iterator. If the iterator is not consumed, exceptions raised within the worker threads (like `FileNotFoundError`) are silently swallowed, causing scripts to exit successfully even when errors occurred.
 **Action:** Always consume the generator returned by `executor.map()` (e.g., by wrapping the call in `list()`) to ensure exceptions bubble up to the main thread appropriately, maintaining robust error handling.
+
+## 2024-08-08 - LCP Image Preload and Fetch Priority
+**Learning:** For Largest Contentful Paint (LCP) images (i.e., those located above the fold), removing `loading="lazy"` as it delays asset fetching and adding `fetchpriority="high"` directly to the `<img>` tag, along with a corresponding `<link rel="preload" as="image" href="..." fetchpriority="high" />` in the HTML `<head>` optimally prioritizes their loading for performance. I've optimized the hero image in `services.html` with this pattern.
+**Action:** When evaluating frontend performance, ensure critical above-the-fold hero images use `fetchpriority="high"` and `<link rel="preload">` in the `<head>`, and never use `loading="lazy"`.
