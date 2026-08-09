@@ -17,3 +17,6 @@
 ## 2024-07-28 - Swallowed Exceptions in ThreadPoolExecutor
 **Learning:** When using `executor.map()` with Python's `concurrent.futures.ThreadPoolExecutor`, it returns an iterator. If the iterator is not consumed, exceptions raised within the worker threads (like `FileNotFoundError`) are silently swallowed, causing scripts to exit successfully even when errors occurred.
 **Action:** Always consume the generator returned by `executor.map()` (e.g., by wrapping the call in `list()`) to ensure exceptions bubble up to the main thread appropriately, maintaining robust error handling.
+## 2026-08-09 - Added loading=lazy to below-the-fold images
+**Learning:** Native `loading="lazy"` is a safe, impactful, and simple frontend performance optimization for `<img>` tags that are located below the fold. It reduces initial payload and network requests without breaking functionality or introducing complex architectural changes. Ensure  is used for LCP images instead.
+**Action:** When inspecting frontend performance, look for off-screen `<img>` tags that lack the `loading="lazy"` attribute, especially in lists, galleries, or footers, and add it.
