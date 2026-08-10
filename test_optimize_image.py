@@ -1,6 +1,5 @@
 import unittest
 from unittest.mock import patch, MagicMock
-import os
 import sys
 
 # Mock PIL for restricted environment testing before importing the target module
