@@ -1,12 +1,45 @@
 const { chromium } = require('playwright');
 const path = require('path');
 
+async function testFilter(page, filterName) {
+  const filterButtons = page.locator('#project-filters button');
+  const button = filterButtons.filter({ hasText: filterName });
+
+  if (await button.count() > 0) {
+    await button.click();
+    console.log(`Clicked "${filterName}" filter.`);
+
+    // Wait for the timeout (300ms) in projects.html to finish
+    await page.waitForTimeout(400);
+
+    const visibleCards = await page.$$eval('#project-grid > .group.flex.flex-col', cards => cards.filter(c => c.style.display !== 'none').length);
+    console.log(`Visible cards after "${filterName}" filter: ${visibleCards}`);
+
+    if (filterName !== 'All Projects') {
+      const wrongCategoryCards = await page.$$eval('#project-grid > .group.flex.flex-col', (cards, filterName) => {
+          return cards.filter(c => c.style.display !== 'none')
+            .map(c => c.querySelector('.absolute.top-4.left-4 span')?.textContent.trim())
+            .filter(cat => cat !== filterName);
+      }, filterName);
+
+      if (wrongCategoryCards.length > 0) {
+        console.error(`Verification failed for "${filterName}". Found wrong categories: ${wrongCategoryCards.join(', ')}`);
+      } else {
+        console.log(`Verification passed: Only ${filterName} cards are visible.`);
+      }
+    }
+
+    return visibleCards;
+  } else {
+    console.error(`Could not find ${filterName} filter button.`);
+    return -1;
+  }
+}
+
 (async () => {
   const browser = await chromium.launch();
   const context = await browser.newContext();
 
-  // To avoid Playwright timeouts during frontend verification in this environment,
-  // block external network requests (e.g., fonts.googleapis.com, cdn.tailwindcss.com)
   await context.route('**/*', (route) => {
     const url = route.request().url();
     if (url.includes('cdn.tailwindcss.com') || url.includes('fonts.googleapis') || url.includes('fonts.gstatic')) {
@@ -21,53 +54,21 @@ const path = require('path');
 
   console.log('Page loaded successfully.');
 
-  // Check initial state
   const initialCards = await page.$$eval('#project-grid > .group.flex.flex-col', cards => cards.filter(c => c.style.display !== 'none').length);
   console.log(`Initial visible cards: ${initialCards}`);
 
-  // Click 'Hospitality' filter button
-  const filterButtons = page.locator('#project-filters button');
-  const hospitalityButton = filterButtons.filter({ hasText: 'Hospitality' });
+  const filterButtons = await page.$$eval('#project-filters button', btns => btns.map(b => b.textContent));
+  console.log('Available filter buttons:', filterButtons);
 
-  if (await hospitalityButton.count() > 0) {
-    await hospitalityButton.click();
-    console.log('Clicked "Hospitality" filter.');
+  await testFilter(page, 'Hospitality');
+  await testFilter(page, 'Commercial');
 
-    // Wait for a brief moment for DOM update
-    await page.waitForTimeout(100);
+  const allVisibleCards = await testFilter(page, 'All Projects');
 
-    // Check visible cards
-    const visibleCards = await page.$$eval('#project-grid > .group.flex.flex-col', cards => cards.filter(c => c.style.display !== 'none').length);
-    console.log(`Visible cards after filter: ${visibleCards}`);
-
-    // Verify all visible cards are 'Hospitality'
-    const wrongCategoryCards = await page.$$eval('#project-grid > .group.flex.flex-col', cards => {
-        return cards.filter(c => c.style.display !== 'none').map(c => c.querySelector('.absolute.top-4.left-4 span')?.textContent.trim()).filter(cat => cat !== 'Hospitality');
-    });
-
-    if (wrongCategoryCards.length > 0) {
-      console.error(`Verification failed. Found wrong categories: ${wrongCategoryCards.join(', ')}`);
-    } else {
-      console.log('Verification passed: Only Hospitality cards are visible.');
-    }
+  if (allVisibleCards === initialCards) {
+    console.log('Verification passed: All cards visible again.');
   } else {
-    console.error('Could not find Hospitality filter button.');
-  }
-
-  // Click 'All Projects' filter button
-  const allButton = filterButtons.filter({ hasText: 'All Projects' });
-  if (await allButton.count() > 0) {
-    await allButton.click();
-    console.log('Clicked "All Projects" filter.');
-    await page.waitForTimeout(100);
-    const allVisibleCards = await page.$$eval('#project-grid > .group.flex.flex-col', cards => cards.filter(c => c.style.display !== 'none').length);
-    console.log(`Visible cards after 'All Projects' filter: ${allVisibleCards}`);
-
-    if (allVisibleCards === initialCards) {
-      console.log('Verification passed: All cards visible again.');
-    } else {
-      console.error(`Verification failed. Expected ${initialCards} cards, got ${allVisibleCards}.`);
-    }
+    console.error(`Verification failed. Expected ${initialCards} cards, got ${allVisibleCards}.`);
   }
 
   await browser.close();
