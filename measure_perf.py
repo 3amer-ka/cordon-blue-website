@@ -1,48 +1,50 @@
 import urllib.request
 import time
-import os
 import socket
+import argparse
 
 from http.server import SimpleHTTPRequestHandler
 import socketserver
 import threading
 
-PORT = 8000
 Handler = SimpleHTTPRequestHandler
 
+class ReusableTCPServer(socketserver.TCPServer):
+    allow_reuse_address = True
+
 class MyServer(threading.Thread):
-    def __init__(self, port=PORT):
+    def __init__(self, port=8000):
         super().__init__()
-        socketserver.TCPServer.allow_reuse_address = True
-        self.httpd = socketserver.TCPServer(("", port), Handler)
-        self.port = self.httpd.server_address[1]
+        self.port = port
+        self.httpd = None
+        self.server_started = threading.Event()
 
     def run(self):
-        with self.httpd:
-            self.httpd.serve_forever()
+        with ReusableTCPServer(("", self.port), Handler) as httpd:
+            self.httpd = httpd
+            self.port = httpd.server_address[1]
+            self.server_started.set()
+            httpd.serve_forever()
 
     def stop(self):
-        self.httpd.shutdown()
-        self.httpd.server_close()
-
-def wait_for_server(port, timeout=5.0):
-    start_time = time.time()
-    while time.time() - start_time < timeout:
-        try:
-            with socket.create_connection(("localhost", port), timeout=0.1):
-                return True
-        except OSError:
-            time.sleep(0.05)
-    return False
+        if self.httpd:
+            self.httpd.shutdown()
+            self.httpd.server_close()
 
 def main():
-    # Pass 0 to use an ephemeral port to prevent 'Address already in use'
-    server = MyServer(port=0)
+    parser = argparse.ArgumentParser(description="Measure load performance of local web server.")
+    parser.add_argument('--port', type=int, default=8000, help="Port to run the local server on")
+    parser.add_argument('--image', type=str, default="/assets/images/resort-design.jpg", help="Path to the image to measure load time")
+    args = parser.parse_args()
+
+    server = MyServer(port=args.port)
     server.start()
 
-    if not wait_for_server(server.port):
-        print("Failed to start server")
+    # Wait up to 2 seconds for the server to bind and start
+    if not server.server_started.wait(timeout=2.0):
+        print("Failed to start server within timeout.")
         server.stop()
+        server.join()
         return
 
     try:
@@ -52,7 +54,7 @@ def main():
 
         # fetch the main image
         img_start = time.time()
-        img_response = urllib.request.urlopen(f'http://localhost:{server.port}/assets/images/resort-design.jpg')
+        img_response = urllib.request.urlopen(f'http://localhost:{server.port}{args.image}')
         img_data = img_response.read()
         img_end = time.time()
 
