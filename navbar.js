@@ -3,6 +3,21 @@
  * Modern Web Components with semantic HTML and accessibility
  */
 
+
+/**
+ * Utility to escape HTML characters and prevent XSS
+ */
+const escapeHTML = (str) => {
+    if (str == null) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+};
+
+
 class MainHeader extends HTMLElement {
     constructor() {
         super();
@@ -34,19 +49,19 @@ class MainHeader extends HTMLElement {
 
     /** Render navigation link */
     renderNavLink = (link) => `
-        <a href="${link.href}" 
+        <a href="${escapeHTML(link.href)}"
            class="text-sm font-semibold transition-colors ${link.active ? 'text-primary' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'}"
            ${link.active ? 'aria-current="page"' : ''}>
-            ${link.name}
+            ${escapeHTML(link.name)}
         </a>
     `;
 
     /** Render mobile navigation link */
     renderMobileNavLink = (link) => `
-        <a href="${link.href}" 
+        <a href="${escapeHTML(link.href)}"
            class="text-base font-semibold px-4 py-2 rounded-lg transition-colors ${link.active ? 'bg-primary/10 text-primary' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-surface-dark'}"
            ${link.active ? 'aria-current="page"' : ''}>
-            ${link.name}
+            ${escapeHTML(link.name)}
         </a>
     `;
 
@@ -199,7 +214,7 @@ class MainFooter extends HTMLElement {
                         </address>
                     </div>
                     <div class="mt-16 pt-8 border-t border-slate-200 dark:border-white/5 text-center text-sm text-slate-500 dark:text-slate-500">
-                        <p>&copy; ${currentYear} Cordon Blue Global Services Ltd. All Rights Reserved.</p>
+                        <p>&copy; ${escapeHTML(currentYear)} Cordon Blue Global Services Ltd. All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>
