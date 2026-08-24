@@ -2,8 +2,6 @@ import unittest
 import threading
 import time
 import socket
-import urllib.request
-import urllib.error
 from measure_perf import MyServer
 
 def wait_for_server(port, timeout=5.0):
