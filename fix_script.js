@@ -1,9 +1,11 @@
-const fs = require('fs');
+const fs = require('fs').promises;
 
-let html = fs.readFileSync('projects.html', 'utf8');
+async function updateProjects() {
+    try {
+        let html = await fs.readFile('projects.html', 'utf8');
 
-// The CSS classes used in the project are different from my previous script. Let's update them to match the dark mode compatible buttons.
-const newScript = `
+        // The CSS classes used in the project are different from my previous script. Let's update them to match the dark mode compatible buttons.
+        const newScript = `
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const filters = document.getElementById('project-filters');
@@ -44,5 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
 </body></html>
 `;
 
-html = html.replace(/<script>\s*document\.addEventListener\('DOMContentLoaded'[\s\S]*?<\/html>/m, newScript);
-fs.writeFileSync('projects.html', html);
+        html = html.replace(/<script>\s*document\.addEventListener\('DOMContentLoaded'[\s\S]*?<\/html>/m, newScript);
+        await fs.writeFile('projects.html', html);
+    } catch (err) {
+        console.error('Error updating projects.html:', err);
+    }
+}
+
+updateProjects();
