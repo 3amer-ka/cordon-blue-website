@@ -25,12 +25,23 @@ async function runTests() {
     console.log("Running tests for MainHeader...");
 
     try {
-        // Test 1: Home page active link
-        let dom = setupDOM('http://localhost/index.html');
+
+        // Test 0: Root path active link
+        let dom = setupDOM('http://localhost/');
         let document = dom.window.document;
         let mainHeader = document.querySelector('main-header');
 
         let activeLinks = mainHeader.querySelectorAll('header nav a.text-primary');
+        assert.strictEqual(activeLinks.length, 1, "There should be exactly 1 active link");
+        assert.strictEqual(activeLinks[0].textContent.trim(), 'Home', "Active link should be Home");
+        console.log("✅ Test 0 Passed: Root page active link");
+
+        // Test 1: Home page active link
+        dom = setupDOM('http://localhost/index.html');
+        document = dom.window.document;
+        mainHeader = document.querySelector('main-header');
+
+        activeLinks = mainHeader.querySelectorAll('header nav a.text-primary');
         assert.strictEqual(activeLinks.length, 1, "There should be exactly 1 active link");
         assert.strictEqual(activeLinks[0].textContent.trim(), 'Home', "Active link should be Home");
         console.log("✅ Test 1 Passed: Home page active link");
