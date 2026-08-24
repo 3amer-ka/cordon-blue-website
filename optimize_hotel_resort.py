@@ -9,16 +9,12 @@ def optimize_image(input_path, output_dir, base_name):
         return False
 
     widths = [640, 1280]
-    cached_resized_images = {}
 
     for w in widths:
         h = int((w / img.width) * img.height)
         print(f"Resizing to {w}x{h}...")
 
-        if (w, h) not in cached_resized_images:
-            cached_resized_images[(w, h)] = img.resize((w, h), Image.Resampling.LANCZOS)
-
-        resized = cached_resized_images[(w, h)]
+        resized = img.resize((w, h), Image.Resampling.LANCZOS)
         resized.save(os.path.join(output_dir, f'{base_name}-{w}w.webp'), 'WEBP', quality=80)
 
     # Fallback optimized jpeg
@@ -26,10 +22,7 @@ def optimize_image(input_path, output_dir, base_name):
     w_fallback = min(img.width, 1280)
     h_fallback = int((w_fallback / img.width) * img.height)
 
-    if (w_fallback, h_fallback) in cached_resized_images:
-        resized_jpg = cached_resized_images[(w_fallback, h_fallback)]
-    else:
-        resized_jpg = img.resize((w_fallback, h_fallback), Image.Resampling.LANCZOS)
+    resized_jpg = img.resize((w_fallback, h_fallback), Image.Resampling.LANCZOS)
 
     if resized_jpg.mode != 'RGB':
         resized_jpg = resized_jpg.convert('RGB')
