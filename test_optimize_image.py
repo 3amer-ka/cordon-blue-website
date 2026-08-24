@@ -3,10 +3,6 @@ from unittest.mock import patch, MagicMock
 import os
 import sys
 
-# Mock PIL for restricted environment testing before importing the target module
-sys.modules['PIL'] = MagicMock()
-sys.modules['PIL.Image'] = MagicMock()
-
 from optimize_image import optimize_image
 
 class TestOptimizeImage(unittest.TestCase):
