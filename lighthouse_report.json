@@ -1046,7 +1046,7 @@
             "entity": "Adobe Acrobat: PDF edit, convert, sign tools"\
           \},\
           \{\
-            "url": "https://www.google-analytics.com/mp/collect?measurement_id=G-03XW3FWG7L&api_secret=Px06eCtvQLS0hVSB2MPj_g",\
+            "url": "https://www.google-analytics.com/mp/collect?measurement_id=G-03XW3FWG7L&api_secret=REDACTED",\
             "sessionTargetType": "page",\
             "protocol": "h2",\
             "rendererStartTime": 392.8569999989122,\
@@ -6027,7 +6027,7 @@
               "type": "subitems",\
               "items": [\
                 \{\
-                  "url": "https://www.google-analytics.com/mp/collect?measurement_id=G-03XW3FWG7L&api_secret=Px06eCtvQLS0hVSB2MPj_g",\
+                  "url": "https://www.google-analytics.com/mp/collect?measurement_id=G-03XW3FWG7L&api_secret=REDACTED",\
                   "mainThreadTime": 0,\
                   "transferSize": 572\
                 \}\
