@@ -1,34 +1,7 @@
 import urllib.request
 import time
 
-from http.server import SimpleHTTPRequestHandler
-import socketserver
-import threading
-
-PORT = 8001
-Handler = SimpleHTTPRequestHandler
-
-class ReusableTCPServer(socketserver.TCPServer):
-    allow_reuse_address = True
-
-class MyServer(threading.Thread):
-    def __init__(self, port=PORT):
-        super().__init__()
-        self.port = port
-        self.httpd = None
-        self.server_started = threading.Event()
-
-    def run(self):
-        with ReusableTCPServer(("", self.port), Handler) as httpd:
-            self.httpd = httpd
-            self.port = httpd.server_address[1]
-            self.server_started.set()
-            httpd.serve_forever()
-
-    def stop(self):
-        if self.httpd:
-            self.httpd.shutdown()
-            self.httpd.server_close()
+from server_utils import MyServer
 
 def main():
     server = MyServer(port=8001)

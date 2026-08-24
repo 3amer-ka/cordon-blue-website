@@ -5,20 +5,10 @@ import time
 import socket
 import urllib.request
 import urllib.error
-from measure_perf_new import MyServer
+from server_utils import MyServer, wait_for_server
 import measure_perf_new
 import io
 from contextlib import redirect_stdout
-
-def wait_for_server(port, timeout=5.0):
-    start_time = time.time()
-    while time.time() - start_time < timeout:
-        try:
-            with socket.create_connection(("localhost", port), timeout=0.1):
-                return True
-        except OSError:
-            time.sleep(0.05)
-    return False
 
 class TestMeasurePerfNew(unittest.TestCase):
     def test_server_start_stop(self):
