@@ -38,7 +38,7 @@ class TestOptimizeHotelResort(unittest.TestCase):
         self.assertTrue(result)
         mock_open.assert_called_once_with('valid.jpg')
         mock_resized.convert.assert_not_called()
-        self.assertEqual(mock_img.resize.call_count, 2) # 2 widths + 1 fallback
+        self.assertEqual(mock_img.resize.call_count, 3) # 2 widths + 1 fallback
         self.assertEqual(mock_resized.save.call_count, 3) # 2 webp + 1 jpg
 
     @patch('optimize_hotel_resort.Image.open')
