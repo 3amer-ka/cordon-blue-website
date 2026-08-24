@@ -1,6 +1,5 @@
 import urllib.request
 import time
-import os
 import socket
 
 from http.server import SimpleHTTPRequestHandler
