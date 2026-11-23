@@ -17,8 +17,7 @@ class MainHeader extends HTMLElement {
     getNavLinks() {
         const currentPath = window.location.pathname;
         const isActive = (filename) =>
-            currentPath === '/' ||
-            currentPath.endsWith('index.html') && filename === 'index.html' ||
+            (currentPath === '/' || currentPath.endsWith('index.html')) && filename === 'index.html' ||
             currentPath.endsWith(filename);
 
         return [
