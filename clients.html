@@ -9,15 +9,38 @@
         content="Cordon Blue Global Services Ltd works with leading Nigerian businesses across construction, engineering, and project management. Our trusted clients include MTN, Gastech, Mikano, and more." />
     <link rel="icon" type="image/png" href="./assets/images/logo_header.png" />
     <meta property="og:title" content="Our Clients - Cordon Blue Global Services Ltd" />
-    <meta property="og:description" content="Trusted by leading Nigerian businesses and organizations across construction, engineering, and industrial sectors." />
+    <meta property="og:description"
+        content="Trusted by leading Nigerian businesses and organizations across construction, engineering, and industrial sectors." />
     <meta property="og:image" content="./assets/images/resort-design.jpg" />
     <link rel="preload" href="./assets/fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./assets/fonts/material-symbols-outlined-subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/material-symbols-outlined-subset.woff2" as="font" type="font/woff2"
+        crossorigin>
     <link href="./assets/output.css" rel="stylesheet">
     <style>
         @media (min-width: 1536px) {
             .max-w-7xl {
                 max-width: 1600px !important;
+            }
+        }
+
+        @keyframes logo-scroll {
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .logo-marquee {
+            display: flex;
+            animation: logo-scroll 30s linear infinite;
+        }
+
+        .logo-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .logo-marquee {
+                animation: none;
             }
         }
     </style>
@@ -26,122 +49,137 @@
 
 <body class="bg-background-light dark:bg-background-dark font-display">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBKV9K75" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBKV9K75" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <main-header class="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl block"></main-header>
+    <main-header
+        class="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-xl block"></main-header>
 
     <main class="pt-24 pb-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
             <!-- Header -->
             <div class="text-center mb-16">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4">Our Clients</h1>
-                <p class="text-lg lg:text-2xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Trusted by leading Nigerian
-                    businesses and organizations across construction, engineering, and industrial sectors.</p>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4">Our Clients
+                </h1>
+                <p class="text-lg lg:text-2xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Trusted by leading
+                    Nigerian businesses and organizations across construction, engineering, and industrial sectors.</p>
             </div>
 
-            <!-- Client Logo Marquee -->
-            <div class="relative overflow-hidden bg-slate-100 dark:bg-surface-dark rounded-2xl py-8 sm:py-10 mb-14 md:mb-20"
+            <!-- Logo Marquee -->
+            <div class="relative overflow-hidden bg-slate-100 dark:bg-surface-dark rounded-2xl py-6 sm:py-8 mb-14 md:mb-20"
                 aria-label="Featured client logos">
-                <div class="client-logo-marquee">
-                    <div class="client-logo-group">
-                        <div class="client-logo-frame"><img src="./assets/images/mikano-logo.png"
-                                alt="Mikano International logo"></div>
-                        <div class="client-logo-frame"><img src="./assets/images/gastech-logo.png"
-                                alt="Gastech Nigeria Ltd logo"></div>
-                        <div class="client-logo-frame"><img src="./assets/images/mtn-logo.png" alt="MTN Nigeria logo">
+                <!-- Fade edges -->
+                <div class="absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-slate-100 dark:from-surface-dark to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-slate-100 dark:from-surface-dark to-transparent z-10 pointer-events-none"></div>
+
+                <div class="logo-marquee">
+                    <!-- Group 1 -->
+                    <div class="flex shrink-0 items-center gap-8 sm:gap-12 pr-8 sm:pr-12">
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/mikano-logo.png" alt="Mikano International logo" class="max-h-10 sm:max-h-12 max-w-full object-contain">
                         </div>
-                        <div class="client-logo-frame"><img src="./assets/images/unitrust-logo.png"
-                                alt="UNITRUST Insurance logo"></div>
-                        <div class="client-logo-frame"><img src="./assets/images/rccg-logo.png"
-                                alt="Redeemed Christian Church of God logo"></div>
-                        <div class="client-logo-frame"><img src="./assets/images/army-logo.png"
-                                alt="Nigerian Army Engineers logo"></div>
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/gastech-logo.png" alt="Gastech Nigeria Ltd logo" class="max-h-10 sm:max-h-12 max-w-full object-contain">
+                        </div>
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/mtn-logo.png" alt="MTN Nigeria logo" class="max-h-10 sm:max-h-12 max-w-full object-contain">
+                        </div>
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/unitrust-logo.png" alt="UNITRUST Insurance logo" class="max-h-10 sm:max-h-12 max-w-full object-contain">
+                        </div>
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/rccg-logo.png" alt="Redeemed Christian Church of God logo" class="max-h-10 sm:max-h-12 max-w-full object-contain">
+                        </div>
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/army-logo.png" alt="Nigerian Army Engineers logo" class="max-h-10 sm:max-h-12 max-w-full object-contain">
+                        </div>
                     </div>
-                    <div class="client-logo-group" aria-hidden="true">
-                        <div class="client-logo-frame"><img src="./assets/images/mikano-logo.png" alt=""></div>
-                        <div class="client-logo-frame"><img src="./assets/images/gastech-logo.png" alt=""></div>
-                        <div class="client-logo-frame"><img src="./assets/images/mtn-logo.png" alt=""></div>
-                        <div class="client-logo-frame"><img src="./assets/images/unitrust-logo.png" alt=""></div>
-                        <div class="client-logo-frame"><img src="./assets/images/rccg-logo.png" alt=""></div>
-                        <div class="client-logo-frame"><img src="./assets/images/army-logo.png" alt=""></div>
+                    <!-- Group 2 (duplicate for seamless loop) -->
+                    <div class="flex shrink-0 items-center gap-8 sm:gap-12 pr-8 sm:pr-12" aria-hidden="true">
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/mikano-logo.png" alt="" class="max-h-10 sm:max-h-12 max-w-full object-contain">
+                        </div>
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/gastech-logo.png" alt="" class="max-h-10 sm:max-h-12 max-w-full object-contain">
+                        </div>
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/mtn-logo.png" alt="" class="max-h-10 sm:max-h-12 max-w-full object-contain">
+                        </div>
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/unitrust-logo.png" alt="" class="max-h-10 sm:max-h-12 max-w-full object-contain">
+                        </div>
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/rccg-logo.png" alt="" class="max-h-10 sm:max-h-12 max-w-full object-contain">
+                        </div>
+                        <div class="flex shrink-0 items-center justify-center w-32 sm:w-40 lg:w-48 h-16 sm:h-20 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-4 py-3 shadow-sm">
+                            <img src="./assets/images/army-logo.png" alt="" class="max-h-10 sm:max-h-12 max-w-full object-contain">
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Client Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Mikano Construction -->
-                <div
-                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="client-card-logo mb-6">
-                        <img loading="lazy" src="./assets/images/mikano-logo.png" alt="Mikano International logo">
+
+                <!-- Mikano International -->
+                <div class="flex flex-col h-full bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="flex items-center justify-center h-24 w-full bg-slate-50 dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-6 py-4 mb-6">
+                        <img loading="lazy" src="./assets/images/mikano-logo.png" alt="Mikano International logo" class="max-h-14 max-w-[10rem] object-contain">
                     </div>
                     <h3 class="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-2">Mikano International</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">Industrial and manufacturing facility
-                        construction and fit-out across Nigeria.</p>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">Industrial and manufacturing facility construction and fit-out across Nigeria.</p>
                 </div>
 
                 <!-- Gastech -->
-                <div
-                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="client-card-logo mb-6">
-                        <img loading="lazy" src="./assets/images/gastech-logo.png" alt="Gastech Nigeria Ltd logo">
+                <div class="flex flex-col h-full bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="flex items-center justify-center h-24 w-full bg-slate-50 dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-6 py-4 mb-6">
+                        <img loading="lazy" src="./assets/images/gastech-logo.png" alt="Gastech Nigeria Ltd logo" class="max-h-14 max-w-[10rem] object-contain">
                     </div>
                     <h3 class="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-2">Gastech Nigeria Ltd</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">CNG infrastructure and energy sector
-                        construction projects.</p>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">CNG infrastructure and energy sector construction projects.</p>
                 </div>
 
                 <!-- MTN -->
-                <div
-                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="client-card-logo mb-6">
-                        <img loading="lazy" src="./assets/images/mtn-logo.png" alt="MTN Nigeria logo">
+                <div class="flex flex-col h-full bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="flex items-center justify-center h-24 w-full bg-slate-50 dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-6 py-4 mb-6">
+                        <img loading="lazy" src="./assets/images/mtn-logo.png" alt="MTN Nigeria logo" class="max-h-14 max-w-[10rem] object-contain">
                     </div>
                     <h3 class="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-2">MTN Nigeria</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">Telecommunications infrastructure and site
-                        development.</p>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">Telecommunications infrastructure and site development.</p>
                 </div>
 
                 <!-- UNITRUST -->
-                <div
-                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="client-card-logo mb-6">
-                        <img loading="lazy" src="./assets/images/unitrust-logo.png" alt="UNITRUST Insurance logo">
+                <div class="flex flex-col h-full bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="flex items-center justify-center h-24 w-full bg-slate-50 dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-6 py-4 mb-6">
+                        <img loading="lazy" src="./assets/images/unitrust-logo.png" alt="UNITRUST Insurance logo" class="max-h-14 max-w-[10rem] object-contain">
                     </div>
                     <h3 class="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-2">UNITRUST Insurance</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">Commercial and industrial insurance
-                        infrastructure projects.</p>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">Commercial and industrial insurance infrastructure projects.</p>
                 </div>
 
                 <!-- RCCG -->
-                <div
-                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="client-card-logo mb-6">
-                        <img loading="lazy" src="./assets/images/rccg-logo.png"
-                            alt="Redeemed Christian Church of God logo">
+                <div class="flex flex-col h-full bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="flex items-center justify-center h-24 w-full bg-slate-50 dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-6 py-4 mb-6">
+                        <img loading="lazy" src="./assets/images/rccg-logo.png" alt="Redeemed Christian Church of God logo" class="max-h-14 max-w-[10rem] object-contain">
                     </div>
                     <h3 class="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-2">RCCG</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">Church infrastructure and fellowship center
-                        construction.</p>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">Church infrastructure and fellowship center construction.</p>
                 </div>
 
                 <!-- Nigerian Army -->
-                <div
-                    class="client-card bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
-                    <div class="client-card-logo mb-6">
-                        <img loading="lazy" src="./assets/images/army-logo.png" alt="Nigerian Army Engineers logo">
+                <div class="flex flex-col h-full bg-white dark:bg-surface-dark rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-border-dark hover:shadow-xl transition-shadow">
+                    <div class="flex items-center justify-center h-24 w-full bg-slate-50 dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 px-6 py-4 mb-6">
+                        <img loading="lazy" src="./assets/images/army-logo.png" alt="Nigerian Army Engineers logo" class="max-h-14 max-w-[10rem] object-contain">
                     </div>
                     <h3 class="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-2">Nigerian Army Engineers</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">Defense and military engineering
-                        infrastructure projects.</p>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm lg:text-base">Defense and military engineering infrastructure projects.</p>
                 </div>
             </div>
 
             <!-- CTA -->
             <div class="text-center mt-20">
-                <p class="text-slate-600 dark:text-slate-400 mb-6">Ready to join our growing list of satisfied clients?
-                </p>
+                <p class="text-slate-600 dark:text-slate-400 mb-6">Ready to join our growing list of satisfied clients?</p>
                 <a href="contact.html"
                     class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-xl font-bold text-base lg:text-lg transition-all shadow-lg shadow-primary/20">
                     Start Your Project
