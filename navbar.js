@@ -35,7 +35,7 @@ class MainHeader extends HTMLElement {
     /** Render navigation link */
     renderNavLink = (link) => `
         <a href="${link.href}" 
-           class="text-sm font-semibold transition-colors ${link.active ? 'text-primary' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'}"
+           class="text-sm lg:text-base font-semibold transition-colors ${link.active ? 'text-primary' : 'text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-white'}"
            ${link.active ? 'aria-current="page"' : ''}>
             ${link.name}
         </a>
@@ -55,7 +55,7 @@ class MainHeader extends HTMLElement {
 
         this.innerHTML = `
             <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex h-16 items-center justify-between">
+                <div class="flex h-16 lg:h-20 items-center justify-between">
                     <div class="flex items-center gap-3">
                         <a href="index.html" class="flex items-center gap-3" aria-label="Cordon Blue Global Services - Home">
                             <div class="size-10 bg-white rounded-xl flex items-center justify-center overflow-hidden shrink-0 shadow-sm border border-slate-200/50">
@@ -73,7 +73,7 @@ class MainHeader extends HTMLElement {
                     </nav>
 
                     <div class="flex items-center gap-4">
-                        <a href="contact.html" class="hidden sm:flex items-center justify-center rounded-xl bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                        <a href="contact.html" class="hidden sm:flex items-center justify-center rounded-xl bg-primary px-6 py-2.5 lg:px-8 lg:py-3 text-sm lg:text-base font-bold text-white hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
                             Get a Quote
                         </a>
                         <button id="mobile-menu-button" class="md:hidden text-slate-900 dark:text-white p-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -152,13 +152,13 @@ class MainFooter extends HTMLElement {
                                 </div>
                                 <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue</span>
                             </div>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                            <p class="text-slate-500 dark:text-slate-400 text-sm lg:text-base leading-relaxed">
                                 A Lagos-based construction and project management company delivering civil works, energy infrastructure and architectural design across Nigeria.
                             </p>
                         </div>
                         <nav aria-label="Quick Links">
                             <h3 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Quick Links</h3>
-                            <ul class="space-y-4 text-sm font-medium">
+                            <ul class="space-y-4 text-sm lg:text-base font-medium">
                                 <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="index.html">Home</a></li>
                                 <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="about.html">About Us</a></li>
                                 <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="services.html">Our Services</a></li>
@@ -167,7 +167,7 @@ class MainFooter extends HTMLElement {
                         </nav>
                         <nav aria-label="Company Links">
                             <h3 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Company</h3>
-                            <ul class="space-y-4 text-sm font-medium">
+                            <ul class="space-y-4 text-sm lg:text-base font-medium">
                                 <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="why-choose-us.html">Why Choose Us</a></li>
                                 <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="contact.html">Contact Us</a></li>
                                 <li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a></li>
@@ -176,7 +176,7 @@ class MainFooter extends HTMLElement {
                         </nav>
                         <address class="not-italic">
                             <h3 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-widest text-xs">Contact Info</h3>
-                            <ul class="space-y-4 text-sm">
+                            <ul class="space-y-4 text-sm lg:text-base">
                                 <li class="flex items-start gap-3">
                                     <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">&#xF1DB;</span>
                                     <span class="text-slate-500 dark:text-slate-400">174, Ikorodu Road, Onipanu, Lagos, Nigeria</span>
