@@ -12,13 +12,11 @@
     <link rel="preload" href="./assets/fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/material-symbols-outlined-subset.woff2" as="font" type="font/woff2" crossorigin>
     <link href="./assets/output.css" rel="stylesheet">
-<style>
-    @media (min-width: 1536px) {
-        .max-w-7xl {
-            max-width: 1600px !important;
+    <style>
+        @media (min-width: 1536px) {
+            .max-w-7xl { max-width: 1600px !important; }
         }
-    }
-</style>
+    </style>
     <script src="navbar.js" defer></script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-200 font-display transition-colors duration-300">
@@ -29,25 +27,34 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="py-20 bg-slate-50 dark:bg-surface-dark/30 border-b border-slate-200 dark:border-white/5">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Contact Us</h1>
-                <p class="text-lg md:text-xl lg:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                    Have a project in mind? Let's discuss how we can bring your vision to life.
-                </p>
+        <section class="relative py-24 md:py-32 lg:py-40 bg-slate-900 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800"></div>
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[128px]" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-[100px]" aria-hidden="true"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-4xl">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold uppercase tracking-widest mb-8">
+                        <span class="material-symbols-outlined text-sm" aria-hidden="true">&#xE159;</span> Get In Touch
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">Contact Us</h1>
+                    <p class="text-lg md:text-xl lg:text-2xl text-slate-300 max-w-3xl leading-relaxed">
+                        Have a project in mind? Let's discuss how we can bring your vision to life.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <section class="py-24">
+        <!-- Contact Form + Details -->
+        <section class="py-24 lg:py-32">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-20">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
                     <!-- Contact Form -->
-                    <div class="bg-white dark:bg-surface-dark p-10 rounded-3xl border border-slate-200 dark:border-white/5 shadow-2xl">
-                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-slate-900 dark:text-white uppercase tracking-tight">Send Us a Message</h2>
+                    <div class="bg-white dark:bg-surface-dark p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-white/5 shadow-2xl">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-slate-900 dark:text-white uppercase tracking-tight">Send Us a Message</h2>
                         <form action="https://formsubmit.co/cordonblueglobal@gmail.com" method="POST" class="space-y-6">
                             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                             <input type="hidden" name="_captcha" value="true">
-                            <div class="grid md:grid-cols-2 gap-6">
+                            <div class="grid sm:grid-cols-2 gap-6">
                                 <div class="space-y-2">
                                     <label for="first_name" class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">First Name</label>
                                     <input type="text" id="first_name" name="first_name" required class="w-full px-4 py-3 bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white">
@@ -69,10 +76,10 @@
                                 <label for="service" class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">Service of Interest</label>
                                 <select id="service" name="service" class="w-full px-4 py-3 bg-slate-50 dark:bg-background-dark/50 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white">
                                     <option value="Project Management">Project Management</option>
-                                    <option value="Civil Contracting & Construction">Civil Contracting & Construction</option>
+                                    <option value="Civil Contracting & Construction">Civil Contracting &amp; Construction</option>
                                     <option value="Facility Management">Facility Management</option>
                                     <option value="Architectural Design">Architectural Design</option>
-                                    <option value="Procurement & Supply">Procurement & Supply</option>
+                                    <option value="Procurement & Supply">Procurement &amp; Supply</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
@@ -88,8 +95,8 @@
 
                     <!-- Contact Details -->
                     <div class="space-y-12">
-                        <div class="space-y-6">
-                            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white uppercase tracking-tight">Our Information</h2>
+                        <div class="space-y-4">
+                            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white uppercase tracking-tight">Our Information</h2>
                             <p class="text-lg text-slate-600 dark:text-slate-400">Feel free to reach out to us via any of the channels below or visit our office for a face-to-face consultation.</p>
                         </div>
 
@@ -99,7 +106,7 @@
                                     <span class="material-symbols-outlined text-3xl">&#xF1DB;</span>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-2">Office Address</h4>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Office Address</h4>
                                     <p class="text-slate-600 dark:text-slate-400 text-lg">174, Ikorodu Road, Onipanu, Lagos, Nigeria</p>
                                 </div>
                             </div>
@@ -109,8 +116,8 @@
                                     <span class="material-symbols-outlined text-3xl">&#xF0D4;</span>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-2">Phone Numbers</h4>
-                                    <p class="text-slate-600 dark:text-slate-400 text-lg">+234 812 414 1514</p>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Phone Numbers</h4>
+                                    <a href="tel:+2348124141514" class="text-slate-600 dark:text-slate-400 text-lg hover:text-primary transition-colors">+234 812 414 1514</a>
                                 </div>
                             </div>
 
@@ -119,8 +126,8 @@
                                     <span class="material-symbols-outlined text-3xl">&#xE159;</span>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-2">Email Address</h4>
-                                    <p class="text-slate-600 dark:text-slate-400 text-lg">cordonblueglobal@gmail.com</p>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Email Address</h4>
+                                    <a href="mailto:cordonblueglobal@gmail.com" class="text-slate-600 dark:text-slate-400 text-lg hover:text-primary transition-colors">cordonblueglobal@gmail.com</a>
                                 </div>
                             </div>
 
@@ -129,7 +136,7 @@
                                     <span class="material-symbols-outlined text-3xl">&#xEFD6;</span>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-2">Business Hours</h4>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Business Hours</h4>
                                     <p class="text-slate-600 dark:text-slate-400 text-lg">Monday – Friday: 8:00 AM – 6:00 PM</p>
                                     <p class="text-slate-600 dark:text-slate-400 text-lg">Saturday: 10:00 AM – 2:00 PM</p>
                                 </div>
@@ -139,19 +146,19 @@
                 </div>
             </div>
         </section>
-    
+
         <!-- Google Maps Section -->
-        <section class="py-16 bg-slate-100 dark:bg-surface-dark">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-center">Find Us</h2>
+        <section class="py-16 bg-slate-50 dark:bg-surface-dark/30 border-y border-slate-200 dark:border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center text-slate-900 dark:text-white">Find Us</h2>
                 <div class="rounded-2xl overflow-hidden shadow-xl">
-                    <iframe 
+                    <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4!2d3.3745!3d6.5325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8d7a1e77c0a7%3A0x5a3e4b1c2d3e4f5a!2s174+Ikorodu+Rd%2C+Onipanu%2C+Lagos!5e0!3m2!1sen!2sng!4v1700000000000"
-                        width="100%" 
-                        height="400" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
                         class="dark:brightness-75">
                     </iframe>
@@ -164,7 +171,7 @@
     <main-footer></main-footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/2348124141514" target="_blank" rel="noopener noreferrer" 
+    <a href="https://wa.me/2348124141514" target="_blank" rel="noopener noreferrer"
        class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110"
        aria-label="Chat on WhatsApp">
         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">

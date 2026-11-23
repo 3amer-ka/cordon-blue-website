@@ -12,13 +12,11 @@
     <link rel="preload" href="./assets/fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/material-symbols-outlined-subset.woff2" as="font" type="font/woff2" crossorigin>
     <link href="./assets/output.css" rel="stylesheet">
-<style>
-    @media (min-width: 1536px) {
-        .max-w-7xl {
-            max-width: 1600px !important;
+    <style>
+        @media (min-width: 1536px) {
+            .max-w-7xl { max-width: 1600px !important; }
         }
-    }
-</style>
+    </style>
     <script src="navbar.js" defer></script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-200 font-display transition-colors duration-300">
@@ -29,81 +27,83 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="py-20 bg-slate-50 dark:bg-surface-dark/30 border-b border-slate-200 dark:border-white/5">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Why Choose Cordon Blue</h1>
-                <p class="text-lg md:text-xl lg:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                    Discover why we are the preferred choice for construction and engineering projects in West Africa.
-                </p>
+        <section class="relative py-24 md:py-32 lg:py-40 bg-slate-900 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800"></div>
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[128px]" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-[100px]" aria-hidden="true"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-4xl">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold uppercase tracking-widest mb-8">
+                        <span class="material-symbols-outlined text-sm" aria-hidden="true">&#xEF76;</span> Why Us
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">Why Choose Cordon Blue</h1>
+                    <p class="text-lg md:text-xl lg:text-2xl text-slate-300 max-w-3xl leading-relaxed">
+                        Discover why we are the preferred choice for construction and engineering projects in West Africa.
+                    </p>
+                </div>
             </div>
         </section>
 
         <!-- USPs Section -->
-        <section class="py-24">
+        <section class="py-24 lg:py-32">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <!-- USP 1 -->
-                    <div class="p-8 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                    <div class="p-8 lg:p-10 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
                         <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-3xl">&#xEF76;</span>
                         </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold mb-4 dark:text-white uppercase tracking-tight">Outcome-Focused Delivery</h3>
-                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                        <h3 class="text-xl lg:text-2xl font-bold mb-4 dark:text-white uppercase tracking-tight">Outcome-Focused Delivery</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
                             We measure success by the results our clients achieve — operational buildings, revenue-generating assets and infrastructure that works from day one.
                         </p>
                     </div>
 
-                    <!-- USP 2 -->
-                    <div class="p-8 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
+                    <div class="p-8 lg:p-10 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
                         <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-3xl">&#xEA3D;</span>
                         </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold mb-4 dark:text-white uppercase tracking-tight">Transparent Reporting</h3>
-                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                        <h3 class="text-xl lg:text-2xl font-bold mb-4 dark:text-white uppercase tracking-tight">Transparent Reporting</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
                             Clients receive regular progress reports with real data — schedule status, spend-to-date, risks and next steps — so there are never surprises.
                         </p>
                     </div>
 
-                    <!-- USP 3 -->
-                    <div class="p-8 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
+                    <div class="p-8 lg:p-10 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
                         <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-3xl">&#xE425;</span>
                         </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold mb-4 dark:text-white uppercase tracking-tight">Live-Site Capability</h3>
-                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                        <h3 class="text-xl lg:text-2xl font-bold mb-4 dark:text-white uppercase tracking-tight">Live-Site Capability</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
                             We deliver inside operational facilities — CNG stations, telecom sites, occupied buildings — without shutting down your business.
                         </p>
                     </div>
 
-                    <!-- USP 4 -->
-                    <div class="p-8 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
+                    <div class="p-8 lg:p-10 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
                         <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-3xl">&#xE850;</span>
                         </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold mb-4 dark:text-white uppercase tracking-tight">Design & Build Under One Roof</h3>
-                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                        <h3 class="text-xl lg:text-2xl font-bold mb-4 dark:text-white uppercase tracking-tight">Design &amp; Build Under One Roof</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
                             Architecture, engineering, construction and facility management under a single contract — one team, one point of accountability.
                         </p>
                     </div>
 
-                    <!-- USP 5 -->
-                    <div class="p-8 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
+                    <div class="p-8 lg:p-10 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
                         <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-3xl">&#xEC1A;</span>
                         </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold mb-4 dark:text-white uppercase tracking-tight">Zero-Compromise Quality</h3>
-                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                        <h3 class="text-xl lg:text-2xl font-bold mb-4 dark:text-white uppercase tracking-tight">Zero-Compromise Quality</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
                             Every material is verified, every pour is tested, every finish is inspected. We never trade quality for speed.
                         </p>
                     </div>
 
-                    <!-- USP 6 -->
-                    <div class="p-8 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
+                    <div class="p-8 lg:p-10 bg-white dark:bg-surface-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm transition-all hover:shadow-xl group">
                         <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-3xl">&#xF0E2;</span>
                         </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold mb-4 dark:text-white uppercase tracking-tight">Nationwide Reach</h3>
-                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                        <h3 class="text-xl lg:text-2xl font-bold mb-4 dark:text-white uppercase tracking-tight">Nationwide Reach</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
                             Active across Lagos, Abuja, Imo and Delta States, with the logistics and local knowledge to mobilise anywhere in Nigeria.
                         </p>
                     </div>
@@ -112,19 +112,18 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section class="py-24 bg-slate-950 text-white overflow-hidden relative">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[128px]"></div>
-            <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[128px]"></div>
+        <section class="py-24 lg:py-32 bg-slate-950 text-white overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[128px]" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[128px]" aria-hidden="true"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-20">
-                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 tracking-tight">What Our Clients Say</h2>
-                    <p class="text-slate-400 text-lg max-w-2xl mx-auto font-medium">Hear from the leaders and organizations who have trusted us with their most ambitious projects.</p>
+                <div class="text-center mb-16 lg:mb-20">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">What Our Clients Say</h2>
+                    <p class="text-slate-400 text-lg max-w-2xl mx-auto">Hear from the leaders and organizations who have trusted us with their most ambitious projects.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Testimonial 1 -->
-                    <div class="p-10 bg-white/5 rounded-[2.5rem] border border-white/10 backdrop-blur-sm shadow-2xl">
+                    <div class="p-10 lg:p-12 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl">
                         <div class="flex items-center gap-1 mb-6">
                             <span class="material-symbols-outlined text-primary">&#xF09A;</span>
                             <span class="material-symbols-outlined text-primary">&#xF09A;</span>
@@ -132,7 +131,7 @@
                             <span class="material-symbols-outlined text-primary">&#xF09A;</span>
                             <span class="material-symbols-outlined text-primary">&#xF09A;</span>
                         </div>
-                        <p class="text-xl lg:text-2xl text-slate-200 italic mb-8 leading-relaxed">
+                        <p class="text-lg lg:text-xl text-slate-200 italic mb-8 leading-relaxed">
                             "Cordon Blue's attention to detail and engineering expertise transformed our vision for the Administrative Tower into a reality that exceeded all expectations. They are true professionals."
                         </p>
                         <div class="flex items-center gap-4 border-t border-white/10 pt-8">
@@ -144,8 +143,7 @@
                         </div>
                     </div>
 
-                    <!-- Testimonial 2 -->
-                    <div class="p-10 bg-white/5 rounded-[2.5rem] border border-white/10 backdrop-blur-sm shadow-2xl">
+                    <div class="p-10 lg:p-12 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-sm shadow-2xl">
                         <div class="flex items-center gap-1 mb-6">
                             <span class="material-symbols-outlined text-primary">&#xF09A;</span>
                             <span class="material-symbols-outlined text-primary">&#xF09A;</span>
@@ -153,7 +151,7 @@
                             <span class="material-symbols-outlined text-primary">&#xF09A;</span>
                             <span class="material-symbols-outlined text-primary">&#xF09A;</span>
                         </div>
-                        <p class="text-xl lg:text-2xl text-slate-200 italic mb-8 leading-relaxed">
+                        <p class="text-lg lg:text-xl text-slate-200 italic mb-8 leading-relaxed">
                             "Building a resort in a challenging environment required a partner who was adaptable and technically brilliant. Cordon Blue was that partner, delivering the project on time and within budget."
                         </p>
                         <div class="flex items-center gap-4 border-t border-white/10 pt-8">
@@ -164,6 +162,24 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 bg-primary relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-slate-950/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" aria-hidden="true"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">Ready to Experience the Difference?</h2>
+                <p class="text-sky-100/80 text-lg max-w-2xl mx-auto mb-10">Partner with a team that delivers on every promise. Let's start building your next project together.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a class="w-full sm:w-auto px-10 py-5 bg-white text-primary font-black rounded-2xl hover:scale-105 active:scale-95 transition-all text-lg flex items-center justify-center gap-3 shadow-2xl" href="contact.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">&#xE159;</span> Get a Free Quote
+                    </a>
+                    <a class="w-full sm:w-auto px-10 py-5 bg-slate-950 text-white font-black rounded-2xl hover:bg-slate-900 active:scale-95 transition-all text-lg flex items-center justify-center gap-3 shadow-2xl" href="projects.html">
+                        <span class="material-symbols-outlined" aria-hidden="true">&#xE9B0;</span> View Our Work
+                    </a>
                 </div>
             </div>
         </section>
