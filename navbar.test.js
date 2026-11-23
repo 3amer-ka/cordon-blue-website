@@ -113,7 +113,7 @@ async function runTests() {
         let contactInfo = footerElement.querySelector('address');
         assert.ok(contactInfo.textContent.includes('174, Ikorodu Road, Onipanu, Lagos, Nigeria'), "Address should be present");
         assert.ok(contactInfo.textContent.includes('+234 812 414 1514'), "Phone number should be present");
-        assert.ok(contactInfo.textContent.includes('info@cordonblueglobal.com'), "Email should be present");
+        assert.ok(contactInfo.textContent.includes('cordonblueglobal@gmail.com'), "Email should be present");
         console.log("✅ Test 9 Passed: Contact information accuracy");
 
 

@@ -153,7 +153,7 @@ class MainFooter extends HTMLElement {
                                 <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white uppercase">Cordon Blue</span>
                             </div>
                             <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
-                                A premier construction firm dedicated to transforming architectural visions into structural realities with precision and innovation.
+                                A Lagos-based construction and project management company delivering civil works, energy infrastructure and architectural design across Nigeria.
                             </p>
                         </div>
                         <nav aria-label="Quick Links">
@@ -187,7 +187,7 @@ class MainFooter extends HTMLElement {
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">&#xE159;</span>
-                                    <a href="mailto:info@cordonblueglobal.com" class="break-all text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">info@cordonblueglobal.com</a>
+                                    <a href="mailto:cordonblueglobal@gmail.com" class="break-all text-slate-500 dark:text-slate-400 hover:text-primary transition-colors">cordonblueglobal@gmail.com</a>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <a href="https://www.linkedin.com/company/cordon-blue-global-services-ltd" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-primary transition-colors">
